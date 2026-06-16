@@ -36,6 +36,7 @@ export function SiteShell({ content, language, children }: SiteShellProps) {
                 { href: `/${language}`, label: content.nav.home },
                 { href: `/${language}/library`, label: content.nav.library },
                 { href: `/${language}/puma-path`, label: content.nav.pumaPath },
+                { href: `/${language}/conservation`, label: content.nav.conservation },
                 { href: `/${language}/dashboard`, label: content.nav.dashboard },
                 { href: `/${language}/about`, label: content.nav.about },
                 { href: `/${language}/contact`, label: content.nav.contact },
@@ -77,6 +78,12 @@ export function SiteShell({ content, language, children }: SiteShellProps) {
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-goldmoun">
               {content.footer.mission}
             </p>
+            <Link
+              href={`/${language}/conservation`}
+              className="text-sm text-cloudwhite/70 transition hover:text-cloudwhite"
+            >
+              {content.nav.conservation}
+            </Link>
             <Link
               href={`/${language}/about`}
               className="text-sm text-cloudwhite/70 transition hover:text-cloudwhite"
