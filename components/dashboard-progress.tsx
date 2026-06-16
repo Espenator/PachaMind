@@ -49,8 +49,9 @@ export function DashboardProgress({
     lessons.some((lesson) => lesson.slug === slug),
   ).length;
   const percentComplete = lessons.length === 0 ? 0 : Math.round((completedCount / lessons.length) * 100);
+  const isAllComplete = lessons.length > 0 && completedCount >= lessons.length;
   const continueLesson =
-    lessons.find((lesson) => lesson.slug === lastOpenedLessonSlug && !completedSet.has(lesson.slug)) ??
+    lessons.find((lesson) => lesson.slug === lastOpenedLessonSlug && (!completedSet.has(lesson.slug) || isAllComplete)) ??
     lessons.find((lesson) => !completedSet.has(lesson.slug)) ??
     lessons.at(-1);
 
@@ -77,7 +78,9 @@ export function DashboardProgress({
             <div>
               <p className="text-sm uppercase tracking-[0.24em] text-stonegray">{labels.continueLearning}</p>
               <h2 className="headline-font mt-3 text-3xl text-deepearth">{continueLesson.title}</h2>
-              <p className="mt-3 text-base leading-7 text-stonegray">{continueLesson.description}</p>
+              <p className="mt-3 text-base leading-7 text-stonegray">
+                {isAllComplete ? labels.allComplete : continueLesson.description}
+              </p>
             </div>
             <div className="flex items-center justify-between gap-4">
               <span className="rounded-full border border-deepearth/10 bg-cloudwhite px-4 py-2 text-sm text-deepearth">

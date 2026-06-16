@@ -23,12 +23,12 @@ export function LessonProgressButton({
   completedLabel,
   hint,
 }: LessonProgressButtonProps) {
-  const [isCompleted, setIsCompleted] = useState(false);
+  const [isCompleted, setIsCompleted] = useState(() =>
+    readProgressState().completedLessonSlugs.includes(slug),
+  );
 
   useEffect(() => {
     setLastOpenedLessonSlug(slug);
-    const state = readProgressState();
-    setIsCompleted(state.completedLessonSlugs.includes(slug));
   }, [slug]);
 
   function toggleCompletion() {

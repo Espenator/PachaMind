@@ -74,6 +74,7 @@ export default async function LessonPage({
 
         <aside className="space-y-8">
           <LessonProgressButton
+            key={lesson.slug}
             slug={lesson.slug}
             markCompleteLabel={content.lessonPage.markComplete}
             markIncompleteLabel={content.lessonPage.markIncomplete}
