@@ -33,6 +33,7 @@ export interface SiteContent {
     library: string;
     dashboard: string;
     about: string;
+    contact: string;
     english: string;
     spanish: string;
   };
@@ -82,12 +83,35 @@ export interface SiteContent {
   about: {
     title: string;
     intro: string;
+    missionHeading: string;
+    missionBody: string;
+    storyHeading: string;
+    storyBody: string;
+    traditionHolderHeading: string;
+    traditionHolderBody: string;
     valuesHeading: string;
     values: string[];
   };
   footer: {
     credit: string;
     mission: string;
+  };
+  contact: {
+    title: string;
+    intro: string;
+    nameLabel: string;
+    namePlaceholder: string;
+    emailLabel: string;
+    emailPlaceholder: string;
+    messageLabel: string;
+    messagePlaceholder: string;
+    submitLabel: string;
+    successHeading: string;
+    successBody: string;
+    validationName: string;
+    validationEmail: string;
+    validationMessage: string;
+    noteLabel: string;
   };
   lessons: Lesson[];
 }

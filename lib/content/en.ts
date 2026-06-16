@@ -21,6 +21,7 @@ export const en: SiteContent = {
     library: "Library",
     dashboard: "Dashboard",
     about: "About",
+    contact: "Contact",
     english: "English",
     spanish: "Español",
   },
@@ -90,6 +91,15 @@ export const en: SiteContent = {
     title: "About this learning space",
     intro:
       "PachaMind preserves a sacred documentary atmosphere: cinematic pacing, earth-toned visuals, and reflective study rooted in free access.",
+    missionHeading: "Our mission",
+    missionBody:
+      "PachaMind exists to carry Andean teachings into a freely accessible digital space without distortion, commercialisation, or pressure. Every design decision — slow pacing, visual spaciousness, no checkout language — is a direct expression of that commitment.",
+    storyHeading: "How this space came to be",
+    storyBody:
+      "PachaMind grew out of a desire to honour living traditions and the people who keep them. The platform was shaped around the teachings of Mallku Aribalo, who shared them so that they could travel respectfully beyond their original geography and reach anyone ready to listen carefully. Nothing here is sold, tokenised, or extracted from its context.",
+    traditionHolderHeading: "Mallku Aribalo — tradition-holder and shamanic teacher",
+    traditionHolderBody:
+      "Mallku Aribalo is an Andean shamanic teacher and tradition-holder whose knowledge of cosmological practice, community reciprocity, and sacred attention forms the living foundation of every lesson in this space. His teachings are offered here for cultural learning and reflection, and are credited to him throughout the experience.",
     valuesHeading: "Grounding commitments",
     values: [
       "100% free and nonprofit, with no pricing, sales funnel, or checkout language.",
@@ -100,6 +110,26 @@ export const en: SiteContent = {
   footer: {
     credit: "Tradition-holder: Mallku Aribalo",
     mission: "No cost, no sales — only learning",
+  },
+  contact: {
+    title: "Get in touch",
+    intro:
+      "Questions, translations, or feedback about the learning space — this form opens a message in your default email app. No data is collected on this site.",
+    nameLabel: "Your name",
+    namePlaceholder: "How you would like to be addressed",
+    emailLabel: "Your email address",
+    emailPlaceholder: "So we can reply to you",
+    messageLabel: "Your message",
+    messagePlaceholder: "Questions, reflections, or feedback — write as freely as you like",
+    submitLabel: "Open in email app",
+    successHeading: "Message composed",
+    successBody:
+      "Your email app has opened with the message pre-filled. Send it whenever you are ready.",
+    validationName: "Please enter your name.",
+    validationEmail: "Please enter a valid email address.",
+    validationMessage: "Please write a message before sending.",
+    noteLabel:
+      "This form opens a mailto: link in your email app. No information is transmitted to or stored by this website.",
   },
   lessons: [
     {

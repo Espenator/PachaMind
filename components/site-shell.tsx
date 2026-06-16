@@ -37,6 +37,7 @@ export function SiteShell({ content, language, children }: SiteShellProps) {
                 { href: `/${language}/library`, label: content.nav.library },
                 { href: `/${language}/dashboard`, label: content.nav.dashboard },
                 { href: `/${language}/about`, label: content.nav.about },
+                { href: `/${language}/contact`, label: content.nav.contact },
               ].map((item) => (
                 <Link
                   key={item.href}
@@ -71,9 +72,23 @@ export function SiteShell({ content, language, children }: SiteShellProps) {
         <div className="mx-auto grid max-w-7xl gap-4 px-6 py-8 lg:px-10">
           <p className="headline-font text-2xl">{content.footer.credit}</p>
           <p className="text-sm text-cloudwhite/85">{content.brand.disclaimer}</p>
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-goldmoun">
-            {content.footer.mission}
-          </p>
+          <div className="flex flex-wrap items-center gap-4">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-goldmoun">
+              {content.footer.mission}
+            </p>
+            <Link
+              href={`/${language}/about`}
+              className="text-sm text-cloudwhite/70 transition hover:text-cloudwhite"
+            >
+              {content.nav.about}
+            </Link>
+            <Link
+              href={`/${language}/contact`}
+              className="text-sm text-cloudwhite/70 transition hover:text-cloudwhite"
+            >
+              {content.nav.contact}
+            </Link>
+          </div>
         </div>
       </footer>
     </div>
