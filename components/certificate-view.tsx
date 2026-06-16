@@ -20,11 +20,13 @@ export function CertificateView({ labels }: CertificateViewProps) {
   const [mounted, setMounted] = useState(false);
   const printRef = useRef<HTMLDivElement>(null);
 
+  /* eslint-disable react-hooks/set-state-in-effect -- reading localStorage for SSR-safe init */
   useEffect(() => {
     const stored = readProgressState().displayName ?? "";
     setName(stored);
     setMounted(true);
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   function handleNameChange(e: React.ChangeEvent<HTMLInputElement>) {
     const value = e.target.value;

@@ -4,7 +4,7 @@ export type Language = (typeof languages)[number];
 
 export interface Lesson {
   slug: string;
-  topic: string;
+  topic?: string;
   title: string;
   kicker: string;
   duration: string;
@@ -13,7 +13,6 @@ export interface Lesson {
   learningNotes: string[];
   reflectionPrompt: string;
   youtubeId: string;
-  topic?: string;
 }
 
 export interface PumaPathStage {

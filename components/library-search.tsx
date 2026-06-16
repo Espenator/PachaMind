@@ -29,7 +29,7 @@ export function LibrarySearch({ lessons, library, brand, lang }: LibrarySearchPr
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Derive unique topics in the order lessons appear
-  const uniqueTopics = Array.from(new Set(lessons.map((l) => l.topic)));
+  const uniqueTopics = Array.from(new Set(lessons.map((l) => l.topic).filter((t): t is string => t !== undefined)));
 
   // Sync URL when activeTopic changes (immediate)
   function updateUrl(q: string, topic: string) {
@@ -69,14 +69,6 @@ export function LibrarySearch({ lessons, library, brand, lang }: LibrarySearchPr
       if (debounceRef.current) clearTimeout(debounceRef.current);
     };
   }, []);
-
-  // Sync local state if searchParams change externally (e.g. browser back/forward)
-  const paramQ = searchParams.get("q") ?? "";
-  const paramTopic = searchParams.get("topic") ?? "";
-  useEffect(() => {
-    setInputValue(paramQ);
-    setActiveTopic(paramTopic);
-  }, [paramQ, paramTopic]);
 
   // Filter lessons
   const query = inputValue.trim().toLowerCase();

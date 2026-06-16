@@ -222,7 +222,6 @@ export const en: SiteContent = {
       title: "Mountain Listening",
       kicker: "Lesson 1",
       duration: "12 min",
-      topic: "Foundations",
       youtubeId: "ScMzIvxBSi4",
       description:
         "Begin with attentive listening: pacing your attention, noticing place, and letting silence do part of the teaching.",
@@ -242,7 +241,6 @@ export const en: SiteContent = {
       title: "Ayllu and Reciprocity",
       kicker: "Lesson 2",
       duration: "14 min",
-      topic: "Foundations",
       youtubeId: "aqz-KE-bpKQ",
       description:
         "Explore reciprocity as a living practice of mutual care, responsibility, and gratitude across community and landscape.",
@@ -262,7 +260,6 @@ export const en: SiteContent = {
       title: "Ritual Attention",
       kicker: "Lesson 3",
       duration: "11 min",
-      topic: "Living Practice",
       youtubeId: "ysz5S6PUM-U",
       description:
         "Learn how ritual attention gathers memory, intention, and embodied care without spectacle or performance pressure.",
@@ -282,7 +279,6 @@ export const en: SiteContent = {
       title: "Carrying the Teaching Forward",
       kicker: "Lesson 4",
       duration: "13 min",
-      topic: "Living Practice",
       youtubeId: "M7lc1UVf-VE",
       description:
         "Close the sequence by considering how teachings are carried forward through humility, accuracy, and shared responsibility.",

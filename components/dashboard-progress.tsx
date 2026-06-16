@@ -270,7 +270,7 @@ export function DashboardProgress({
                 type="button"
                 onClick={handleReset}
                 className="rounded-full bg-terracotta px-5 py-3 text-sm font-semibold text-cloudwhite transition hover:bg-deepearth"
-              >              >
+              >
                 {labels.resetConfirmLabel}
               </button>
               <button
