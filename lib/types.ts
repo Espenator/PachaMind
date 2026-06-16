@@ -31,7 +31,11 @@ export interface SiteContent {
   };
   nav: {
     home: string;
+    curriculum: string;
     library: string;
+    pumaPath: string;
+    conservation: string;
+    reflections: string;
     dashboard: string;
     about: string;
     contact: string;
@@ -44,6 +48,22 @@ export interface SiteContent {
     primaryCta: string;
     secondaryCta: string;
     featuredLabel: string;
+    featuredCta: string;
+    curriculumLabel: string;
+    curriculumCta: string;
+    libraryLabel: string;
+    libraryCta: string;
+    pumaPathTeaser: {
+      title: string;
+      body: string;
+      ctaLabel: string;
+      image: string;
+    };
+    reflectionsTeaser: {
+      title: string;
+      body: string;
+      ctaLabel: string;
+    };
     sections: Array<{
       title: string;
       body: string;
@@ -71,8 +91,14 @@ export interface SiteContent {
     markIncomplete: string;
     completedLabel: string;
     progressHint: string;
+    prevLessonLabel: string;
     nextLessonLabel: string;
     dashboardLabel: string;
+    reflectionEntryLabel: string;
+    reflectionPlaceholder: string;
+    reflectionSaveLabel: string;
+    reflectionSavedLabel: string;
+    viewReflectionsLabel: string;
   };
   dashboard: {
     title: string;
@@ -117,6 +143,52 @@ export interface SiteContent {
     validationEmail: string;
     validationMessage: string;
     noteLabel: string;
+  };
+  curriculum: {
+    title: string;
+    intro: string;
+    viewLessonLabel: string;
+    modules: Array<{
+      title: string;
+      description: string;
+      lessonSlugs: string[];
+    }>;
+  };
+  reflections: {
+    title: string;
+    intro: string;
+    emptyState: string;
+    promptLabel: string;
+    entryPlaceholder: string;
+    saveLabel: string;
+    savedLabel: string;
+    clearAllLabel: string;
+    clearConfirm: string;
+    lessonLinkLabel: string;
+    savedAtLabel: string;
+  };
+  conservation: {
+    title: string;
+    intro: string;
+    sections: Array<{
+      title: string;
+      body: string;
+      image: string;
+    }>;
+  };
+  pumaPath: {
+    title: string;
+    intro: string;
+    stepLabel: string;
+    steps: Array<{
+      title: string;
+      body: string;
+      lessonSlug?: string;
+      ctaLabel?: string;
+    }>;
+    beginLabel: string;
+    completedState: string;
+    heroImage: string;
   };
   lessons: Lesson[];
 }

@@ -10,11 +10,10 @@ import type { Language, Lesson, SiteContent } from "@/lib/types";
 interface LibrarySearchProps {
   lessons: Lesson[];
   library: SiteContent["library"];
-  brand: SiteContent["brand"];
   lang: Language;
 }
 
-export function LibrarySearch({ lessons, library, brand, lang }: LibrarySearchProps) {
+export function LibrarySearch({ lessons, library, lang }: LibrarySearchProps) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -74,8 +73,11 @@ export function LibrarySearch({ lessons, library, brand, lang }: LibrarySearchPr
   const paramQ = searchParams.get("q") ?? "";
   const paramTopic = searchParams.get("topic") ?? "";
   useEffect(() => {
-    setInputValue(paramQ);
-    setActiveTopic(paramTopic);
+    function syncFromSearchParams() {
+      setInputValue(paramQ);
+      setActiveTopic(paramTopic);
+    }
+    syncFromSearchParams();
   }, [paramQ, paramTopic]);
 
   // Filter lessons

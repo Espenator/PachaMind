@@ -18,7 +18,11 @@ export const en: SiteContent = {
   },
   nav: {
     home: "Home",
+    curriculum: "Curriculum",
     library: "Library",
+    pumaPath: "Puma Path",
+    conservation: "Conservation",
+    reflections: "Reflections",
     dashboard: "Dashboard",
     about: "About",
     contact: "Contact",
@@ -29,9 +33,26 @@ export const en: SiteContent = {
     title: "Enter a mountain-paced library of listening, reciprocity, and remembrance.",
     intro:
       "PachaMind is a free bilingual learning space shaped like a documentary field notebook: spacious, visual, and grounded in community reflection.",
-    primaryCta: "Explore the library",
+    primaryCta: "Explore the curriculum",
     secondaryCta: "View your dashboard",
     featuredLabel: "Featured lesson",
+    featuredCta: "Open full lesson",
+    curriculumLabel: "Structured curriculum",
+    curriculumCta: "See the full curriculum",
+    libraryLabel: "Full lesson library",
+    libraryCta: "Browse the library",
+    pumaPathTeaser: {
+      title: "Walk the Puma Path",
+      body: "A guided four-lesson sequence moving from arrival and listening through reciprocity, ritual, and stewardship. Begin at your own pace, return when you are ready.",
+      ctaLabel: "Begin the guided journey",
+      image:
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+    },
+    reflectionsTeaser: {
+      title: "Keep a reflection journal",
+      body: "Each lesson closes with a question held in spacious silence. Write your response and save it privately in this browser — unhurried, and entirely yours.",
+      ctaLabel: "Open your journal",
+    },
     sections: [
       {
         title: "Documentary pacing",
@@ -81,8 +102,14 @@ export const en: SiteContent = {
     completedLabel: "Saved in this browser as completed",
     progressHint:
       "Progress is stored locally on this device only. No account is required.",
+    prevLessonLabel: "Previous lesson",
     nextLessonLabel: "Continue to next lesson",
     dashboardLabel: "Go to dashboard",
+    reflectionEntryLabel: "Your reflection",
+    reflectionPlaceholder: "Write your response to the prompt above…",
+    reflectionSaveLabel: "Save to journal",
+    reflectionSavedLabel: "Saved to journal ✓",
+    viewReflectionsLabel: "View all reflections",
   },
   dashboard: {
     title: "Your learning dashboard",
@@ -139,6 +166,102 @@ export const en: SiteContent = {
     validationMessage: "Please write a message before sending.",
     noteLabel:
       "This form opens a mailto: link in your email app. No information is transmitted to or stored by this website.",
+  },
+  curriculum: {
+    title: "Curriculum",
+    intro:
+      "Four lessons across two modules, each grounded in Andean cosmological practice and the sacred documentary tradition of careful, unhurried attention.",
+    viewLessonLabel: "Open lesson",
+    modules: [
+      {
+        title: "Foundation: Listening and Reciprocity",
+        description:
+          "The first two lessons establish the ground of the practice — how to arrive, how to receive, and how to return care to the places and people that sustain us.",
+        lessonSlugs: ["mountain-listening", "ayllu-reciprocity"],
+      },
+      {
+        title: "Practice: Ritual and Stewardship",
+        description:
+          "The final two lessons move from foundation into ongoing practice — how to concentrate attention through ritual, and how to carry teachings forward responsibly.",
+        lessonSlugs: ["ritual-attention", "carrying-the-teaching"],
+      },
+    ],
+  },
+  reflections: {
+    title: "Your reflections",
+    intro:
+      "Each lesson carries a reflection prompt. Entries you write here are stored only in this browser and never transmitted anywhere.",
+    emptyState:
+      "No reflections saved yet. Open any lesson and write a response to the reflection prompt to begin your journal.",
+    promptLabel: "Prompt",
+    entryPlaceholder: "Write your reflection here…",
+    saveLabel: "Save reflection",
+    savedLabel: "Saved",
+    clearAllLabel: "Clear all reflections",
+    clearConfirm: "This will permanently delete all saved reflections. Are you sure?",
+    lessonLinkLabel: "Return to lesson",
+    savedAtLabel: "Saved",
+  },
+  conservation: {
+    title: "Conservation",
+    intro:
+      "Andean cosmology does not separate human communities from the natural world. Land, water, animal, and ancestor are held together in one living web of care, reciprocity, and accountability.",
+    sections: [
+      {
+        title: "Pachamama and living stewardship",
+        body: "Pachamama — the Earth Mother — is not a metaphor in Andean thought. She is a living subject who holds memory, responds to care, and withdraws when reciprocity is broken. To study with Mallku Aribalo is to encounter a cosmology in which conservation is not a project but a posture: the ordinary, daily practice of living in right relation.",
+        image:
+          "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80",
+      },
+      {
+        title: "Ayllu and the web of mutual care",
+        body: "The Andean concept of ayllu — community — extends beyond human households to include the landscape, the seasons, and the more-than-human world. Every practice taught in these lessons carries the implicit understanding that learning well means caring well: attending to what feeds us, protecting what is fragile, and returning what we receive.",
+        image:
+          "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80",
+      },
+      {
+        title: "Responsible learning",
+        body: "These teachings are offered not for extraction but for transformation. Taking them seriously means asking how your own practices — of attention, time, and resource — align with the reciprocal ethic they describe. Cultural learning, when it is honest, leads back to the local: what is yours to protect, tend, and carry forward.",
+        image:
+          "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1600&q=80",
+      },
+    ],
+  },
+  pumaPath: {
+    title: "The Puma Path",
+    intro:
+      "A guided journey through all four teachings in sequence. The puma in Andean cosmology is a guardian of the earth — present, patient, and attentive. This path asks you to move at that pace.",
+    stepLabel: "Step",
+    steps: [
+      {
+        title: "Arrive in listening",
+        body: "Begin by slowing your pace. The first lesson introduces the ground of the practice: how to arrive at a teaching without grabbing at it, and what becomes possible when silence is given as much space as speech.",
+        lessonSlug: "mountain-listening",
+        ctaLabel: "Begin: Mountain Listening",
+      },
+      {
+        title: "Enter reciprocity",
+        body: "From listening, move into exchange. The second lesson asks what you receive from the places, communities, and traditions around you — and how a more reciprocal way of living might look in practice.",
+        lessonSlug: "ayllu-reciprocity",
+        ctaLabel: "Continue: Ayllu and Reciprocity",
+      },
+      {
+        title: "Deepen through ritual",
+        body: "Ritual attention is the third lesson. Here, the path narrows and focuses: how do you concentrate care into a repeated gesture, and what does it mean to practice something until it holds memory on your behalf?",
+        lessonSlug: "ritual-attention",
+        ctaLabel: "Continue: Ritual Attention",
+      },
+      {
+        title: "Carry the teaching forward",
+        body: "The final step asks the most demanding question: how do you carry what you have learned — faithfully, humbly, connected to its source — into your own life and the lives of those around you?",
+        lessonSlug: "carrying-the-teaching",
+        ctaLabel: "Complete the path: Carrying the Teaching",
+      },
+    ],
+    beginLabel: "Begin the Puma Path",
+    completedState: "Completed",
+    heroImage:
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
   },
   lessons: [
     {

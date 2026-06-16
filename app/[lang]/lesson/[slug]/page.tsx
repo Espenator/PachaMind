@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { LessonProgressButton } from "@/components/lesson-progress-button";
+import { ReflectionBox } from "@/components/reflection-box";
 import { YouTubeEmbed } from "@/components/youtube-embed";
 import { getContent, getLesson, isLanguage } from "@/lib/content";
 import { languages } from "@/lib/types";
@@ -34,8 +35,9 @@ export default async function LessonPage({
     notFound();
   }
 
-  const nextLessonIndex = content.lessons.findIndex((entry) => entry.slug === lesson.slug) + 1;
-  const nextLesson = content.lessons[nextLessonIndex];
+  const lessonIndex = content.lessons.findIndex((entry) => entry.slug === lesson.slug);
+  const prevLesson = lessonIndex > 0 ? content.lessons[lessonIndex - 1] : undefined;
+  const nextLesson = content.lessons[lessonIndex + 1];
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-10 lg:px-10 lg:py-16">
@@ -43,10 +45,10 @@ export default async function LessonPage({
         <section className="space-y-8">
           <div className="documentary-card p-8 lg:p-10">
             <Link href={`/${lang}/library`} className="text-sm font-medium text-terracotta">
-              {content.lessonPage.backToLibrary}
+              ← {content.lessonPage.backToLibrary}
             </Link>
             <p className="mt-5 text-xs uppercase tracking-[0.3em] text-terracotta">
-              {lesson.kicker} · {lesson.duration}
+              {lesson.kicker} · {lesson.duration} · {content.library.topics[lesson.topic] ?? lesson.topic}
             </p>
             <h1 className="headline-font mt-4 text-5xl leading-tight text-deepearth">{lesson.title}</h1>
             <p className="mt-5 text-lg leading-8 text-stonegray">{lesson.description}</p>
@@ -70,6 +72,20 @@ export default async function LessonPage({
               ))}
             </ul>
           </div>
+
+          <ReflectionBox
+            lessonSlug={lesson.slug}
+            prompt={lesson.reflectionPrompt}
+            lang={lang}
+            labels={{
+              reflectionHeading: content.lessonPage.reflectionHeading,
+              reflectionEntryLabel: content.lessonPage.reflectionEntryLabel,
+              reflectionPlaceholder: content.lessonPage.reflectionPlaceholder,
+              reflectionSaveLabel: content.lessonPage.reflectionSaveLabel,
+              reflectionSavedLabel: content.lessonPage.reflectionSavedLabel,
+              viewReflectionsLabel: content.lessonPage.viewReflectionsLabel,
+            }}
+          />
         </section>
 
         <aside className="space-y-8">
@@ -82,11 +98,6 @@ export default async function LessonPage({
             hint={content.lessonPage.progressHint}
           />
 
-          <div className="documentary-card p-8">
-            <h2 className="headline-font text-3xl text-deepearth">{content.lessonPage.reflectionHeading}</h2>
-            <p className="mt-4 text-base leading-8 text-stonegray">{lesson.reflectionPrompt}</p>
-          </div>
-
           <div className="documentary-card flex flex-col gap-4 p-8">
             <Link
               href={`/${lang}/dashboard`}
@@ -94,6 +105,14 @@ export default async function LessonPage({
             >
               {content.lessonPage.dashboardLabel}
             </Link>
+            {prevLesson ? (
+              <Link
+                href={`/${lang}/lesson/${prevLesson.slug}`}
+                className="rounded-full border border-deepearth/10 px-5 py-3 text-center text-sm font-semibold transition hover:bg-deepearth/10"
+              >
+                ← {content.lessonPage.prevLessonLabel}
+              </Link>
+            ) : null}
             {nextLesson ? (
               <Link
                 href={`/${lang}/lesson/${nextLesson.slug}`}
@@ -102,6 +121,16 @@ export default async function LessonPage({
                 {content.lessonPage.nextLessonLabel}
               </Link>
             ) : null}
+          </div>
+
+          <div className="documentary-card p-8">
+            <Link
+              href={`/${lang}/curriculum`}
+              className="text-sm font-medium text-terracotta transition hover:text-deepearth"
+            >
+              {content.nav.curriculum} →
+            </Link>
+            <p className="mt-3 text-sm leading-7 text-stonegray">{content.curriculum.intro}</p>
           </div>
         </aside>
       </div>
