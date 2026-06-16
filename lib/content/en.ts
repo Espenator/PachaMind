@@ -20,6 +20,7 @@ export const en: SiteContent = {
     home: "Home",
     library: "Library",
     dashboard: "Dashboard",
+    reflections: "Reflections",
     about: "About",
     contact: "Contact",
     english: "English",
@@ -218,4 +219,33 @@ export const en: SiteContent = {
         "How can you carry a teaching forward in a way that preserves context, credit, and responsibility?",
     },
   ],
+  reflections: {
+    title: "Reflections",
+    intro:
+      "A contemplative space to sit with each lesson's journaling prompt. Write privately — your notes remain in this browser only and are never transmitted or stored by this site.",
+    promptsHeading: "Journaling prompts",
+    noteLabel: "Your private notes",
+    notePlaceholder:
+      "Write freely. Your notes stay in this browser only — nothing is shared or transmitted.",
+    saveLabel: "Save note",
+    savedLabel: "Saved",
+    clearLabel: "Clear",
+    storageHint:
+      "Notes are stored only in this browser. Nothing is transmitted to or collected by this site.",
+    attributionLabel: "Reflective prompts drawn from teachings by Mallku Aribalo",
+    parallaxSections: [
+      {
+        title: "Writing as listening",
+        body: "Journaling within a cosmovision framework is not analysis — it is a way of attending to what is already present. Write toward noticing, not toward conclusions.",
+        image:
+          "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1600&q=80",
+      },
+      {
+        title: "Private and unhurried",
+        body: "These notes belong only to you. There are no accounts, no submissions, and no right answers — only the quiet space between a question and your response.",
+        image:
+          "https://images.unsplash.com/photo-1457269449834-928af64c684d?auto=format&fit=crop&w=1600&q=80",
+      },
+    ],
+  },
 };

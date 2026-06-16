@@ -20,6 +20,7 @@ export const es: SiteContent = {
     home: "Inicio",
     library: "Biblioteca",
     dashboard: "Panel",
+    reflections: "Reflexiones",
     about: "Acerca de",
     contact: "Contacto",
     english: "English",
@@ -220,4 +221,33 @@ export const es: SiteContent = {
         "¿Cómo puedes llevar una enseñanza hacia adelante de una manera que preserve contexto, crédito y responsabilidad?",
     },
   ],
+  reflections: {
+    title: "Reflexiones",
+    intro:
+      "Un espacio contemplativo para detenerte con la pregunta de cada lección. Escribe en privado — tus notas permanecen solo en este navegador y nunca se transmiten ni se almacenan en este sitio.",
+    promptsHeading: "Preguntas para el diario",
+    noteLabel: "Tus notas privadas",
+    notePlaceholder:
+      "Escribe con libertad. Tus notas permanecen solo en este navegador — nada se comparte ni se transmite.",
+    saveLabel: "Guardar nota",
+    savedLabel: "Guardada",
+    clearLabel: "Borrar",
+    storageHint:
+      "Las notas se almacenan solo localmente en este navegador. Este sitio no transmite ni recopila ningún dato.",
+    attributionLabel: "Preguntas reflexivas extraídas de las enseñanzas de Mallku Aribalo",
+    parallaxSections: [
+      {
+        title: "Escribir como escucha",
+        body: "Llevar un diario dentro de un marco de cosmovisión no es análisis — es una manera de atender a lo que ya está presente. Escribe hacia la observación, no hacia conclusiones.",
+        image:
+          "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1600&q=80",
+      },
+      {
+        title: "Privado y sin prisa",
+        body: "Estas notas te pertenecen solo a ti. No hay cuentas, ni envíos, ni respuestas correctas — solo el espacio tranquilo entre una pregunta y tu respuesta.",
+        image:
+          "https://images.unsplash.com/photo-1457269449834-928af64c684d?auto=format&fit=crop&w=1600&q=80",
+      },
+    ],
+  },
 };

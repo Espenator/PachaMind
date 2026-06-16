@@ -36,6 +36,7 @@ export function SiteShell({ content, language, children }: SiteShellProps) {
                 { href: `/${language}`, label: content.nav.home },
                 { href: `/${language}/library`, label: content.nav.library },
                 { href: `/${language}/dashboard`, label: content.nav.dashboard },
+                { href: `/${language}/reflections`, label: content.nav.reflections },
                 { href: `/${language}/about`, label: content.nav.about },
                 { href: `/${language}/contact`, label: content.nav.contact },
               ].map((item) => (

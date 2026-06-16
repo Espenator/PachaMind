@@ -33,6 +33,7 @@ export interface SiteContent {
     home: string;
     library: string;
     dashboard: string;
+    reflections: string;
     about: string;
     contact: string;
     english: string;
@@ -119,4 +120,21 @@ export interface SiteContent {
     noteLabel: string;
   };
   lessons: Lesson[];
+  reflections: {
+    title: string;
+    intro: string;
+    promptsHeading: string;
+    noteLabel: string;
+    notePlaceholder: string;
+    saveLabel: string;
+    savedLabel: string;
+    clearLabel: string;
+    storageHint: string;
+    attributionLabel: string;
+    parallaxSections: Array<{
+      title: string;
+      body: string;
+      image: string;
+    }>;
+  };
 }
