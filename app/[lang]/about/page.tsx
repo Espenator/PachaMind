@@ -1,6 +1,35 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { getContent, isLanguage } from "@/lib/content";
+import { SITE_URL } from "@/lib/site";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isLanguage(lang)) return {};
+  const content = getContent(lang);
+  return {
+    title: content.about.title,
+    description: content.about.intro,
+    openGraph: {
+      title: content.about.title,
+      description: content.about.intro,
+      url: `${SITE_URL}/${lang}/about`,
+    },
+    alternates: {
+      canonical: `${SITE_URL}/${lang}/about`,
+      languages: {
+        en: `${SITE_URL}/en/about`,
+        es: `${SITE_URL}/es/about`,
+        "x-default": `${SITE_URL}/en/about`,
+      },
+    },
+  };
+}
 
 export default async function AboutPage({
   params,

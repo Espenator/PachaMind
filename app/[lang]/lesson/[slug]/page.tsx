@@ -1,9 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { LessonProgressButton } from "@/components/lesson-progress-button";
 import { YouTubeEmbed } from "@/components/youtube-embed";
 import { getContent, getLesson, isLanguage } from "@/lib/content";
+import { SITE_URL } from "@/lib/site";
 import { languages } from "@/lib/types";
 
 export async function generateStaticParams() {
@@ -14,6 +16,34 @@ export async function generateStaticParams() {
       slug: lesson.slug,
     }));
   });
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string; slug: string }>;
+}): Promise<Metadata> {
+  const { lang, slug } = await params;
+  if (!isLanguage(lang)) return {};
+  const lesson = getLesson(lang, slug);
+  if (!lesson) return {};
+  return {
+    title: lesson.title,
+    description: lesson.description,
+    openGraph: {
+      title: lesson.title,
+      description: lesson.description,
+      url: `${SITE_URL}/${lang}/lesson/${slug}`,
+    },
+    alternates: {
+      canonical: `${SITE_URL}/${lang}/lesson/${slug}`,
+      languages: {
+        en: `${SITE_URL}/en/lesson/${slug}`,
+        es: `${SITE_URL}/es/lesson/${slug}`,
+        "x-default": `${SITE_URL}/en/lesson/${slug}`,
+      },
+    },
+  };
 }
 
 export default async function LessonPage({
