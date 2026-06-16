@@ -36,20 +36,17 @@ export const en: SiteContent = {
       {
         title: "Documentary pacing",
         body: "Slow visuals, layered notes, and grounded prompts help each lesson feel like a field visit instead of a sales funnel.",
-        image:
-          "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/hero-machu-picchu.jpg",
       },
       {
         title: "Bilingual access",
         body: "English and Spanish stay in sync so every reflection, lesson note, and next step carries the same meaning across both routes.",
-        image:
-          "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/sacred-valley-1.jpg",
       },
       {
         title: "Free and nonprofit",
         body: "Every page repeats the core promise clearly: no pricing, no checkout, no reservation pressure, and no donations asked here.",
-        image:
-          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/andean-terraces-1.jpg",
       },
     ],
   },

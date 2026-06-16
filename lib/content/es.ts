@@ -37,20 +37,17 @@ export const es: SiteContent = {
       {
         title: "Ritmo documental",
         body: "Visuales lentos, notas en capas y preguntas serenas hacen que cada lección se sienta como una visita de campo y no como un embudo de ventas.",
-        image:
-          "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/hero-machu-picchu.jpg",
       },
       {
         title: "Acceso bilingüe",
         body: "El inglés y el español se mantienen sincronizados para que cada reflexión, nota y siguiente paso conserve el mismo sentido en ambas rutas.",
-        image:
-          "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/sacred-valley-1.jpg",
       },
       {
         title: "Gratuito y sin fines de lucro",
         body: "Cada página repite la promesa central con claridad: sin precios, sin checkout, sin presión para reservar y sin solicitudes de donación.",
-        image:
-          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/andean-terraces-1.jpg",
       },
     ],
   },

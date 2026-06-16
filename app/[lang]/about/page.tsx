@@ -44,7 +44,7 @@ export default async function AboutPage({
           className="photo-overlay parallax-band rounded-[2rem]"
           style={{
             backgroundImage:
-              "url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80)",
+              "url(/images/andes/andes-mountains-1.jpg)",
           }}
         >
           <div className="relative z-10 p-8 sm:p-10 lg:p-14">
@@ -67,7 +67,7 @@ export default async function AboutPage({
           className="photo-overlay parallax-band rounded-[2rem]"
           style={{
             backgroundImage:
-              "url(https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=1600&q=80)",
+              "url(/images/andes/textiles-ychsma.jpg)",
           }}
         >
           <div className="relative z-10 p-8 sm:p-10 lg:p-14">
