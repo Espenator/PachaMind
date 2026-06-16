@@ -42,7 +42,7 @@ export default async function LessonPage({
       <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
         <section className="space-y-8">
           <div className="documentary-card p-8 lg:p-10">
-            <Link href={`/${lang}/library`} className="text-sm font-medium text-terracotta">
+            <Link href={`/${lang}/library`} className="text-sm font-medium text-terracotta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded">
               {content.lessonPage.backToLibrary}
             </Link>
             <p className="mt-5 text-xs uppercase tracking-[0.3em] text-terracotta">
@@ -90,14 +90,14 @@ export default async function LessonPage({
           <div className="documentary-card flex flex-col gap-4 p-8">
             <Link
               href={`/${lang}/dashboard`}
-              className="rounded-full border border-deepearth/10 px-5 py-3 text-center text-sm font-semibold transition hover:bg-skyblue hover:text-cloudwhite"
+              className="rounded-full border border-deepearth/10 px-5 py-3 text-center text-sm font-semibold transition hover:bg-skyblue hover:text-cloudwhite focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
             >
               {content.lessonPage.dashboardLabel}
             </Link>
             {nextLesson ? (
               <Link
                 href={`/${lang}/lesson/${nextLesson.slug}`}
-                className="rounded-full bg-deepearth px-5 py-3 text-center text-sm font-semibold text-cloudwhite transition hover:bg-terracotta"
+                className="rounded-full bg-deepearth px-5 py-3 text-center text-sm font-semibold text-cloudwhite transition hover:bg-terracotta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
               >
                 {content.lessonPage.nextLessonLabel}
               </Link>

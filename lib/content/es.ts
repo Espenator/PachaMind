@@ -27,6 +27,11 @@ export const es: SiteContent = {
     conservation: "Conservación",
     english: "English",
     spanish: "Español",
+    skipToContent: "Saltar al contenido principal",
+    openMenu: "Abrir menú de navegación",
+    closeMenu: "Cerrar menú de navegación",
+    languageToggleLabel: "Elegir idioma",
+    mainNavLabel: "Navegación principal",
   },
   home: {
     title:
