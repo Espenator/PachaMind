@@ -1,0 +1,240 @@
+@import "tailwindcss";
+
+/* ─── PachaMind Design Tokens ─────────────────────────────────────────────── */
+
+@theme {
+  /* ── Colour Palette ─── */
+
+  /* Earth Base */
+  --color-stone-50:  #FAF8F5;
+  --color-stone-100: #F2EDE6;
+  --color-stone-200: #E3D9CE;
+  --color-stone-300: #C8BAA9;
+  --color-stone-400: #A99082;
+  --color-stone-500: #8B6F4E;
+  --color-stone-600: #6E5840;
+  --color-stone-700: #503F2E;
+  --color-stone-800: #3A2D21;
+  --color-stone-900: #241C15;
+
+  /* Terracotta (primary accent) */
+  --color-terra-50:  #FDF4EE;
+  --color-terra-100: #FAE5D5;
+  --color-terra-200: #F5C8A8;
+  --color-terra-300: #EDA67A;
+  --color-terra-400: #E08452;
+  --color-terra-500: #C17F5E;
+  --color-terra-600: #A56644;
+  --color-terra-700: #834E32;
+  --color-terra-800: #5E3622;
+  --color-terra-900: #3C2115;
+
+  /* Sage (nature / conservation) */
+  --color-sage-50:  #F4F7F1;
+  --color-sage-100: #E4EDE0;
+  --color-sage-200: #C7DBBC;
+  --color-sage-300: #A4C298;
+  --color-sage-400: #82A876;
+  --color-sage-500: #6B7C4A;
+  --color-sage-600: #546038;
+  --color-sage-700: #3D4529;
+  --color-sage-800: #282E1B;
+  --color-sage-900: #171A10;
+
+  /* Sky (Hanaq Pacha) */
+  --color-sky-50:  #F0F6FB;
+  --color-sky-100: #DAEAF6;
+  --color-sky-200: #B3D4EC;
+  --color-sky-300: #85B9DF;
+  --color-sky-400: #5999CF;
+  --color-sky-500: #4A6FA5;
+  --color-sky-600: #3A5888;
+  --color-sky-700: #2A406A;
+  --color-sky-800: #1C2B4A;
+  --color-sky-900: #10192D;
+
+  /* Paper / warm white */
+  --color-paper-white: #FDFAF6;
+  --color-paper-cream: #F5EFE4;
+
+  /* Semantic aliases */
+  --color-background:       var(--color-paper-white);
+  --color-foreground:       var(--color-stone-900);
+  --color-muted:            var(--color-stone-400);
+  --color-muted-foreground: var(--color-stone-600);
+  --color-border:           var(--color-stone-200);
+  --color-accent:           var(--color-terra-500);
+  --color-accent-hover:     var(--color-terra-600);
+
+  /* Pacha section backgrounds */
+  --color-uku-pacha:   var(--color-stone-800);   /* deep earth / dark */
+  --color-kay-pacha:   var(--color-stone-100);   /* mid-tone earthy   */
+  --color-hanaq-pacha: var(--color-sky-50);       /* light sky         */
+
+  /* ── Typography ─── */
+  --font-serif: "Lora", "EB Garamond", Georgia, serif;
+  --font-sans:  "Inter", "Source Sans 3", system-ui, sans-serif;
+  --font-mono:  "JetBrains Mono", monospace;
+
+  --font-size-xs:   0.75rem;   /* 12px */
+  --font-size-sm:   0.875rem;  /* 14px */
+  --font-size-base: 1rem;      /* 16px */
+  --font-size-lg:   1.125rem;  /* 18px */
+  --font-size-xl:   1.25rem;   /* 20px */
+  --font-size-2xl:  1.5rem;    /* 24px */
+  --font-size-3xl:  1.875rem;  /* 30px */
+  --font-size-4xl:  2.25rem;   /* 36px */
+  --font-size-5xl:  3rem;      /* 48px */
+  --font-size-6xl:  3.75rem;   /* 60px */
+
+  --line-height-tight:  1.2;
+  --line-height-snug:   1.35;
+  --line-height-normal: 1.6;
+  --line-height-relaxed:1.75;
+
+  --font-weight-normal:   400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+
+  /* ── Spacing ─── */
+  --spacing-1:  0.25rem;
+  --spacing-2:  0.5rem;
+  --spacing-3:  0.75rem;
+  --spacing-4:  1rem;
+  --spacing-5:  1.25rem;
+  --spacing-6:  1.5rem;
+  --spacing-8:  2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+
+  /* ── Border Radius ─── */
+  --radius-sm:   0.25rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   0.75rem;
+  --radius-xl:   1rem;
+  --radius-2xl:  1.5rem;
+  --radius-full: 9999px;
+
+  /* ── Shadows ─── */
+  --shadow-sm:  0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md:  0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg:  0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  --shadow-xl:  0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+  --shadow-card: 0 2px 8px 0 rgb(139 111 78 / 0.12);
+}
+
+/* ─── Dark Mode Overrides ─────────────────────────────────────────────────── */
+
+.dark {
+  --color-background:       var(--color-stone-900);
+  --color-foreground:       var(--color-stone-50);
+  --color-muted:            var(--color-stone-600);
+  --color-muted-foreground: var(--color-stone-400);
+  --color-border:           var(--color-stone-700);
+  --color-accent:           var(--color-terra-400);
+  --color-accent-hover:     var(--color-terra-300);
+  --color-uku-pacha:        var(--color-stone-950, #160f09);
+  --color-kay-pacha:        var(--color-stone-800);
+  --color-hanaq-pacha:      var(--color-sky-900);
+}
+
+/* ─── Base Styles ─────────────────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Heading typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-foreground);
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Smooth image rendering */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Video responsive container */
+.video-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-stone-900);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.video-container iframe,
+.video-container video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Section padding utility */
+.section-pad {
+  padding-top: var(--spacing-16);
+  padding-bottom: var(--spacing-16);
+}
+
+@media (min-width: 768px) {
+  .section-pad {
+    padding-top: var(--spacing-24);
+    padding-bottom: var(--spacing-24);
+  }
+}
+
+/* Container */
+.container-pm {
+  width: 100%;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-6);
+  padding-right: var(--spacing-6);
+}
+
+/* ─── Puma Path Stage Colours ─────────────────────────────────────────────── */
+.stage-semilla { color: #8B6F4E; }
+.stage-raiz    { color: #6B7C4A; }
+.stage-tallo   { color: #7A9E7E; }
+.stage-flor    { color: #C17F5E; }
+.stage-puma    { color: #4A6FA5; }
+
+.stage-semilla-bg { background-color: #8B6F4E; }
+.stage-raiz-bg    { background-color: #6B7C4A; }
+.stage-tallo-bg   { background-color: #7A9E7E; }
+.stage-flor-bg    { background-color: #C17F5E; }
+.stage-puma-bg    { background-color: #4A6FA5; }

@@ -1,0 +1,18 @@
+{
+  "_template_instructions": [
+    "Copy this for each field note.",
+    "Field notes are on-location observations from Mallku Aribalo.",
+    "Do not fabricate quotes or observations.",
+    "Images should be credited and have appropriate rights."
+  ],
+  "id": "fn-NNN",
+  "slug": "field-note-slug",
+  "title": "Field Note Title",
+  "date": "2024-01-01",
+  "location": "Location Name, Sacred Valley, Peru",
+  "excerpt": "One or two sentences shown in cards.",
+  "body": "Full field note body text (Markdown supported).",
+  "imageUrl": "/images/field-notes/field-note-slug.jpg",
+  "tags": ["tag1", "tag2"],
+  "author": "Mallku Aribalo (James Arevalo Merejildo)"
+}

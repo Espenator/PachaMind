@@ -1,0 +1,40 @@
+{
+  "_template_instructions": [
+    "Copy this file for each new lesson.",
+    "Fill in all required fields.",
+    "AI-assisted drafts MUST be reviewed by a human editor before publishing.",
+    "Do not fabricate Mallku's teachings. Do not make health/therapy claims.",
+    "Attribute all teachings to Mallku Aribalo (James Arevalo Merejildo)."
+  ],
+  "id": "lesson-NNN",
+  "slug": "lesson-slug-here",
+  "title": "Lesson Title Here",
+  "summary": "One-sentence summary for cards and search.",
+  "pathStage": "semilla",
+  "category": "andean-cosmovision",
+  "estimatedMinutes": 5,
+  "isPublished": false,
+  "publishedAt": "",
+  "author": "Mallku Aribalo (James Arevalo Merejildo)",
+  "thumbnailUrl": "/images/lessons/lesson-slug-thumb.jpg",
+  "video": {
+    "id": "v-NNN",
+    "title": "Video title",
+    "durationSeconds": 0,
+    "url": "https://www.youtube.com/embed/VIDEO_ID",
+    "thumbnailUrl": "/images/lessons/lesson-slug-thumb.jpg",
+    "captionsUrl": "/captions/lesson-NNN-en.vtt",
+    "language": "en",
+    "isVertical": false
+  },
+  "reflectionPrompts": [
+    {
+      "id": "rp-NNN-1",
+      "lessonId": "lesson-NNN",
+      "prompt": "Your open-ended reflection question here.",
+      "guidance": "Optional: a gentle framing note for the learner."
+    }
+  ],
+  "glossaryTermIds": [],
+  "relatedLessonIds": []
+}

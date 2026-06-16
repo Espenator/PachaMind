@@ -1,0 +1,17 @@
+{
+  "_template_instructions": [
+    "Copy this for each glossary term.",
+    "Use exact Quechua/Aymara spelling where known.",
+    "Do not invent definitions — all content reviewed by Mallku Aribalo.",
+    "Relate to lessons where this term appears."
+  ],
+  "id": "gt-term-slug",
+  "slug": "term-slug",
+  "term": "Display Term",
+  "termOriginal": "Original Quechua/Aymara spelling",
+  "language": "Quechua",
+  "definition": "Clear, accurate definition in plain English.",
+  "context": "Optional: extended cultural context. Keep factual, not speculative.",
+  "relatedLessonIds": [],
+  "relatedTermIds": []
+}
