@@ -61,6 +61,15 @@ export const es: SiteContent = {
     watchLabel: "Ver ahora",
     notesLabel: "Notas de aprendizaje",
     openLessonLabel: "Abrir lección completa",
+    searchPlaceholder: "Buscar lecciones…",
+    filterAllLabel: "Todas",
+    emptyState: "Ninguna lección coincide con tu búsqueda. Prueba otro término o tema.",
+    topics: {
+      listening: "Escucha",
+      reciprocity: "Reciprocidad",
+      ritual: "Ritual",
+      stewardship: "Custodia",
+    },
   },
   lessonPage: {
     watchHeading: "Ver la lección",
@@ -106,6 +115,7 @@ export const es: SiteContent = {
   lessons: [
     {
       slug: "mountain-listening",
+      topic: "listening",
       title: "Escucha de la montaña",
       kicker: "Lección 1",
       duration: "12 min",
@@ -124,6 +134,7 @@ export const es: SiteContent = {
     },
     {
       slug: "ayllu-reciprocity",
+      topic: "reciprocity",
       title: "Ayllu y reciprocidad",
       kicker: "Lección 2",
       duration: "14 min",
@@ -142,6 +153,7 @@ export const es: SiteContent = {
     },
     {
       slug: "ritual-attention",
+      topic: "ritual",
       title: "Atención ritual",
       kicker: "Lección 3",
       duration: "11 min",
@@ -160,6 +172,7 @@ export const es: SiteContent = {
     },
     {
       slug: "carrying-the-teaching",
+      topic: "stewardship",
       title: "Llevar la enseñanza hacia adelante",
       kicker: "Lección 4",
       duration: "13 min",

@@ -4,6 +4,7 @@ export type Language = (typeof languages)[number];
 
 export interface Lesson {
   slug: string;
+  topic: string;
   title: string;
   kicker: string;
   duration: string;
@@ -55,6 +56,10 @@ export interface SiteContent {
     watchLabel: string;
     notesLabel: string;
     openLessonLabel: string;
+    searchPlaceholder: string;
+    filterAllLabel: string;
+    emptyState: string;
+    topics: Record<string, string>;
   };
   lessonPage: {
     watchHeading: string;
