@@ -1,8 +1,37 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { YouTubeEmbed } from "@/components/youtube-embed";
 import { getContent, isLanguage } from "@/lib/content";
+import { SITE_URL } from "@/lib/site";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isLanguage(lang)) return {};
+  const content = getContent(lang);
+  return {
+    title: { absolute: content.meta.title },
+    description: content.home.intro,
+    openGraph: {
+      title: content.meta.title,
+      description: content.home.intro,
+      url: `${SITE_URL}/${lang}`,
+    },
+    alternates: {
+      canonical: `${SITE_URL}/${lang}`,
+      languages: {
+        en: `${SITE_URL}/en`,
+        es: `${SITE_URL}/es`,
+        "x-default": `${SITE_URL}/en`,
+      },
+    },
+  };
+}
 
 export default async function HomePage({
   params,

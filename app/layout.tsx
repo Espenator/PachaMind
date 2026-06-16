@@ -1,20 +1,9 @@
-import type { Metadata } from "next";
 import "./globals.css";
+import type { ReactNode } from "react";
 
-export const metadata: Metadata = {
-  title: "PachaMind",
-  description:
-    "A free bilingual learning platform for sacred documentary lessons and reflection.",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" className="h-full antialiased">
-      <body className="min-h-full bg-cloudwhite text-deepearth">{children}</body>
-    </html>
-  );
+// The <html> and <body> tags are rendered by app/[lang]/layout.tsx so that
+// the correct `lang` attribute is set per locale.  This root layout only
+// imports global styles and passes children through.
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return <>{children}</>;
 }
