@@ -41,6 +41,7 @@ export interface SiteContent {
     library: string;
     pumaPath: string;
     dashboard: string;
+    reflections: string;
     about: string;
     contact: string;
     conservation: string;
@@ -155,5 +156,22 @@ export interface SiteContent {
       image: string;
     }>;
     principles: string[];
+  };
+  reflections: {
+    title: string;
+    intro: string;
+    promptsHeading: string;
+    noteLabel: string;
+    notePlaceholder: string;
+    saveLabel: string;
+    savedLabel: string;
+    clearLabel: string;
+    storageHint: string;
+    attributionLabel: string;
+    parallaxSections: Array<{
+      title: string;
+      body: string;
+      image: string;
+    }>;
   };
 }
