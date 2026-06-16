@@ -69,6 +69,7 @@ export const en: SiteContent = {
       reciprocity: "Reciprocity",
       ritual: "Ritual",
       stewardship: "Stewardship",
+      cosmovision: "Cosmovision",
     },
   },
   lessonPage: {
@@ -216,6 +217,207 @@ export const en: SiteContent = {
       ],
       reflectionPrompt:
         "How can you carry a teaching forward in a way that preserves context, credit, and responsibility?",
+    },
+    {
+      slug: "what-pachamind-is",
+      topic: "listening",
+      title: "What PachaMind Is",
+      kicker: "Lesson 5",
+      duration: "8 min",
+      youtubeId: "dQw4w9WgXcQ",
+      description:
+        "An orientation to PachaMind: a free, nonprofit Andean wisdom education space dedicated to cultural preservation and open access.",
+      extendedDescription:
+        "This lesson introduces the purpose and commitments of PachaMind. It explains why this space is structured as a documentary learning environment, why no cost or sales language ever appears, and how every lesson connects to the living traditions held by Mallku Aribalo. PachaMind exists to make Andean cultural knowledge freely available without distortion, commercialisation, or pressure.",
+      learningNotes: [
+        "PachaMind is a free, nonprofit learning space — no pricing, no checkout, no donations asked.",
+        "Every lesson is grounded in the living tradition held by Mallku Aribalo, credited as tradition-holder throughout.",
+        "Content is offered for cultural learning and reflection only; it does not replace medical, therapeutic, or legal guidance.",
+        "Risk tier: Low — orientation content with no health or outcome claims.",
+      ],
+      reflectionPrompt:
+        "What draws you to learning from an Andean cultural tradition, and how do you want to hold what you receive here?",
+    },
+    {
+      slug: "mallku-aribalo-tradition-holder",
+      topic: "stewardship",
+      title: "Mallku Aribalo: Tradition-Holder and Andean Teacher",
+      kicker: "Lesson 6",
+      duration: "10 min",
+      youtubeId: "9bZkp7q19f0",
+      description:
+        "Meet Mallku Aribalo — Andean shamanic teacher, tradition-holder, and cultural anchor of the PachaMind learning space.",
+      extendedDescription:
+        "This lesson introduces Mallku Aribalo as the living source of the teachings carried in this space. It covers his role as a tradition-holder within Andean cosmological practice, his commitment to community reciprocity, and why attribution matters when sharing sacred knowledge across cultures. Understanding who holds a teaching is inseparable from understanding the teaching itself.",
+      learningNotes: [
+        "Mallku Aribalo is an Andean shamanic teacher whose knowledge of cosmological practice forms the foundation of every lesson in this space.",
+        "Attribution is an act of reciprocity: crediting the source preserves the integrity of the teaching.",
+        "Shamanic teacher here refers to a cultural and traditional role; no therapeutic or medical claims are made.",
+        "Risk tier: Medium — biographical and attribution content; verify rights before quoting his published works directly.",
+      ],
+      reflectionPrompt:
+        "Why does knowing who holds a teaching matter to how you receive and carry it forward?",
+    },
+    {
+      slug: "kausay-pacha-living-universe",
+      topic: "cosmovision",
+      title: "Kausay Pacha: The Living Universe",
+      kicker: "Lesson 7",
+      duration: "12 min",
+      youtubeId: "eVTXPUF4Oz4",
+      description:
+        "Explore Kausay Pacha — the Andean concept of the living universe — as the cosmological foundation of Andean thought and practice.",
+      extendedDescription:
+        "In Andean cosmovision, Kausay Pacha describes a universe that is alive, relational, and in constant dialogue with human beings. This lesson introduces the concept as a lens for understanding how the Three Pachas (Hanaq, Kay, and Uku) relate to one another and to everyday life. It presents this framework as cultural and philosophical education, not as prescriptive cosmology.",
+      learningNotes: [
+        "Kausay Pacha means 'the living universe' in Quechua — a cosmos understood as animate and relational.",
+        "This framework is presented as cultural and philosophical education rooted in Andean tradition.",
+        "The living-universe concept provides the cosmological foundation for understanding the Three Pachas.",
+        "Risk tier: Low — cultural literacy with no health or outcome claims.",
+      ],
+      reflectionPrompt:
+        "How does thinking of the universe as living and relational change the way you understand your place within it?",
+    },
+    {
+      slug: "hanaq-pacha-sky-cycles",
+      topic: "cosmovision",
+      title: "Hanaq Pacha: Sky, Cycles, and Archaeo-Astronomy",
+      kicker: "Lesson 8",
+      duration: "14 min",
+      youtubeId: "pFqgFbDLMKk",
+      description:
+        "Study Hanaq Pacha — the upper world of sky, stars, and cosmic cycles — and how Andean peoples read the heavens as a map of time and relationship.",
+      extendedDescription:
+        "Hanaq Pacha is the Andean upper world: the realm of sun, moon, stars, and cosmic cycles. This lesson explores how Andean communities developed sophisticated archaeo-astronomical knowledge to track time, align sacred architecture, and sustain community rhythm. All astronomical claims are presented as scholarly and historical interpretation — not as predictive or astrological authority.",
+      learningNotes: [
+        "Hanaq Pacha refers to the upper world in Andean cosmovision — encompassing sky, celestial bodies, and cosmic cycles.",
+        "Andean archaeo-astronomy is a documented area of academic study; claims here follow scholarly interpretation.",
+        "Sacred site alignments (e.g., Machu Picchu, Sacsayhuamán) are presented as historical and architectural evidence, not mystical prescription.",
+        "Risk tier: Medium — avoid overclaiming astronomical, astrological, or predictive authority; frame content as historical interpretation.",
+      ],
+      reflectionPrompt:
+        "What does it mean to read the sky as a calendar and a map of community responsibility rather than only as a backdrop?",
+    },
+    {
+      slug: "kay-pacha-reciprocity",
+      topic: "reciprocity",
+      title: "Kay Pacha: Reciprocity and Daily Practice",
+      kicker: "Lesson 9",
+      duration: "13 min",
+      youtubeId: "J---aiyznGQ",
+      description:
+        "Kay Pacha — the present world of everyday life — is where reciprocity becomes practice: in land, community, and the rhythms of ordinary days.",
+      extendedDescription:
+        "Kay Pacha is the Andean middle world: the lived present, the ground beneath our feet, the community we move within. This lesson explores how Andean cosmovision asks humans to engage Kay Pacha through reciprocal attention — caring for land, upholding community, and practicing gratitude as a daily discipline rather than a ritual occasion.",
+      learningNotes: [
+        "Kay Pacha is the present world in Andean cosmovision — the domain of everyday human life and relationship.",
+        "Reciprocity in Kay Pacha is a daily practice, not a symbolic gesture: it governs how one treats land, community, and self.",
+        "Grounding the Three Pachas in everyday life connects cosmological study to lived behaviour.",
+        "Risk tier: Low — cultural and ethical education with no health or outcome claims.",
+      ],
+      reflectionPrompt:
+        "Where in your daily life do you experience the present world asking something of you — and how do you respond?",
+    },
+    {
+      slug: "uku-pacha-ancestry",
+      topic: "cosmovision",
+      title: "Uku Pacha: Ancestry, Depth, and Integration",
+      kicker: "Lesson 10",
+      duration: "11 min",
+      youtubeId: "kJQP7kiw5Fk",
+      description:
+        "Uku Pacha — the inner or lower world — holds ancestry, depth, and the roots of what we carry, offered here as cultural learning about integration and memory.",
+      extendedDescription:
+        "Uku Pacha is the Andean inner or lower world: not a place of punishment but of depth, ancestry, and the unseen roots of living traditions. This lesson presents Uku Pacha as a cultural lens for understanding how communities hold memory, integrate difficulty, and draw on ancestral knowledge. It is offered strictly as educational and cultural literacy — not as a therapeutic or psychological framework.",
+      learningNotes: [
+        "Uku Pacha is the lower or inner world in Andean cosmovision — the realm of ancestry, roots, and depth.",
+        "This lesson is offered as cultural and educational literacy about how Andean traditions understand memory and integration.",
+        "No therapeutic, psychological, or healing claims are made; content is strictly cultural in framing.",
+        "Risk tier: Low — cultural literacy presented as educational content with no therapeutic claims.",
+      ],
+      reflectionPrompt:
+        "What do you carry from those who came before you, and how does cultural memory shape the ground you stand on?",
+    },
+    {
+      slug: "ayni-sacred-reciprocity",
+      topic: "reciprocity",
+      title: "Ayni: Sacred Reciprocity",
+      kicker: "Lesson 11",
+      duration: "12 min",
+      youtubeId: "RgKAFK5djSk",
+      description:
+        "Ayni is the Andean principle of sacred reciprocity: give and receive in balance, with the land, the community, and the cosmos.",
+      extendedDescription:
+        "Ayni — often translated as sacred reciprocity — is one of the most foundational principles in Andean culture. This lesson explores Ayni as a relational ethic that binds individuals to community, to place, and to the wider cosmic order. It examines how Ayni differs from transactional exchange and why it remains a living practice rather than a historical artefact.",
+      learningNotes: [
+        "Ayni is usually translated as 'sacred reciprocity' — a relational ethic at the centre of Andean cultural life.",
+        "Ayni differs from transactional exchange: it is relational, ongoing, and rooted in mutual care rather than equivalence.",
+        "Understanding Ayni helps situate Kay Pacha, Ayllu, and the Five Andean Values within a single coherent cultural framework.",
+        "Risk tier: Low — cultural and ethical education with no health or outcome claims.",
+      ],
+      reflectionPrompt:
+        "Where in your relationships do you practice balance in giving and receiving, and where does that balance feel most challenging to hold?",
+    },
+    {
+      slug: "values-munay-yachay-llankay",
+      topic: "ritual",
+      title: "Munay, Yachay, Llank'ay, Sami, and Hucha: Values as Curriculum",
+      kicker: "Lesson 12",
+      duration: "15 min",
+      youtubeId: "OPf0YbXqDm0",
+      description:
+        "The Five Andean Values — Munay, Yachay, Llank'ay, Sami, and Hucha — form the ethical spine of Andean cultural practice and the curriculum of PachaMind.",
+      extendedDescription:
+        "Andean tradition organises ethical life around five interlocking concepts: Munay (love and will), Yachay (knowledge and wisdom), Llank'ay (purposeful work and service), Sami (refined, light energy), and Hucha (heavy or unprocessed energy). This lesson presents these values as a curriculum framework — a way of assessing where your attention, intention, and effort currently rest, and where growth calls you.",
+      learningNotes: [
+        "Munay: love, intention, and the will to act from care rather than fear.",
+        "Yachay: accumulated wisdom and the discipline of learning with humility.",
+        "Llank'ay: meaningful work and service as a form of reciprocity with community.",
+        "Sami and Hucha describe energy qualities — lightness and heaviness — as cultural, not medical, concepts.",
+        "Risk tier: Low — values education presented as cultural curriculum with no therapeutic claims.",
+      ],
+      reflectionPrompt:
+        "Which of these five values asks the most of you right now, and what would it look like to tend to it this week?",
+    },
+    {
+      slug: "huacas-sacred-sites",
+      topic: "stewardship",
+      title: "Huacas and Sacred Sites: Academic Interpretation and Living Tradition",
+      kicker: "Lesson 13",
+      duration: "13 min",
+      youtubeId: "4N1iwQxiHrs",
+      description:
+        "Huacas — Andean sacred places and objects — sit at the intersection of archaeology, living tradition, and cultural stewardship.",
+      extendedDescription:
+        "A huaca is a place, object, or being considered sacred in Andean tradition — a mountain, a spring, a carved stone, or an ancestor site. This lesson navigates the difference between academic archaeological interpretation and the living significance that Andean communities continue to hold. It asks learners to sit with that difference with respect rather than resolving it prematurely.",
+      learningNotes: [
+        "Huaca (wak'a) refers to a sacred place, object, or being in Andean tradition — the term encompasses a wide range of sites and entities.",
+        "Archaeological and academic interpretations of huacas differ from the living meaning held by Andean communities; both deserve careful attention.",
+        "This lesson practices cultural stewardship: holding complexity, avoiding extraction, and crediting living traditions as sources.",
+        "Risk tier: Medium — verify academic sources; avoid overclaiming spiritual authority; respect community intellectual property.",
+      ],
+      reflectionPrompt:
+        "How do you hold the difference between studying a sacred site as an outsider and respecting its living meaning for the community that calls it home?",
+    },
+    {
+      slug: "puma-path-orientation",
+      topic: "stewardship",
+      title: "Puma Path Orientation: Semilla to Puma as Learning Progression",
+      kicker: "Lesson 14",
+      duration: "9 min",
+      youtubeId: "tgbNymZ7vqY",
+      description:
+        "The Puma Path is PachaMind's learning progression — a structured curriculum arc from Semilla (seed) to Puma — not an initiation or ceremony.",
+      extendedDescription:
+        "The Puma Path organises the PachaMind curriculum into a progression of study. Semilla (seed) marks the beginning — an orientation to listening, presence, and cultural context. Puma marks a sustained engagement with Andean values, cosmovision, and reciprocal practice. This progression is a learning framework only: it is not a ceremony, not an initiation, and not a qualification. It is a map for studious, humble, long-term engagement with a living tradition.",
+      learningNotes: [
+        "The Puma Path is a curriculum arc — a learning progression — not a ceremony, initiation, or spiritual qualification.",
+        "Stages run from Semilla (seed) through to Puma; each stage corresponds to deepening study and practice, not ritual advancement.",
+        "Completion of the Puma Path confers no authority over Andean tradition; it is a personal learning record only.",
+        "Risk tier: Low — learning-progression framing only; no initiation, ceremony, or outcome-promise language.",
+      ],
+      reflectionPrompt:
+        "What does it mean to follow a learning path with genuine humility — treating each stage as a deepening of attention rather than an achievement to collect?",
     },
   ],
 };

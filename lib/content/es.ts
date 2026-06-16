@@ -70,6 +70,7 @@ export const es: SiteContent = {
       reciprocity: "Reciprocidad",
       ritual: "Ritual",
       stewardship: "Custodia",
+      cosmovision: "Cosmovisión",
     },
   },
   lessonPage: {
@@ -218,6 +219,207 @@ export const es: SiteContent = {
       ],
       reflectionPrompt:
         "¿Cómo puedes llevar una enseñanza hacia adelante de una manera que preserve contexto, crédito y responsabilidad?",
+    },
+    {
+      slug: "what-pachamind-is",
+      topic: "listening",
+      title: "Qué es PachaMind",
+      kicker: "Lección 5",
+      duration: "8 min",
+      youtubeId: "dQw4w9WgXcQ",
+      description:
+        "Una orientación a PachaMind: un espacio de educación andina gratuito y sin fines de lucro dedicado a la preservación cultural y el acceso abierto.",
+      extendedDescription:
+        "Esta lección presenta el propósito y los compromisos de PachaMind. Explica por qué este espacio está estructurado como un entorno de aprendizaje documental, por qué nunca aparece ningún costo ni lenguaje de ventas, y cómo cada lección se conecta con las tradiciones vivas que sostiene Mallku Aribalo. PachaMind existe para hacer que el conocimiento cultural andino esté disponible gratuitamente, sin distorsión, comercialización ni presión.",
+      learningNotes: [
+        "PachaMind es un espacio de aprendizaje gratuito y sin fines de lucro — sin precios, sin checkout, sin solicitudes de donación.",
+        "Cada lección está arraigada en la tradición viva de Mallku Aribalo, acreditado como guardián de la tradición en toda la experiencia.",
+        "El contenido se ofrece solo para aprendizaje cultural y reflexión; no reemplaza orientación médica, terapéutica ni legal.",
+        "Nivel de riesgo: Bajo — contenido de orientación sin afirmaciones de salud ni de resultados.",
+      ],
+      reflectionPrompt:
+        "¿Qué te atrae de aprender de una tradición cultural andina y cómo quieres sostener lo que recibas aquí?",
+    },
+    {
+      slug: "mallku-aribalo-tradition-holder",
+      topic: "stewardship",
+      title: "Mallku Aribalo: Guardián de la tradición y maestro andino",
+      kicker: "Lección 6",
+      duration: "10 min",
+      youtubeId: "9bZkp7q19f0",
+      description:
+        "Conoce a Mallku Aribalo — maestro chamánico andino, guardián de la tradición y ancla cultural del espacio de aprendizaje de PachaMind.",
+      extendedDescription:
+        "Esta lección presenta a Mallku Aribalo como la fuente viva de las enseñanzas que se transmiten en este espacio. Aborda su rol como guardián de la tradición dentro de la práctica cosmológica andina, su compromiso con la reciprocidad comunitaria y por qué la atribución es fundamental al compartir conocimiento sagrado entre culturas. Comprender quién sostiene una enseñanza es inseparable de comprender la enseñanza misma.",
+      learningNotes: [
+        "Mallku Aribalo es un maestro chamánico andino cuyo conocimiento de la práctica cosmológica forma el fundamento de cada lección en este espacio.",
+        "La atribución es un acto de reciprocidad: acreditar la fuente preserva la integridad de la enseñanza.",
+        "Maestro chamánico aquí se refiere a un rol cultural y tradicional; no se hacen afirmaciones terapéuticas ni médicas.",
+        "Nivel de riesgo: Medio — contenido biográfico y de atribución; verificar derechos antes de citar directamente sus obras publicadas.",
+      ],
+      reflectionPrompt:
+        "¿Por qué es importante saber quién sostiene una enseñanza para la manera en que la recibes y la llevas hacia adelante?",
+    },
+    {
+      slug: "kausay-pacha-living-universe",
+      topic: "cosmovision",
+      title: "Kausay Pacha: El universo viviente",
+      kicker: "Lección 7",
+      duration: "12 min",
+      youtubeId: "eVTXPUF4Oz4",
+      description:
+        "Explora Kausay Pacha — el concepto andino del universo viviente — como fundamento cosmológico del pensamiento y la práctica andinos.",
+      extendedDescription:
+        "En la cosmovisión andina, Kausay Pacha describe un universo que está vivo, es relacional y se encuentra en diálogo constante con los seres humanos. Esta lección introduce el concepto como una lente para comprender cómo las Tres Pachas (Hanaq, Kay y Uku) se relacionan entre sí y con la vida cotidiana. Presenta este marco como educación cultural y filosófica, no como cosmología prescriptiva.",
+      learningNotes: [
+        "Kausay Pacha significa 'el universo viviente' en quechua — un cosmos entendido como animado y relacional.",
+        "Este marco se presenta como educación cultural y filosófica arraigada en la tradición andina.",
+        "El concepto del universo viviente proporciona el fundamento cosmológico para comprender las Tres Pachas.",
+        "Nivel de riesgo: Bajo — alfabetización cultural sin afirmaciones de salud ni de resultados.",
+      ],
+      reflectionPrompt:
+        "¿Cómo cambia la comprensión de tu lugar en el mundo cuando piensas en el universo como algo vivo y relacional?",
+    },
+    {
+      slug: "hanaq-pacha-sky-cycles",
+      topic: "cosmovision",
+      title: "Hanaq Pacha: Cielo, ciclos y arqueoastronomía",
+      kicker: "Lección 8",
+      duration: "14 min",
+      youtubeId: "pFqgFbDLMKk",
+      description:
+        "Estudia Hanaq Pacha — el mundo superior del cielo, las estrellas y los ciclos cósmicos — y cómo los pueblos andinos leyeron los cielos como un mapa del tiempo y la relación.",
+      extendedDescription:
+        "Hanaq Pacha es el mundo superior andino: el reino del sol, la luna, las estrellas y los ciclos cósmicos. Esta lección explora cómo las comunidades andinas desarrollaron un sofisticado conocimiento arqueoastronómico para rastrear el tiempo, alinear la arquitectura sagrada y sostener el ritmo comunitario. Todas las afirmaciones astronómicas se presentan como interpretación académica e histórica, no como autoridad predictiva ni astrológica.",
+      learningNotes: [
+        "Hanaq Pacha se refiere al mundo superior en la cosmovisión andina — abarca el cielo, los cuerpos celestes y los ciclos cósmicos.",
+        "La arqueoastronomía andina es un campo académico documentado; las afirmaciones aquí siguen la interpretación académica.",
+        "Las alineaciones de sitios sagrados (p. ej., Machu Picchu, Sacsayhuamán) se presentan como evidencia histórica y arquitectónica, no como prescripción mística.",
+        "Nivel de riesgo: Medio — evitar reclamar autoridad astronómica, astrológica o predictiva; enmarcar el contenido como interpretación histórica.",
+      ],
+      reflectionPrompt:
+        "¿Qué significa leer el cielo como un calendario y un mapa de responsabilidad comunitaria, en lugar de solo como un telón de fondo?",
+    },
+    {
+      slug: "kay-pacha-reciprocity",
+      topic: "reciprocity",
+      title: "Kay Pacha: Reciprocidad y práctica cotidiana",
+      kicker: "Lección 9",
+      duration: "13 min",
+      youtubeId: "J---aiyznGQ",
+      description:
+        "Kay Pacha — el mundo presente de la vida cotidiana — es donde la reciprocidad se convierte en práctica: en la tierra, la comunidad y los ritmos de los días ordinarios.",
+      extendedDescription:
+        "Kay Pacha es el mundo medio andino: el presente vivido, la tierra bajo nuestros pies, la comunidad en la que nos movemos. Esta lección explora cómo la cosmovisión andina invita a los seres humanos a relacionarse con Kay Pacha a través de la atención recíproca: cuidar la tierra, sostener la comunidad y practicar la gratitud como disciplina cotidiana más que como ocasión ritual.",
+      learningNotes: [
+        "Kay Pacha es el mundo presente en la cosmovisión andina — el dominio de la vida humana cotidiana y la relación.",
+        "La reciprocidad en Kay Pacha es una práctica diaria, no un gesto simbólico: rige cómo uno trata la tierra, la comunidad y uno mismo.",
+        "Anclar las Tres Pachas en la vida cotidiana conecta el estudio cosmológico con el comportamiento vivido.",
+        "Nivel de riesgo: Bajo — educación cultural y ética sin afirmaciones de salud ni de resultados.",
+      ],
+      reflectionPrompt:
+        "¿Dónde en tu vida cotidiana experimenta el mundo presente que te pide algo — y cómo respondes?",
+    },
+    {
+      slug: "uku-pacha-ancestry",
+      topic: "cosmovision",
+      title: "Uku Pacha: Ancestralidad, profundidad e integración",
+      kicker: "Lección 10",
+      duration: "11 min",
+      youtubeId: "kJQP7kiw5Fk",
+      description:
+        "Uku Pacha — el mundo interior o inferior — sostiene la ancestralidad, la profundidad y las raíces de lo que portamos, ofrecido aquí como aprendizaje cultural sobre la integración y la memoria.",
+      extendedDescription:
+        "Uku Pacha es el mundo interior o inferior andino: no un lugar de castigo sino de profundidad, ancestralidad y las raíces invisibles de las tradiciones vivas. Esta lección presenta Uku Pacha como una lente cultural para comprender cómo las comunidades sostienen la memoria, integran la dificultad y se nutren del conocimiento ancestral. Se ofrece estrictamente como alfabetización educativa y cultural, no como marco terapéutico ni psicológico.",
+      learningNotes: [
+        "Uku Pacha es el mundo inferior o interior en la cosmovisión andina — el reino de la ancestralidad, las raíces y la profundidad.",
+        "Esta lección se ofrece como alfabetización cultural y educativa sobre cómo las tradiciones andinas comprenden la memoria y la integración.",
+        "No se hacen afirmaciones terapéuticas, psicológicas ni de sanación; el contenido es estrictamente cultural en su enfoque.",
+        "Nivel de riesgo: Bajo — alfabetización cultural presentada como contenido educativo sin afirmaciones terapéuticas.",
+      ],
+      reflectionPrompt:
+        "¿Qué portas de quienes te precedieron y cómo moldea la memoria cultural la tierra sobre la que te paras?",
+    },
+    {
+      slug: "ayni-sacred-reciprocity",
+      topic: "reciprocity",
+      title: "Ayni: Reciprocidad sagrada",
+      kicker: "Lección 11",
+      duration: "12 min",
+      youtubeId: "RgKAFK5djSk",
+      description:
+        "Ayni es el principio andino de reciprocidad sagrada: dar y recibir en equilibrio, con la tierra, la comunidad y el cosmos.",
+      extendedDescription:
+        "El Ayni — frecuentemente traducido como reciprocidad sagrada — es uno de los principios más fundamentales de la cultura andina. Esta lección explora el Ayni como una ética relacional que une a los individuos con la comunidad, con el lugar y con el orden cósmico más amplio. Examina en qué se diferencia el Ayni del intercambio transaccional y por qué sigue siendo una práctica viva y no un artefacto histórico.",
+      learningNotes: [
+        "Ayni suele traducirse como 'reciprocidad sagrada' — una ética relacional en el centro de la vida cultural andina.",
+        "El Ayni difiere del intercambio transaccional: es relacional, continuo y está arraigado en el cuidado mutuo más que en la equivalencia.",
+        "Comprender el Ayni ayuda a situar Kay Pacha, Ayllu y los Cinco Valores Andinos dentro de un marco cultural coherente.",
+        "Nivel de riesgo: Bajo — educación cultural y ética sin afirmaciones de salud ni de resultados.",
+      ],
+      reflectionPrompt:
+        "¿Dónde en tus relaciones practicas el equilibrio entre dar y recibir, y dónde resulta más difícil mantener ese equilibrio?",
+    },
+    {
+      slug: "values-munay-yachay-llankay",
+      topic: "ritual",
+      title: "Munay, Yachay, Llank'ay, Sami y Hucha: Los valores como currículo",
+      kicker: "Lección 12",
+      duration: "15 min",
+      youtubeId: "OPf0YbXqDm0",
+      description:
+        "Los Cinco Valores Andinos — Munay, Yachay, Llank'ay, Sami y Hucha — forman la columna vertebral ética de la práctica cultural andina y el currículo de PachaMind.",
+      extendedDescription:
+        "La tradición andina organiza la vida ética en torno a cinco conceptos entrelazados: Munay (amor y voluntad), Yachay (conocimiento y sabiduría), Llank'ay (trabajo con propósito y servicio), Sami (energía refinada y liviana) y Hucha (energía pesada o sin procesar). Esta lección presenta estos valores como un marco curricular — una manera de evaluar dónde descansa actualmente tu atención, intención y esfuerzo, y hacia dónde te llama el crecimiento.",
+      learningNotes: [
+        "Munay: amor, intención y voluntad de actuar desde el cuidado más que desde el miedo.",
+        "Yachay: sabiduría acumulada y la disciplina de aprender con humildad.",
+        "Llank'ay: trabajo significativo y servicio como forma de reciprocidad con la comunidad.",
+        "Sami y Hucha describen cualidades energéticas — ligereza y pesadez — como conceptos culturales, no médicos.",
+        "Nivel de riesgo: Bajo — educación en valores presentada como currículo cultural sin afirmaciones terapéuticas.",
+      ],
+      reflectionPrompt:
+        "¿Cuál de estos cinco valores te exige más en este momento, y cómo sería cuidarlo esta semana?",
+    },
+    {
+      slug: "huacas-sacred-sites",
+      topic: "stewardship",
+      title: "Huacas y lugares sagrados: Interpretación académica y tradición viva",
+      kicker: "Lección 13",
+      duration: "13 min",
+      youtubeId: "4N1iwQxiHrs",
+      description:
+        "Las huacas — lugares y objetos sagrados andinos — se encuentran en la intersección de la arqueología, la tradición viva y la custodia cultural.",
+      extendedDescription:
+        "Una huaca es un lugar, objeto o ser considerado sagrado en la tradición andina — una montaña, un manantial, una piedra tallada o un sitio ancestral. Esta lección navega la diferencia entre la interpretación arqueológica académica y el significado vivo que las comunidades andinas continúan sosteniendo. Invita a los estudiantes a permanecer con esa diferencia con respeto, en lugar de resolverla prematuramente.",
+      learningNotes: [
+        "Huaca (wak'a) se refiere a un lugar, objeto o ser sagrado en la tradición andina — el término abarca una amplia gama de sitios y entidades.",
+        "Las interpretaciones arqueológicas y académicas de las huacas difieren del significado vivo que sostienen las comunidades andinas; ambas merecen atención cuidadosa.",
+        "Esta lección practica la custodia cultural: sostener la complejidad, evitar la extracción y acreditar las tradiciones vivas como fuentes.",
+        "Nivel de riesgo: Medio — verificar fuentes académicas; evitar reclamar autoridad espiritual; respetar la propiedad intelectual comunitaria.",
+      ],
+      reflectionPrompt:
+        "¿Cómo sostienes la diferencia entre estudiar un lugar sagrado desde afuera y respetar su significado vivo para la comunidad que lo llama hogar?",
+    },
+    {
+      slug: "puma-path-orientation",
+      topic: "stewardship",
+      title: "Orientación al Camino del Puma: De Semilla a Puma como progresión de aprendizaje",
+      kicker: "Lección 14",
+      duration: "9 min",
+      youtubeId: "tgbNymZ7vqY",
+      description:
+        "El Camino del Puma es la progresión de aprendizaje de PachaMind — un arco curricular estructurado de Semilla (semilla) a Puma — no una iniciación ni una ceremonia.",
+      extendedDescription:
+        "El Camino del Puma organiza el currículo de PachaMind en una progresión de estudio. Semilla (semilla) marca el comienzo — una orientación hacia la escucha, la presencia y el contexto cultural. Puma marca un compromiso sostenido con los valores andinos, la cosmovisión y la práctica recíproca. Esta progresión es solo un marco de aprendizaje: no es una ceremonia, no es una iniciación y no es una calificación. Es un mapa para un compromiso estudioso, humilde y a largo plazo con una tradición viva.",
+      learningNotes: [
+        "El Camino del Puma es un arco curricular — una progresión de aprendizaje — no una ceremonia, iniciación ni calificación espiritual.",
+        "Las etapas van de Semilla (semilla) hasta Puma; cada etapa corresponde a un estudio y práctica más profundos, no a un avance ritual.",
+        "Completar el Camino del Puma no confiere ninguna autoridad sobre la tradición andina; es solo un registro de aprendizaje personal.",
+        "Nivel de riesgo: Bajo — solo enmarcamiento como progresión de aprendizaje; sin lenguaje de iniciación, ceremonia ni promesa de resultados.",
+      ],
+      reflectionPrompt:
+        "¿Qué significa seguir un camino de aprendizaje con genuina humildad — tratando cada etapa como una profundización de la atención en lugar de un logro que coleccionar?",
     },
   ],
 };
