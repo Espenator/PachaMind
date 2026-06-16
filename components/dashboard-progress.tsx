@@ -90,7 +90,7 @@ export function DashboardProgress({
               </span>
               <Link
                 href={`/${language}/lesson/${continueLesson.slug}`}
-                className="rounded-full bg-deepearth px-5 py-3 text-sm font-semibold text-cloudwhite transition hover:bg-terracotta"
+                className="rounded-full bg-deepearth px-5 py-3 text-sm font-semibold text-cloud transition hover:bg-terracotta focus-gold min-h-[44px] flex items-center"
               >
                 {labels.continueLearning}
               </Link>

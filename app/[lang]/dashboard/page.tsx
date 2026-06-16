@@ -17,11 +17,17 @@ export default async function DashboardPage({
   const content = getContent(lang);
 
   return (
-    <div className="mx-auto max-w-7xl px-6 py-10 lg:px-10 lg:py-16">
-      <section className="documentary-card p-8 lg:p-10">
-        <p className="text-xs uppercase tracking-[0.34em] text-terracotta">{content.brand.promise}</p>
-        <h1 className="headline-font mt-4 text-5xl text-deepearth">{content.dashboard.title}</h1>
-        <p className="mt-5 max-w-3xl text-lg leading-8 text-stonegray">{content.dashboard.intro}</p>
+    <div className="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:px-10 lg:py-16">
+      <section className="documentary-card grain p-8 lg:p-12">
+        <p className="text-xs uppercase tracking-[0.38em] text-terracotta font-medium">
+          {content.brand.promise}
+        </p>
+        <h1 className="headline-font mt-5 text-fluid-4xl text-deepearth">
+          {content.dashboard.title}
+        </h1>
+        <p className="mt-5 max-w-[62ch] text-fluid-lg leading-[1.72] text-stonegray">
+          {content.dashboard.intro}
+        </p>
       </section>
 
       <section className="mt-8">

@@ -42,7 +42,7 @@ export function LessonProgressButton({
       <button
         type="button"
         onClick={toggleCompletion}
-        className="rounded-full bg-terracotta px-5 py-3 text-sm font-semibold text-cloudwhite transition hover:bg-deepearth"
+        className="rounded-full bg-terracotta px-5 py-3 text-sm font-semibold text-cloud transition hover:bg-deepearth focus-gold min-h-[44px]"
       >
         {isCompleted ? markIncompleteLabel : markCompleteLabel}
       </button>
