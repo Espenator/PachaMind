@@ -51,7 +51,7 @@ export default async function LibraryPage({
 
               <Link
                 href={`/${lang}/lesson/${lesson.slug}`}
-                className="w-fit rounded-full bg-deepearth px-5 py-3 text-sm font-semibold text-cloudwhite transition hover:bg-terracotta"
+                className="w-fit rounded-full bg-deepearth px-5 py-3 text-sm font-semibold text-cloudwhite transition hover:bg-terracotta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
               >
                 {content.library.openLessonLabel}
               </Link>

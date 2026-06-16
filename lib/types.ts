@@ -35,6 +35,11 @@ export interface SiteContent {
     about: string;
     english: string;
     spanish: string;
+    skipToContent: string;
+    openMenu: string;
+    closeMenu: string;
+    languageToggleLabel: string;
+    mainNavLabel: string;
   };
   home: {
     title: string;

@@ -23,6 +23,11 @@ export const en: SiteContent = {
     about: "About",
     english: "English",
     spanish: "Español",
+    skipToContent: "Skip to main content",
+    openMenu: "Open navigation menu",
+    closeMenu: "Close navigation menu",
+    languageToggleLabel: "Choose language",
+    mainNavLabel: "Main navigation",
   },
   home: {
     title: "Enter a mountain-paced library of listening, reciprocity, and remembrance.",

@@ -6,7 +6,11 @@ interface YouTubeEmbedProps {
 
 export function YouTubeEmbed({ lesson }: YouTubeEmbedProps) {
   return (
-    <div className="overflow-hidden rounded-[1.75rem] border border-white/20 bg-deepearth/90 shadow-[0_24px_60px_rgba(36,25,21,0.24)]">
+    <div
+      className="overflow-hidden rounded-[1.75rem] border border-white/20 bg-deepearth/90 shadow-[0_24px_60px_rgba(36,25,21,0.24)]"
+      aria-label={lesson.title}
+      role="region"
+    >
       <div className="relative aspect-video w-full">
         <iframe
           className="h-full w-full"

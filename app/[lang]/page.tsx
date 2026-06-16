@@ -32,13 +32,13 @@ export default async function HomePage({
           <div className="flex flex-wrap gap-4">
             <Link
               href={`/${lang}/library`}
-              className="rounded-full bg-deepearth px-6 py-3 text-sm font-semibold text-cloudwhite transition hover:bg-terracotta"
+              className="rounded-full bg-deepearth px-6 py-3 text-sm font-semibold text-cloudwhite transition hover:bg-terracotta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
             >
               {content.home.primaryCta}
             </Link>
             <Link
               href={`/${lang}/dashboard`}
-              className="rounded-full border border-deepearth/10 px-6 py-3 text-sm font-semibold transition hover:bg-skyblue hover:text-cloudwhite"
+              className="rounded-full border border-deepearth/10 px-6 py-3 text-sm font-semibold transition hover:bg-skyblue hover:text-cloudwhite focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
             >
               {content.home.secondaryCta}
             </Link>
