@@ -102,6 +102,19 @@ export const es: SiteContent = {
       "Ya completaste todas las lecciones en este navegador. Puedes volver a cualquiera cuando quieras.",
     completedState: "Completada",
     notStartedState: "Aún no completada",
+    lastWatchedLabel: "Última vista",
+    topicsHeading: "Progreso por tema",
+    resetLabel: "Restablecer progreso",
+    resetConfirmHeading: "¿Restablecer todo el progreso?",
+    resetConfirmLabel: "Sí, restablecer",
+    resetCancelLabel: "Cancelar",
+    certificateTitle: "Certificado de finalización",
+    certificateIntro: "Has completado las cuatro lecciones en este navegador.",
+    certificateBody:
+      "Este es un reconocimiento gratuito de tu recorrido de aprendizaje en PachaMind. Guardián de la tradición: Mallku Aribalo. Sin costo, sin ventas — solo aprendizaje.",
+    certificateNameLabel: "Tu nombre (opcional, guardado solo en este navegador)",
+    certificateNamePlaceholder: "Escribe tu nombre",
+    certificatePrintLabel: "Imprimir certificado",
   },
   about: {
     title: "Acerca de este espacio de aprendizaje",
@@ -206,6 +219,7 @@ export const es: SiteContent = {
       title: "Escucha de la montaña",
       kicker: "Lección 1",
       duration: "12 min",
+      topic: "Fundamentos",
       youtubeId: "ScMzIvxBSi4",
       description:
         "Comienza con una escucha atenta: regula tu atención, observa el lugar y deja que el silencio también enseñe.",
@@ -225,6 +239,7 @@ export const es: SiteContent = {
       title: "Ayllu y reciprocidad",
       kicker: "Lección 2",
       duration: "14 min",
+      topic: "Fundamentos",
       youtubeId: "aqz-KE-bpKQ",
       description:
         "Explora la reciprocidad como una práctica viva de cuidado mutuo, responsabilidad y gratitud entre comunidad y territorio.",
@@ -244,6 +259,7 @@ export const es: SiteContent = {
       title: "Atención ritual",
       kicker: "Lección 3",
       duration: "11 min",
+      topic: "Práctica viva",
       youtubeId: "ysz5S6PUM-U",
       description:
         "Aprende cómo la atención ritual reúne memoria, intención y cuidado encarnado sin espectáculo ni presión performativa.",
@@ -263,6 +279,7 @@ export const es: SiteContent = {
       title: "Llevar la enseñanza hacia adelante",
       kicker: "Lección 4",
       duration: "13 min",
+      topic: "Práctica viva",
       youtubeId: "M7lc1UVf-VE",
       description:
         "Cierra la secuencia considerando cómo las enseñanzas se transmiten con humildad, precisión y responsabilidad compartida.",
