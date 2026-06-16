@@ -3,6 +3,7 @@ export const PROGRESS_STORAGE_KEY = "pachamind-progress-v1";
 export interface ProgressState {
   completedLessonSlugs: string[];
   lastOpenedLessonSlug?: string;
+  displayName?: string;
 }
 
 const defaultState: ProgressState = {
@@ -34,6 +35,8 @@ export function readProgressState(): ProgressState {
         typeof parsed.lastOpenedLessonSlug === "string"
           ? parsed.lastOpenedLessonSlug
           : undefined,
+      displayName:
+        typeof parsed.displayName === "string" ? parsed.displayName : undefined,
     };
   } catch {
     return defaultState;
@@ -67,7 +70,17 @@ export function setLessonCompletion(slug: string, isCompleted: boolean) {
   }
 
   writeProgressState({
+    ...currentState,
     completedLessonSlugs: [...completedSet],
     lastOpenedLessonSlug: currentState.lastOpenedLessonSlug ?? slug,
   });
+}
+
+export function setDisplayName(name: string) {
+  const currentState = readProgressState();
+  writeProgressState({ ...currentState, displayName: name });
+}
+
+export function resetProgressState() {
+  writeProgressState(defaultState);
 }

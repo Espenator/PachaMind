@@ -12,6 +12,7 @@ export interface Lesson {
   learningNotes: string[];
   reflectionPrompt: string;
   youtubeId: string;
+  topic?: string;
 }
 
 export interface SiteContent {
@@ -78,6 +79,18 @@ export interface SiteContent {
     allComplete: string;
     completedState: string;
     notStartedState: string;
+    lastWatchedLabel: string;
+    topicsHeading: string;
+    resetLabel: string;
+    resetConfirmHeading: string;
+    resetConfirmLabel: string;
+    resetCancelLabel: string;
+    certificateTitle: string;
+    certificateIntro: string;
+    certificateBody: string;
+    certificateNameLabel: string;
+    certificateNamePlaceholder: string;
+    certificatePrintLabel: string;
   };
   about: {
     title: string;
