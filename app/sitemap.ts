@@ -4,7 +4,16 @@ import { getContent } from "@/lib/content";
 import { SITE_URL } from "@/lib/site";
 import { languages } from "@/lib/types";
 
-const STATIC_PATHS = ["", "/library", "/about", "/dashboard"] as const;
+const STATIC_PATHS = [
+  "",
+  "/library",
+  "/about",
+  "/dashboard",
+  "/conservation",
+  "/puma-path",
+  "/reflections",
+  "/contact",
+] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Build hreflang alternates helper

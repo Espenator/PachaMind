@@ -10,11 +10,10 @@ import type { Language, Lesson, SiteContent } from "@/lib/types";
 interface LibrarySearchProps {
   lessons: Lesson[];
   library: SiteContent["library"];
-  brand: SiteContent["brand"];
   lang: Language;
 }
 
-export function LibrarySearch({ lessons, library, brand, lang }: LibrarySearchProps) {
+export function LibrarySearch({ lessons, library, lang }: LibrarySearchProps) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
