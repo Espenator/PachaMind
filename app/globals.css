@@ -1,37 +1,79 @@
 @import "tailwindcss";
+/*
+  Google Fonts — loaded as CSS import so the Next.js custom-font lint rule
+  does not fire.  font-display=swap keeps text visible in system fallbacks
+  while the fonts load; preconnect in layout.tsx gives the browser an early
+  connection hint so there is no observable layout shift on fast networks.
+  Playfair Display → editorial serif for headings (--font-display)
+  Inter           → neutral sans-serif for body & UI  (--font-body)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap");
 
+/* ─── Sacred Documentary Design Tokens ─────────────────────────────────── */
 :root {
-  --background: #f7f2ea;
-  --foreground: #241915;
+  /* Palette */
+  --c-deepearth:  #2B1B12;
+  --c-stonegray:  #4A4039;
+  --c-terracotta: #B5613A;
+  --c-gold:       #C9A14A;
+  --c-sky:        #6E8CA0;
+  --c-sand:       #F3ECE2;
+  --c-cloud:      #FBF8F3;
+  --c-moss:       #5C6B4C;
+
+  /* Semantic aliases */
+  --background: var(--c-cloud);
+  --foreground: var(--c-deepearth);
+
+  /* Typography */
   --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
-  --font-body: Inter, "Helvetica Neue", Arial, sans-serif;
+  --font-body:    Inter, "Helvetica Neue", Arial, sans-serif;
+
+  /* Film-grain SVG noise (3 % opacity applied in .grain class) */
+  --grain-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
 }
 
 @theme inline {
+  /* Named tokens — used as Tailwind utility classes */
+  --color-deepearth:  var(--c-deepearth);
+  --color-stonegray:  var(--c-stonegray);
+  --color-terracotta: var(--c-terracotta);
+  --color-gold:       var(--c-gold);
+  --color-sky:        var(--c-sky);
+  --color-sand:       var(--c-sand);
+  --color-cloud:      var(--c-cloud);
+  --color-moss:       var(--c-moss);
+
+  /* Legacy aliases — existing classes keep working */
+  --color-goldmoun:   var(--c-gold);
+  --color-skyblue:    var(--c-sky);
+  --color-cloudwhite: var(--c-cloud);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-deepearth: #241915;
-  --color-terracotta: #a7583b;
-  --color-goldmoun: #c9a353;
-  --color-stonegray: #6e6a63;
-  /* Darkened from #6f93aa → #3d6b82 to meet WCAG AA 4.5:1 contrast with cloudwhite text on hover */
-  --color-skyblue: #3d6b82;
-  --color-cloudwhite: #f7f2ea;
-  --font-sans: var(--font-body);
+
+  --font-sans:  var(--font-body);
   --font-serif: var(--font-display);
 }
 
-* {
+/* ─── Base ──────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body);
+  line-height: 1.7;
+  /* Subtle warm vignette */
   background-image:
-    radial-gradient(circle at top, rgba(201, 163, 83, 0.12), transparent 34%),
-    linear-gradient(180deg, rgba(111, 147, 170, 0.1), transparent 24%);
+    radial-gradient(ellipse at top, rgba(201, 161, 74, 0.09) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(110, 140, 160, 0.07) 0%, transparent 30%);
 }
 
 a {
@@ -39,26 +81,47 @@ a {
   text-decoration: none;
 }
 
-/* Global focus-visible ring — applied to all interactive elements */
-:focus-visible {
-  outline: 2px solid var(--color-terracotta);
-  outline-offset: 2px;
-  border-radius: 0.25rem;
-}
-
-/* Suppress the default :focus outline in favour of :focus-visible */
-:focus:not(:focus-visible) {
-  outline: none;
-}
-
+/* ─── Typography helpers ────────────────────────────────────────────────── */
 .headline-font {
   font-family: var(--font-display);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
 }
 
+/* Fluid type scale — clamp(min, fluid, max) */
+.text-fluid-xs   { font-size: clamp(0.75rem,  1.5vw, 0.875rem); }
+.text-fluid-sm   { font-size: clamp(0.875rem, 2vw,   1rem);     }
+.text-fluid-base { font-size: clamp(1rem,     2.2vw, 1.125rem); }
+.text-fluid-lg   { font-size: clamp(1.125rem, 2.5vw, 1.25rem);  }
+.text-fluid-xl   { font-size: clamp(1.25rem,  3vw,   1.5rem);   }
+.text-fluid-2xl  { font-size: clamp(1.5rem,   4vw,   2rem);     }
+.text-fluid-3xl  { font-size: clamp(2rem,     5vw,   2.75rem);  }
+.text-fluid-4xl  { font-size: clamp(2.5rem,   6vw,   3.75rem);  }
+.text-fluid-5xl  { font-size: clamp(3rem,     8vw,   5rem);     }
+
+/* ─── Card component ────────────────────────────────────────────────────── */
 .documentary-card {
-  @apply rounded-[2rem] border border-white/20 bg-white/70 shadow-[0_25px_80px_rgba(36,25,21,0.12)] backdrop-blur-sm;
+  @apply rounded-[2rem] border border-white/20 bg-white/70 shadow-[0_20px_60px_rgba(43,27,18,0.10)] backdrop-blur-sm;
 }
 
+/* ─── Film-grain overlay ────────────────────────────────────────────────── */
+/* Add .grain to any sand/cloud section for the 3% noise texture */
+.grain {
+  position: relative;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0.03;
+  background-image: var(--grain-url);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* ─── Photo / parallax bands ────────────────────────────────────────────── */
 .photo-overlay {
   position: relative;
   overflow: hidden;
@@ -68,10 +131,17 @@ a {
   content: "";
   position: absolute;
   inset: 0;
+  /* Dark deepearth gradient for text legibility, with warm gold tint at top */
   background:
-    linear-gradient(140deg, rgba(36, 25, 21, 0.74), rgba(36, 25, 21, 0.28)),
-    linear-gradient(180deg, rgba(201, 163, 83, 0.18), transparent 50%);
+    linear-gradient(160deg, rgba(43, 27, 18, 0.72) 0%, rgba(43, 27, 18, 0.26) 60%),
+    linear-gradient(180deg, rgba(201, 161, 74, 0.16) 0%, transparent 45%);
   pointer-events: none;
+  z-index: 1;
+}
+
+.photo-overlay > * {
+  position: relative;
+  z-index: 2;
 }
 
 .parallax-band {
@@ -84,4 +154,37 @@ a {
   .parallax-band {
     background-attachment: scroll;
   }
+}
+
+/* Disable parallax for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .parallax-band {
+    background-attachment: scroll;
+  }
+}
+
+/* ─── Dark documentary section variant ─────────────────────────────────── */
+/* Use on full-width <section> bands: bg deepearth, cloud text, gold/terracotta accents */
+.section-dark {
+  background-color: var(--c-deepearth);
+  color: var(--c-cloud);
+}
+
+.section-dark .headline-font {
+  color: var(--c-cloud);
+}
+
+.section-dark .text-accent {
+  color: var(--c-gold);
+}
+
+.section-dark .text-secondary {
+  color: color-mix(in srgb, var(--c-cloud) 80%, transparent);
+}
+
+/* ─── Focus ring ────────────────────────────────────────────────────────── */
+/* Visible gold focus outline used by interactive elements */
+.focus-gold:focus-visible {
+  outline: 2px solid var(--c-gold);
+  outline-offset: 3px;
 }

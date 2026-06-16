@@ -19,21 +19,27 @@ export default async function ContactPage({
   return (
     <div className="pb-16">
       {/* Hero */}
-      <section className="mx-auto max-w-7xl px-6 py-10 lg:px-10 lg:py-16">
-        <div className="documentary-card p-8 lg:p-10">
-          <p className="text-xs uppercase tracking-[0.3em] text-terracotta">{content.brand.promise}</p>
-          <h1 className="headline-font mt-4 text-5xl text-deepearth">{content.contact.title}</h1>
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-stonegray">{content.contact.intro}</p>
+      <section className="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:px-10 lg:py-16">
+        <div className="documentary-card grain p-8 lg:p-12">
+          <p className="text-xs uppercase tracking-[0.38em] text-terracotta font-medium">
+            {content.brand.promise}
+          </p>
+          <h1 className="headline-font mt-5 text-fluid-4xl text-deepearth">
+            {content.contact.title}
+          </h1>
+          <p className="mt-5 max-w-[62ch] text-fluid-lg leading-[1.72] text-stonegray">
+            {content.contact.intro}
+          </p>
         </div>
       </section>
 
       {/* Form */}
-      <section className="mx-auto max-w-3xl px-6 lg:px-10">
+      <section className="mx-auto max-w-3xl px-5 sm:px-8 lg:px-10">
         <ContactForm content={content.contact} />
       </section>
 
       {/* Attribution band */}
-      <section className="mx-auto mt-6 max-w-7xl px-6 lg:px-10">
+      <section className="mx-auto mt-6 max-w-7xl px-5 sm:px-8 lg:px-10">
         <article
           className="photo-overlay parallax-band rounded-[2rem]"
           style={{
@@ -41,9 +47,13 @@ export default async function ContactPage({
               "url(https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80)",
           }}
         >
-          <div className="relative z-10 p-8 sm:p-10 lg:p-14">
-            <p className="text-xs uppercase tracking-[0.3em] text-goldmoun">{content.footer.credit}</p>
-            <p className="headline-font mt-4 text-3xl text-cloudwhite sm:text-4xl">{content.footer.mission}</p>
+          <div className="p-8 sm:p-12 lg:p-16">
+            <p className="text-xs uppercase tracking-[0.38em] text-gold font-medium">
+              {content.footer.credit}
+            </p>
+            <p className="headline-font mt-4 text-fluid-2xl text-cloud">
+              {content.footer.mission}
+            </p>
           </div>
         </article>
       </section>
