@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
+import { ContinueWatchingBar } from "@/components/continue-watching-bar";
 import type { Language, SiteContent } from "@/lib/types";
 
 interface SiteShellProps {
@@ -91,6 +92,13 @@ export function SiteShell({ content, language, children }: SiteShellProps) {
           </div>
         </div>
       </footer>
+
+      {/* Sticky "continue watching" bar — only renders client-side when progress exists */}
+      <ContinueWatchingBar
+        language={language}
+        lessons={content.lessons}
+        continueLabel={content.dashboard.continueLearning}
+      />
     </div>
   );
 }
