@@ -21,6 +21,7 @@ export const es: SiteContent = {
     library: "Biblioteca",
     dashboard: "Panel",
     about: "Acerca de",
+    contact: "Contacto",
     english: "English",
     spanish: "Español",
   },
@@ -101,6 +102,15 @@ export const es: SiteContent = {
     title: "Acerca de este espacio de aprendizaje",
     intro:
       "PachaMind conserva una atmósfera documental sagrada: ritmo cinematográfico, visuales en tonos tierra y estudio reflexivo con acceso gratuito.",
+    missionHeading: "Nuestra misión",
+    missionBody:
+      "PachaMind existe para llevar las enseñanzas andinas a un espacio digital de libre acceso, sin distorsión, comercialización ni presión. Cada decisión de diseño —ritmo lento, amplitud visual, ausencia de lenguaje transaccional— es una expresión directa de ese compromiso.",
+    storyHeading: "Cómo surgió este espacio",
+    storyBody:
+      "PachaMind nació del deseo de honrar las tradiciones vivas y a quienes las custodian. La plataforma se construyó en torno a las enseñanzas de Mallku Aribalo, quien las compartió para que pudieran viajar con respeto más allá de su geografía original y alcanzar a quienes estén dispuestos a escuchar con atención. Aquí nada se vende, se tokeniza ni se extrae de su contexto.",
+    traditionHolderHeading: "Mallku Aribalo — guardián de la tradición y maestro chamánico",
+    traditionHolderBody:
+      "Mallku Aribalo es un maestro chamánico andino y guardián de la tradición cuyo conocimiento de la práctica cosmológica, la reciprocidad comunitaria y la atención sagrada forma el fundamento vivo de cada lección en este espacio. Sus enseñanzas se ofrecen aquí para el aprendizaje cultural y la reflexión, y aparecen acreditadas a él en toda la experiencia.",
     valuesHeading: "Compromisos que nos orientan",
     values: [
       "100 % gratuito y sin fines de lucro, sin precios, embudos de venta ni lenguaje de checkout.",
@@ -111,6 +121,26 @@ export const es: SiteContent = {
   footer: {
     credit: "Guardián de la tradición: Mallku Aribalo",
     mission: "No cost, no sales — only learning",
+  },
+  contact: {
+    title: "Escríbenos",
+    intro:
+      "Preguntas, traducciones o comentarios sobre el espacio de aprendizaje — este formulario abre un mensaje en tu aplicación de correo. Este sitio no almacena ningún dato.",
+    nameLabel: "Tu nombre",
+    namePlaceholder: "Cómo te gustaría que te llamaran",
+    emailLabel: "Tu dirección de correo",
+    emailPlaceholder: "Para poder responderte",
+    messageLabel: "Tu mensaje",
+    messagePlaceholder: "Preguntas, reflexiones o comentarios — escribe con libertad",
+    submitLabel: "Abrir en la app de correo",
+    successHeading: "Mensaje redactado",
+    successBody:
+      "Tu aplicación de correo se ha abierto con el mensaje ya preparado. Envíalo cuando estés listo.",
+    validationName: "Por favor, escribe tu nombre.",
+    validationEmail: "Por favor, ingresa una dirección de correo válida.",
+    validationMessage: "Por favor, escribe un mensaje antes de enviar.",
+    noteLabel:
+      "Este formulario abre un enlace mailto: en tu aplicación de correo. No se transmite ni almacena ninguna información en este sitio.",
   },
   lessons: [
     {
