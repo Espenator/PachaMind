@@ -1,7 +1,36 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { DashboardProgress } from "@/components/dashboard-progress";
 import { getContent, isLanguage } from "@/lib/content";
+import { SITE_URL } from "@/lib/site";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isLanguage(lang)) return {};
+  const content = getContent(lang);
+  return {
+    title: content.dashboard.title,
+    description: content.dashboard.intro,
+    openGraph: {
+      title: content.dashboard.title,
+      description: content.dashboard.intro,
+      url: `${SITE_URL}/${lang}/dashboard`,
+    },
+    alternates: {
+      canonical: `${SITE_URL}/${lang}/dashboard`,
+      languages: {
+        en: `${SITE_URL}/en/dashboard`,
+        es: `${SITE_URL}/es/dashboard`,
+        "x-default": `${SITE_URL}/en/dashboard`,
+      },
+    },
+  };
+}
 
 export default async function DashboardPage({
   params,

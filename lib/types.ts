@@ -4,7 +4,7 @@ export type Language = (typeof languages)[number];
 
 export interface Lesson {
   slug: string;
-  topic: string;
+  topic?: string;
   title: string;
   kicker: string;
   duration: string;
@@ -13,6 +13,13 @@ export interface Lesson {
   learningNotes: string[];
   reflectionPrompt: string;
   youtubeId: string;
+}
+
+export interface PumaPathStage {
+  key: string;
+  title: string;
+  body: string;
+  image: string;
 }
 
 export interface SiteContent {
@@ -32,11 +39,19 @@ export interface SiteContent {
   nav: {
     home: string;
     library: string;
+    pumaPath: string;
     dashboard: string;
+    reflections: string;
     about: string;
     contact: string;
+    conservation: string;
     english: string;
     spanish: string;
+    skipToContent: string;
+    openMenu: string;
+    closeMenu: string;
+    languageToggleLabel: string;
+    mainNavLabel: string;
   };
   home: {
     title: string;
@@ -84,6 +99,18 @@ export interface SiteContent {
     allComplete: string;
     completedState: string;
     notStartedState: string;
+    lastWatchedLabel: string;
+    topicsHeading: string;
+    resetLabel: string;
+    resetConfirmHeading: string;
+    resetConfirmLabel: string;
+    resetCancelLabel: string;
+    certificateTitle: string;
+    certificateIntro: string;
+    certificateBody: string;
+    certificateNameLabel: string;
+    certificateNamePlaceholder: string;
+    certificatePrintLabel: string;
   };
   about: {
     title: string;
@@ -118,5 +145,50 @@ export interface SiteContent {
     validationMessage: string;
     noteLabel: string;
   };
+  pumaPath: {
+    title: string;
+    intro: string;
+    stagesHeading: string;
+    progressLabel: string;
+    noticeMission: string;
+    attributionNote: string;
+    stageLabel: string;
+    completedLabel: string;
+    notStartedLabel: string;
+    openStageLabel: string;
+    revisitLabel: string;
+    stages: PumaPathStage[];
+  };
   lessons: Lesson[];
+  conservation: {
+    title: string;
+    intro: string;
+    attributionLabel: string;
+    principlesHeading: string;
+    reflectionHeading: string;
+    reflectionPrompt: string;
+    bands: Array<{
+      title: string;
+      body: string;
+      image: string;
+    }>;
+    principles: string[];
+  };
+  reflections: {
+    title: string;
+    intro: string;
+    promptsHeading: string;
+    noteLabel: string;
+    notePlaceholder: string;
+    saveLabel: string;
+    savedLabel: string;
+    clearLabel: string;
+    storageHint: string;
+    attributionLabel: string;
+    parallaxSections: Array<{
+      title: string;
+      body: string;
+      image: string;
+    }>;
+  };
 }
