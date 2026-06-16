@@ -1,51 +1,44 @@
 export const REFLECTIONS_STORAGE_KEY = "pachamind-reflections-v1";
 
-export type ReflectionNotes = Record<string, string>;
+export interface ReflectionEntry {
+  lessonSlug: string;
+  prompt: string;
+  text: string;
+  savedAt: string; // ISO date string
+}
+
+export type ReflectionsState = Record<string, ReflectionEntry>;
 
 function canUseStorage() {
   return typeof window !== "undefined";
 }
 
-export function readReflectionNotes(): ReflectionNotes {
-  if (!canUseStorage()) {
-    return {};
-  }
-
+export function readReflectionsState(): ReflectionsState {
+  if (!canUseStorage()) return {};
   const raw = window.localStorage.getItem(REFLECTIONS_STORAGE_KEY);
-
-  if (!raw) {
-    return {};
-  }
-
+  if (!raw) return {};
   try {
-    const parsed = JSON.parse(raw) as unknown;
-    if (typeof parsed === "object" && parsed !== null && !Array.isArray(parsed)) {
-      const result: ReflectionNotes = {};
-      for (const [key, value] of Object.entries(parsed as Record<string, unknown>)) {
-        if (typeof key === "string" && typeof value === "string") {
-          result[key] = value;
-        }
-      }
-      return result;
-    }
-    return {};
+    return JSON.parse(raw) as ReflectionsState;
   } catch {
     return {};
   }
 }
 
-export function writeReflectionNote(slug: string, note: string) {
-  if (!canUseStorage()) {
-    return;
-  }
+export function writeReflectionsState(state: ReflectionsState) {
+  if (!canUseStorage()) return;
+  window.localStorage.setItem(REFLECTIONS_STORAGE_KEY, JSON.stringify(state));
+}
 
-  const notes = readReflectionNotes();
+export function saveReflectionEntry(entry: ReflectionEntry) {
+  const state = readReflectionsState();
+  state[entry.lessonSlug] = entry;
+  writeReflectionsState(state);
+}
 
-  if (note.trim() === "") {
-    delete notes[slug];
-  } else {
-    notes[slug] = note;
-  }
+export function getReflectionEntry(lessonSlug: string): ReflectionEntry | undefined {
+  return readReflectionsState()[lessonSlug];
+}
 
-  window.localStorage.setItem(REFLECTIONS_STORAGE_KEY, JSON.stringify(notes));
+export function clearAllReflections() {
+  writeReflectionsState({});
 }
