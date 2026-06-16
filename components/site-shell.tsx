@@ -35,6 +35,7 @@ export function SiteShell({ content, language, children }: SiteShellProps) {
               {[
                 { href: `/${language}`, label: content.nav.home },
                 { href: `/${language}/library`, label: content.nav.library },
+                { href: `/${language}/puma-path`, label: content.nav.pumaPath },
                 { href: `/${language}/dashboard`, label: content.nav.dashboard },
                 { href: `/${language}/about`, label: content.nav.about },
                 { href: `/${language}/contact`, label: content.nav.contact },

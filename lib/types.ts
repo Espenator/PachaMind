@@ -15,6 +15,13 @@ export interface Lesson {
   youtubeId: string;
 }
 
+export interface PumaPathStage {
+  key: string;
+  title: string;
+  body: string;
+  image: string;
+}
+
 export interface SiteContent {
   locale: Language;
   meta: {
@@ -32,6 +39,7 @@ export interface SiteContent {
   nav: {
     home: string;
     library: string;
+    pumaPath: string;
     dashboard: string;
     about: string;
     contact: string;
@@ -117,6 +125,20 @@ export interface SiteContent {
     validationEmail: string;
     validationMessage: string;
     noteLabel: string;
+  };
+  pumaPath: {
+    title: string;
+    intro: string;
+    stagesHeading: string;
+    progressLabel: string;
+    noticeMission: string;
+    attributionNote: string;
+    stageLabel: string;
+    completedLabel: string;
+    notStartedLabel: string;
+    openStageLabel: string;
+    revisitLabel: string;
+    stages: PumaPathStage[];
   };
   lessons: Lesson[];
 }

@@ -19,6 +19,7 @@ export const en: SiteContent = {
   nav: {
     home: "Home",
     library: "Library",
+    pumaPath: "Puma Path",
     dashboard: "Dashboard",
     about: "About",
     contact: "Contact",
@@ -69,6 +70,7 @@ export const en: SiteContent = {
       reciprocity: "Reciprocity",
       ritual: "Ritual",
       stewardship: "Stewardship",
+      integration: "Integration",
     },
   },
   lessonPage: {
@@ -139,6 +141,58 @@ export const en: SiteContent = {
     validationMessage: "Please write a message before sending.",
     noteLabel:
       "This form opens a mailto: link in your email app. No information is transmitted to or stored by this website.",
+  },
+  pumaPath: {
+    title: "The Puma Path",
+    intro:
+      "A five-stage learning progression shaped by Andean teachings. Move through each stage at your own pace, carry nothing but attention, and let each lesson deepen the next.",
+    stagesHeading: "Five stages of learning",
+    progressLabel: "Your learning progression",
+    noticeMission: "No cost, no sales — only learning",
+    attributionNote:
+      "The Puma Path is drawn from the teachings of Mallku Aribalo, Andean tradition-holder and shamanic teacher. All five stages are offered here for cultural learning and reflection — not as an initiation or therapeutic programme.",
+    stageLabel: "Stage",
+    completedLabel: "Completed",
+    notStartedLabel: "Not yet visited",
+    openStageLabel: "Begin this stage",
+    revisitLabel: "Revisit this stage",
+    stages: [
+      {
+        key: "listening",
+        title: "Listening",
+        body: "Arrive before you interpret. The first stage trains attention to receive before it reacts — learning to notice weather, rhythm, silence, and the space between words.",
+        image:
+          "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80",
+      },
+      {
+        key: "reciprocity",
+        title: "Reciprocity",
+        body: "Shift from receiving to responding. Reciprocity asks what you hold in relation — to community, to land, to teaching — and how steady care sustains belonging over time.",
+        image:
+          "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1600&q=80",
+      },
+      {
+        key: "ritual",
+        title: "Ritual",
+        body: "Anchor intention in repeated action. Ritual attention is the discipline of showing up consistently: small, focused gestures practiced with care accumulate into living memory.",
+        image:
+          "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=80",
+      },
+      {
+        key: "stewardship",
+        title: "Stewardship",
+        body: "Hold what you have learned lightly and faithfully. Stewardship asks how teachings travel without losing their roots — and how credit, context, and humility travel with them.",
+        image:
+          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+      },
+      {
+        key: "integration",
+        title: "Integration",
+        body: "Let the four stages move together. Integration is not a final destination but a continuing return: each practice renews the others when held as a whole rather than a sequence.",
+        image:
+          "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80",
+      },
+    ],
   },
   lessons: [
     {
@@ -216,6 +270,25 @@ export const en: SiteContent = {
       ],
       reflectionPrompt:
         "How can you carry a teaching forward in a way that preserves context, credit, and responsibility?",
+    },
+    {
+      slug: "path-of-integration",
+      topic: "integration",
+      title: "The Path of Integration",
+      kicker: "Lesson 5",
+      duration: "15 min",
+      youtubeId: "ScMzIvxBSi4",
+      description:
+        "Draw the four stages into a living practice: how listening, reciprocity, ritual, and stewardship sustain and renew each other over time.",
+      extendedDescription:
+        "Integration is not a final destination but a continuing movement. This lesson asks how the four previous stages support each other as a whole practice — and how learners can return to any stage with new eyes, deepened by everything that came before.",
+      learningNotes: [
+        "Integration is understood as an ongoing cycle rather than a finished state.",
+        "Each stage deepens the others when held together with steady attention.",
+        "Carrying a complete practice means welcoming return as much as forward movement.",
+      ],
+      reflectionPrompt:
+        "How do listening, reciprocity, ritual, and stewardship already move together in your daily life, and where do they call for more attention?",
     },
   ],
 };

@@ -19,6 +19,7 @@ export const es: SiteContent = {
   nav: {
     home: "Inicio",
     library: "Biblioteca",
+    pumaPath: "Camino del Puma",
     dashboard: "Panel",
     about: "Acerca de",
     contact: "Contacto",
@@ -70,6 +71,7 @@ export const es: SiteContent = {
       reciprocity: "Reciprocidad",
       ritual: "Ritual",
       stewardship: "Custodia",
+      integration: "Integración",
     },
   },
   lessonPage: {
@@ -141,6 +143,58 @@ export const es: SiteContent = {
     validationMessage: "Por favor, escribe un mensaje antes de enviar.",
     noteLabel:
       "Este formulario abre un enlace mailto: en tu aplicación de correo. No se transmite ni almacena ninguna información en este sitio.",
+  },
+  pumaPath: {
+    title: "El Camino del Puma",
+    intro:
+      "Una progresión de aprendizaje de cinco etapas modelada por enseñanzas andinas. Avanza a tu propio ritmo, lleva solo atención y deja que cada lección profundice la siguiente.",
+    stagesHeading: "Cinco etapas de aprendizaje",
+    progressLabel: "Tu progresión de aprendizaje",
+    noticeMission: "No cost, no sales — only learning",
+    attributionNote:
+      "El Camino del Puma se nutre de las enseñanzas de Mallku Aribalo, guardián de la tradición andina y maestro chamánico. Las cinco etapas se ofrecen aquí para el aprendizaje cultural y la reflexión — no como iniciación ni programa terapéutico.",
+    stageLabel: "Etapa",
+    completedLabel: "Completada",
+    notStartedLabel: "Aún no visitada",
+    openStageLabel: "Comenzar esta etapa",
+    revisitLabel: "Volver a esta etapa",
+    stages: [
+      {
+        key: "listening",
+        title: "Escucha",
+        body: "Llega antes de interpretar. La primera etapa entrena la atención para recibir antes de reaccionar: aprender a notar el clima, el ritmo, el silencio y el espacio entre las palabras.",
+        image:
+          "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80",
+      },
+      {
+        key: "reciprocity",
+        title: "Reciprocidad",
+        body: "Pasa de recibir a responder. La reciprocidad pregunta qué sostienes en relación —con la comunidad, con la tierra, con la enseñanza— y cómo el cuidado constante sostiene el sentido de pertenencia.",
+        image:
+          "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1600&q=80",
+      },
+      {
+        key: "ritual",
+        title: "Ritual",
+        body: "Ancla la intención en la acción repetida. La atención ritual es la disciplina de aparecer con constancia: gestos pequeños y enfocados practicados con cuidado se acumulan en memoria viva.",
+        image:
+          "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=80",
+      },
+      {
+        key: "stewardship",
+        title: "Custodia",
+        body: "Sostén lo que aprendiste con ligereza y fidelidad. La custodia pregunta cómo viajan las enseñanzas sin perder sus raíces, y cómo el crédito, el contexto y la humildad viajan con ellas.",
+        image:
+          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+      },
+      {
+        key: "integration",
+        title: "Integración",
+        body: "Deja que las cuatro etapas se muevan juntas. La integración no es un destino final sino un retorno continuo: cada práctica renueva las otras cuando se sostienen como un todo y no como una secuencia.",
+        image:
+          "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80",
+      },
+    ],
   },
   lessons: [
     {
@@ -218,6 +272,25 @@ export const es: SiteContent = {
       ],
       reflectionPrompt:
         "¿Cómo puedes llevar una enseñanza hacia adelante de una manera que preserve contexto, crédito y responsabilidad?",
+    },
+    {
+      slug: "path-of-integration",
+      topic: "integration",
+      title: "El camino de la integración",
+      kicker: "Lección 5",
+      duration: "15 min",
+      youtubeId: "ScMzIvxBSi4",
+      description:
+        "Reúne las cuatro etapas en una práctica viva: cómo la escucha, la reciprocidad, el ritual y la custodia se sostienen y se renuevan mutuamente con el tiempo.",
+      extendedDescription:
+        "La integración no es un destino final sino un movimiento continuo. Esta lección pregunta cómo las cuatro etapas anteriores se apoyan mutuamente como práctica completa, y cómo los estudiantes pueden regresar a cualquier etapa con nuevos ojos, enriquecidos por todo lo que vino antes.",
+      learningNotes: [
+        "La integración se entiende como un ciclo continuo y no como un estado terminado.",
+        "Cada etapa profundiza las demás cuando se sostienen juntas con atención constante.",
+        "Mantener una práctica completa significa acoger el retorno tanto como el avance.",
+      ],
+      reflectionPrompt:
+        "¿Cómo se mueven ya juntas la escucha, la reciprocidad, el ritual y la custodia en tu vida diaria, y dónde piden más atención?",
     },
   ],
 };
