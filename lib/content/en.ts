@@ -22,6 +22,7 @@ export const en: SiteContent = {
     dashboard: "Dashboard",
     about: "About",
     contact: "Contact",
+    conservation: "Conservation",
     english: "English",
     spanish: "Español",
   },
@@ -218,4 +219,47 @@ export const en: SiteContent = {
         "How can you carry a teaching forward in a way that preserves context, credit, and responsibility?",
     },
   ],
+  conservation: {
+    title: "Andean Conservation",
+    intro:
+      "Through the lens of Andean cosmovision, conservation is not a policy or a project — it is a living relationship. These themes explore how Andean teachings offer a grounded approach to caring for water, land, biodiversity, and community across generations.",
+    attributionLabel: "Tradition-holder",
+    principlesHeading: "Core principles",
+    reflectionHeading: "A reflection for your learning",
+    reflectionPrompt:
+      "Which relationship with the natural world around you has been shaped by reciprocity, and what would it mean to tend that relationship with greater care?",
+    bands: [
+      {
+        title: "Reciprocity with the land (Ayni)",
+        body: "In Andean cosmovision, the earth is not a resource to be managed but a living being to be in relationship with. The principle of ayni — reciprocity — shapes every interaction with land: what you take, you return; what you receive, you care for. Conservation becomes an act of ongoing gratitude.",
+        image:
+          "https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&fit=crop&w=1600&q=80",
+      },
+      {
+        title: "Water as a living being",
+        body: "Water is honoured in Andean tradition as a source of life that carries memory and intention. Conservation begins with listening: understanding where water comes from, how it moves, and what it needs to keep flowing across communities and generations. Protecting watersheds is an act of communal reciprocity.",
+        image:
+          "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1600&q=80",
+      },
+      {
+        title: "Biodiversity and the web of life",
+        body: "Andean cosmological thinking recognises that all living beings — plants, animals, fungi, soils — participate in a shared existence. Diversity is not ornamental; it is the structural integrity of the living world, and each loss diminishes the whole. Tending biodiversity is tending relationship itself.",
+        image:
+          "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1600&q=80",
+      },
+      {
+        title: "Sustainable practices rooted in ancestral knowledge",
+        body: "Andean farming and land management traditions — terracing, crop rotation, water channelling, polyculture — evolved through centuries of careful observation and communal stewardship. These practices are not folklore; they are sophisticated responses to complex ecosystems, refined over generations of attentive care.",
+        image:
+          "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80",
+      },
+    ],
+    principles: [
+      "The earth is a living being deserving care, not a resource to be extracted.",
+      "Water carries memory; protecting watersheds is an act of communal reciprocity.",
+      "Biodiversity reflects the richness of relations among all living beings.",
+      "Ancestral ecological knowledge offers grounded, tested guidance for land stewardship.",
+      "Conservation is a collective practice sustained through shared responsibility and attention.",
+    ],
+  },
 };

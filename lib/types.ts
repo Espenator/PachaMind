@@ -35,6 +35,7 @@ export interface SiteContent {
     dashboard: string;
     about: string;
     contact: string;
+    conservation: string;
     english: string;
     spanish: string;
   };
@@ -119,4 +120,18 @@ export interface SiteContent {
     noteLabel: string;
   };
   lessons: Lesson[];
+  conservation: {
+    title: string;
+    intro: string;
+    attributionLabel: string;
+    principlesHeading: string;
+    reflectionHeading: string;
+    reflectionPrompt: string;
+    bands: Array<{
+      title: string;
+      body: string;
+      image: string;
+    }>;
+    principles: string[];
+  };
 }

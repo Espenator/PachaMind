@@ -22,6 +22,7 @@ export const es: SiteContent = {
     dashboard: "Panel",
     about: "Acerca de",
     contact: "Contacto",
+    conservation: "Conservación",
     english: "English",
     spanish: "Español",
   },
@@ -220,4 +221,47 @@ export const es: SiteContent = {
         "¿Cómo puedes llevar una enseñanza hacia adelante de una manera que preserve contexto, crédito y responsabilidad?",
     },
   ],
+  conservation: {
+    title: "Conservación andina",
+    intro:
+      "Desde la perspectiva de la cosmovisión andina, la conservación no es una política ni un proyecto, sino una relación viva. Estas temáticas exploran cómo los saberes andinos ofrecen un enfoque arraigado para cuidar el agua, la tierra, la biodiversidad y la comunidad a lo largo de las generaciones.",
+    attributionLabel: "Guardián de la tradición",
+    principlesHeading: "Principios fundamentales",
+    reflectionHeading: "Una reflexión para tu aprendizaje",
+    reflectionPrompt:
+      "¿Qué relación con el mundo natural que te rodea ha sido moldeada por la reciprocidad y qué significaría cuidar esa relación con mayor atención?",
+    bands: [
+      {
+        title: "Reciprocidad con la tierra (Ayni)",
+        body: "En la cosmovisión andina, la tierra no es un recurso que gestionar sino un ser vivo con quien relacionarse. El principio del ayni — reciprocidad — moldea cada interacción con la tierra: lo que tomas, lo devuelves; lo que recibes, lo cuidas. La conservación se convierte en un acto de gratitud continua.",
+        image:
+          "https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&fit=crop&w=1600&q=80",
+      },
+      {
+        title: "El agua como ser vivo",
+        body: "En la tradición andina, el agua se honra como fuente de vida que porta memoria e intención. La conservación comienza con la escucha: comprender de dónde viene el agua, cómo se mueve y qué necesita para seguir fluyendo a través de comunidades y generaciones. Proteger las cuencas es un acto de reciprocidad comunitaria.",
+        image:
+          "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1600&q=80",
+      },
+      {
+        title: "Biodiversidad y la trama de la vida",
+        body: "El pensamiento cosmológico andino reconoce que todos los seres vivos — plantas, animales, hongos, suelos — participan en una existencia compartida. La diversidad no es ornamental; es la integridad estructural del mundo vivo, y cada pérdida lo empobrece todo. Cuidar la biodiversidad es cuidar la relación misma.",
+        image:
+          "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1600&q=80",
+      },
+      {
+        title: "Prácticas sostenibles arraigadas en el saber ancestral",
+        body: "Las tradiciones andinas de cultivo y gestión del territorio — terrazas, rotación de cultivos, canales de agua, policultivos — se desarrollaron durante siglos de observación cuidadosa y custodia comunitaria. Estas prácticas no son folclore; son respuestas sofisticadas a ecosistemas complejos, refinadas a lo largo de generaciones de cuidado atento.",
+        image:
+          "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80",
+      },
+    ],
+    principles: [
+      "La tierra es un ser vivo que merece cuidado, no un recurso para ser extraído.",
+      "El agua porta memoria; proteger las cuencas es un acto de reciprocidad comunitaria.",
+      "La biodiversidad refleja la riqueza de las relaciones entre todos los seres vivos.",
+      "El conocimiento ecológico ancestral ofrece orientación arraigada y probada para el cuidado del territorio.",
+      "La conservación es una práctica colectiva sostenida mediante responsabilidad compartida y atención constante.",
+    ],
+  },
 };
