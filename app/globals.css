@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f2ea;
+  --foreground: #241915;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: Inter, "Helvetica Neue", Arial, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-deepearth: #241915;
+  --color-terracotta: #a7583b;
+  --color-goldmoun: #c9a353;
+  --color-stonegray: #6e6a63;
+  --color-skyblue: #6f93aa;
+  --color-cloudwhite: #f7f2ea;
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  background-image:
+    radial-gradient(circle at top, rgba(201, 163, 83, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(111, 147, 170, 0.1), transparent 24%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.headline-font {
+  font-family: var(--font-display);
+}
+
+.documentary-card {
+  @apply rounded-[2rem] border border-white/20 bg-white/70 shadow-[0_25px_80px_rgba(36,25,21,0.12)] backdrop-blur-sm;
+}
+
+.photo-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(140deg, rgba(36, 25, 21, 0.74), rgba(36, 25, 21, 0.28)),
+    linear-gradient(180deg, rgba(201, 163, 83, 0.18), transparent 50%);
+  pointer-events: none;
+}
+
+.parallax-band {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .parallax-band {
+    background-attachment: scroll;
+  }
+}
