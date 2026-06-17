@@ -35,7 +35,7 @@ Include:
 Questions:
 
 - [NEEDS COUNSEL/VERIFICATION] Does PachaMind.org Flow A meet nonprofit/Ad Grants posture?
-- [NEEDS COUNSEL/VERIFICATION] Is phone capture permissible during Flow A, or should signup be email/account-first?
+- [NEEDS COUNSEL/VERIFICATION] Consent wording, logging, data-sharing, and channel consent for the approved Flow A membership coordinates (field set settled by the June 17, 2026 canon — collected for the real educational product; the risk is undisclosed commercial use before Flow B, not the collection itself).
 - [NEEDS COUNSEL/VERIFICATION] Can any Embodier.ai disclosure appear before Flow B?
 
 ### Data and consent flow
