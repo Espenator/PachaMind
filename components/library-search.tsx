@@ -10,10 +10,11 @@ import type { Language, Lesson, SiteContent } from "@/lib/types";
 interface LibrarySearchProps {
   lessons: Lesson[];
   library: SiteContent["library"];
+  videoComingSoonLabel: string;
   lang: Language;
 }
 
-export function LibrarySearch({ lessons, library, lang }: LibrarySearchProps) {
+export function LibrarySearch({ lessons, library, videoComingSoonLabel, lang }: LibrarySearchProps) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -180,7 +181,7 @@ export function LibrarySearch({ lessons, library, lang }: LibrarySearchProps) {
 
               <div className="space-y-4">
                 <p className="text-xs uppercase tracking-[0.3em] text-stonegray">{library.watchLabel}</p>
-                <YouTubeEmbed lesson={lesson} />
+                <YouTubeEmbed lesson={lesson} comingSoonLabel={videoComingSoonLabel} />
               </div>
             </article>
           ))}

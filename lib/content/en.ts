@@ -45,19 +45,19 @@ export const en: SiteContent = {
         title: "Documentary pacing",
         body: "Slow visuals, layered notes, and grounded prompts help each lesson feel like a field visit instead of a sales funnel.",
         image:
-          "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/andes-iss59-range.jpg",
       },
       {
         title: "Bilingual access",
         body: "English and Spanish stay in sync so every reflection, lesson note, and next step carries the same meaning across both routes.",
         image:
-          "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/andes-iss64-range.jpg",
       },
       {
         title: "Free and nonprofit",
         body: "Every page repeats the core promise clearly: no pricing, no checkout, no reservation pressure, and no donations asked here.",
         image:
-          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/andes-western-slope-aster.jpg",
       },
     ],
   },
@@ -93,6 +93,7 @@ export const en: SiteContent = {
       "Progress is stored locally on this device only. No account is required.",
     nextLessonLabel: "Continue to next lesson",
     dashboardLabel: "Go to dashboard",
+    videoComingSoonLabel: "Video coming soon",
   },
   dashboard: {
     title: "Your learning dashboard",
@@ -183,35 +184,35 @@ export const en: SiteContent = {
         title: "Listening",
         body: "Arrive before you interpret. The first stage trains attention to receive before it reacts — learning to notice weather, rhythm, silence, and the space between words.",
         image:
-          "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/andes-iss59-range.jpg",
       },
       {
         key: "reciprocity",
         title: "Reciprocity",
         body: "Shift from receiving to responding. Reciprocity asks what you hold in relation — to community, to land, to teaching — and how steady care sustains belonging over time.",
         image:
-          "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/machu-picchu-urubamba-canyon.jpg",
       },
       {
         key: "ritual",
         title: "Ritual",
         body: "Anchor intention in repeated action. Ritual attention is the discipline of showing up consistently: small, focused gestures practiced with care accumulate into living memory.",
         image:
-          "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/machu-picchu-inti-punku.jpg",
       },
       {
         key: "stewardship",
         title: "Stewardship",
         body: "Hold what you have learned lightly and faithfully. Stewardship asks how teachings travel without losing their roots — and how credit, context, and humility travel with them.",
         image:
-          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/andes-western-slope-aster.jpg",
       },
       {
         key: "integration",
         title: "Integration",
         body: "Let the four stages move together. Integration is not a final destination but a continuing return: each practice renews the others when held as a whole rather than a sequence.",
         image:
-          "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/andes-iss47-mountain-road.jpg",
       },
     ],
   },
@@ -222,7 +223,9 @@ export const en: SiteContent = {
       title: "Mountain Listening",
       kicker: "Lesson 1",
       duration: "12 min",
-      youtubeId: "ScMzIvxBSi4",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Film a field-paced opening lesson in Andean mountain terrain demonstrating attentive listening, pauses, ambient sound, and place-based observation before interpretation.",
       description:
         "Begin with attentive listening: pacing your attention, noticing place, and letting silence do part of the teaching.",
       extendedDescription:
@@ -241,7 +244,9 @@ export const en: SiteContent = {
       title: "Ayllu and Reciprocity",
       kicker: "Lesson 2",
       duration: "14 min",
-      youtubeId: "aqz-KE-bpKQ",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Film interviews and B-roll showing ayllu-style reciprocity in daily life, highlighting mutual care, gratitude, and shared responsibility between community and landscape.",
       description:
         "Explore reciprocity as a living practice of mutual care, responsibility, and gratitude across community and landscape.",
       extendedDescription:
@@ -260,7 +265,9 @@ export const en: SiteContent = {
       title: "Ritual Attention",
       kicker: "Lesson 3",
       duration: "11 min",
-      youtubeId: "ysz5S6PUM-U",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Film a respectful demonstration of simple repeated ritual gestures that show preparation, intention, and embodied attention without spectacle.",
       description:
         "Learn how ritual attention gathers memory, intention, and embodied care without spectacle or performance pressure.",
       extendedDescription:
@@ -279,7 +286,9 @@ export const en: SiteContent = {
       title: "Carrying the Teaching Forward",
       kicker: "Lesson 4",
       duration: "13 min",
-      youtubeId: "M7lc1UVf-VE",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Film a closing stewardship lesson on carrying teachings forward with humility, context, attribution, and shared responsibility.",
       description:
         "Close the sequence by considering how teachings are carried forward through humility, accuracy, and shared responsibility.",
       extendedDescription:
@@ -298,7 +307,9 @@ export const en: SiteContent = {
       title: "What PachaMind Is",
       kicker: "Lesson 5",
       duration: "8 min",
-      youtubeId: "dQw4w9WgXcQ",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Film an orientation explainer introducing PachaMind as a free nonprofit Andean learning space and clearly stating no sales or checkout flow.",
       description:
         "An orientation to PachaMind: a free, nonprofit Andean wisdom education space dedicated to cultural preservation and open access.",
       extendedDescription:
@@ -318,7 +329,9 @@ export const en: SiteContent = {
       title: "Mallku Aribalo: Tradition-Holder and Andean Teacher",
       kicker: "Lesson 6",
       duration: "10 min",
-      youtubeId: "9bZkp7q19f0",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Film a biographical profile of Mallku Aribalo covering his role as tradition-holder, teacher lineage context, and why source attribution matters.",
       description:
         "Meet Mallku Aribalo — Andean shamanic teacher, tradition-holder, and cultural anchor of the PachaMind learning space.",
       extendedDescription:
@@ -338,7 +351,9 @@ export const en: SiteContent = {
       title: "Kausay Pacha: The Living Universe",
       kicker: "Lesson 7",
       duration: "12 min",
-      youtubeId: "eVTXPUF4Oz4",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Film a concept lesson explaining Kausay Pacha as a living relational universe and introducing the Three Pachas framework.",
       description:
         "Explore Kausay Pacha — the Andean concept of the living universe — as the cosmological foundation of Andean thought and practice.",
       extendedDescription:
@@ -358,7 +373,9 @@ export const en: SiteContent = {
       title: "Hanaq Pacha: Sky, Cycles, and Archaeo-Astronomy",
       kicker: "Lesson 8",
       duration: "14 min",
-      youtubeId: "pFqgFbDLMKk",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Film a sky-and-site lesson on Hanaq Pacha with historical archaeo-astronomy context, celestial cycles, and architectural alignments.",
       description:
         "Study Hanaq Pacha — the upper world of sky, stars, and cosmic cycles — and how Andean peoples read the heavens as a map of time and relationship.",
       extendedDescription:
@@ -378,7 +395,9 @@ export const en: SiteContent = {
       title: "Kay Pacha: Reciprocity and Daily Practice",
       kicker: "Lesson 9",
       duration: "13 min",
-      youtubeId: "J---aiyznGQ",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Film a daily-life lesson showing Kay Pacha reciprocity practices with land, community, gratitude, and ordinary routine footage.",
       description:
         "Kay Pacha — the present world of everyday life — is where reciprocity becomes practice: in land, community, and the rhythms of ordinary days.",
       extendedDescription:
@@ -398,7 +417,9 @@ export const en: SiteContent = {
       title: "Uku Pacha: Ancestry, Depth, and Integration",
       kicker: "Lesson 10",
       duration: "11 min",
-      youtubeId: "kJQP7kiw5Fk",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Film a cultural literacy lesson on Uku Pacha, ancestry, memory, and integration framed without therapeutic claims.",
       description:
         "Uku Pacha — the inner or lower world — holds ancestry, depth, and the roots of what we carry, offered here as cultural learning about integration and memory.",
       extendedDescription:
@@ -418,7 +439,9 @@ export const en: SiteContent = {
       title: "Ayni: Sacred Reciprocity",
       kicker: "Lesson 11",
       duration: "12 min",
-      youtubeId: "RgKAFK5djSk",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Film an ethics lesson defining Ayni as sacred reciprocity and contrasting relational balance with transactional exchange.",
       description:
         "Ayni is the Andean principle of sacred reciprocity: give and receive in balance, with the land, the community, and the cosmos.",
       extendedDescription:
@@ -438,7 +461,9 @@ export const en: SiteContent = {
       title: "Munay, Yachay, Llank'ay, Sami, and Hucha: Values as Curriculum",
       kicker: "Lesson 12",
       duration: "15 min",
-      youtubeId: "OPf0YbXqDm0",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Film a curriculum lesson unpacking Munay, Yachay, Llank'ay, Sami, and Hucha with grounded examples of each value in practice.",
       description:
         "The Five Andean Values — Munay, Yachay, Llank'ay, Sami, and Hucha — form the ethical spine of Andean cultural practice and the curriculum of PachaMind.",
       extendedDescription:
@@ -459,7 +484,9 @@ export const en: SiteContent = {
       title: "Huacas and Sacred Sites: Academic Interpretation and Living Tradition",
       kicker: "Lesson 13",
       duration: "13 min",
-      youtubeId: "4N1iwQxiHrs",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Film on-location and archival-supported coverage of huacas, balancing academic interpretation with living community meaning and stewardship ethics.",
       description:
         "Huacas — Andean sacred places and objects — sit at the intersection of archaeology, living tradition, and cultural stewardship.",
       extendedDescription:
@@ -479,7 +506,9 @@ export const en: SiteContent = {
       title: "Puma Path Orientation: Semilla to Puma as Learning Progression",
       kicker: "Lesson 14",
       duration: "9 min",
-      youtubeId: "tgbNymZ7vqY",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Film a program-orientation lesson mapping Semilla-to-Puma progression as a study framework, not initiation or ceremony.",
       description:
         "The Puma Path is PachaMind's learning progression — a structured curriculum arc from Semilla (seed) to Puma — not an initiation or ceremony.",
       extendedDescription:
@@ -499,7 +528,9 @@ export const en: SiteContent = {
       title: "The Path of Integration",
       kicker: "Lesson 15",
       duration: "15 min",
-      youtubeId: "ScMzIvxBSi4",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Film an integration wrap-up showing how listening, reciprocity, ritual, and stewardship interconnect as an ongoing cyclical practice.",
       description:
         "Draw the four stages into a living practice: how listening, reciprocity, ritual, and stewardship sustain and renew each other over time.",
       extendedDescription:
@@ -527,25 +558,25 @@ export const en: SiteContent = {
         title: "Reciprocity with the land (Ayni)",
         body: "In Andean cosmovision, the earth is not a resource to be managed but a living being to be in relationship with. The principle of ayni — reciprocity — shapes every interaction with land: what you take, you return; what you receive, you care for. Conservation becomes an act of ongoing gratitude.",
         image:
-          "https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/machu-picchu-general.png",
       },
       {
         title: "Water as a living being",
         body: "Water is honoured in Andean tradition as a source of life that carries memory and intention. Conservation begins with listening: understanding where water comes from, how it moves, and what it needs to keep flowing across communities and generations. Protecting watersheds is an act of communal reciprocity.",
         image:
-          "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/machu-picchu-urubamba-canyon.jpg",
       },
       {
         title: "Biodiversity and the web of life",
         body: "Andean cosmological thinking recognises that all living beings — plants, animals, fungi, soils — participate in a shared existence. Diversity is not ornamental; it is the structural integrity of the living world, and each loss diminishes the whole. Tending biodiversity is tending relationship itself.",
         image:
-          "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/machu-picchu-aster-nasa.jpg",
       },
       {
         title: "Sustainable practices rooted in ancestral knowledge",
         body: "Andean farming and land management traditions — terracing, crop rotation, water channelling, polyculture — evolved through centuries of careful observation and communal stewardship. These practices are not folklore; they are sophisticated responses to complex ecosystems, refined over generations of attentive care.",
         image:
-          "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/machu-picchu-hb10.jpg",
       },
     ],
     principles: [
@@ -575,13 +606,13 @@ export const en: SiteContent = {
         title: "Writing as listening",
         body: "Journaling within a cosmovision framework is not analysis — it is a way of attending to what is already present. Write toward noticing, not toward conclusions.",
         image:
-          "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/machu-picchu-aster-nasa.jpg",
       },
       {
         title: "Private and unhurried",
         body: "These notes belong only to you. There are no accounts, no submissions, and no right answers — only the quiet space between a question and your response.",
         image:
-          "https://images.unsplash.com/photo-1457269449834-928af64c684d?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/machu-picchu-partial-1911.jpg",
       },
     ],
   },

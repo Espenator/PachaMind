@@ -46,19 +46,19 @@ export const es: SiteContent = {
         title: "Ritmo documental",
         body: "Visuales lentos, notas en capas y preguntas serenas hacen que cada lección se sienta como una visita de campo y no como un embudo de ventas.",
         image:
-          "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/andes-iss59-range.jpg",
       },
       {
         title: "Acceso bilingüe",
         body: "El inglés y el español se mantienen sincronizados para que cada reflexión, nota y siguiente paso conserve el mismo sentido en ambas rutas.",
         image:
-          "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/andes-iss64-range.jpg",
       },
       {
         title: "Gratuito y sin fines de lucro",
         body: "Cada página repite la promesa central con claridad: sin precios, sin checkout, sin presión para reservar y sin solicitudes de donación.",
         image:
-          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/andes-western-slope-aster.jpg",
       },
     ],
   },
@@ -94,6 +94,7 @@ export const es: SiteContent = {
       "El progreso se guarda solo en este dispositivo. No necesitas una cuenta.",
     nextLessonLabel: "Continuar a la siguiente lección",
     dashboardLabel: "Ir al panel",
+    videoComingSoonLabel: "Video próximamente",
   },
   dashboard: {
     title: "Tu panel de aprendizaje",
@@ -185,35 +186,35 @@ export const es: SiteContent = {
         title: "Escucha",
         body: "Llega antes de interpretar. La primera etapa entrena la atención para recibir antes de reaccionar: aprender a notar el clima, el ritmo, el silencio y el espacio entre las palabras.",
         image:
-          "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/andes-iss59-range.jpg",
       },
       {
         key: "reciprocity",
         title: "Reciprocidad",
         body: "Pasa de recibir a responder. La reciprocidad pregunta qué sostienes en relación —con la comunidad, con la tierra, con la enseñanza— y cómo el cuidado constante sostiene el sentido de pertenencia.",
         image:
-          "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/machu-picchu-urubamba-canyon.jpg",
       },
       {
         key: "ritual",
         title: "Ritual",
         body: "Ancla la intención en la acción repetida. La atención ritual es la disciplina de aparecer con constancia: gestos pequeños y enfocados practicados con cuidado se acumulan en memoria viva.",
         image:
-          "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/machu-picchu-inti-punku.jpg",
       },
       {
         key: "stewardship",
         title: "Custodia",
         body: "Sostén lo que aprendiste con ligereza y fidelidad. La custodia pregunta cómo viajan las enseñanzas sin perder sus raíces, y cómo el crédito, el contexto y la humildad viajan con ellas.",
         image:
-          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/andes-western-slope-aster.jpg",
       },
       {
         key: "integration",
         title: "Integración",
         body: "Deja que las cuatro etapas se muevan juntas. La integración no es un destino final sino un retorno continuo: cada práctica renueva las otras cuando se sostienen como un todo y no como una secuencia.",
         image:
-          "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/andes-iss47-mountain-road.jpg",
       },
     ],
   },
@@ -224,7 +225,9 @@ export const es: SiteContent = {
       title: "Escucha de la montaña",
       kicker: "Lección 1",
       duration: "12 min",
-      youtubeId: "ScMzIvxBSi4",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Filmar una lección de apertura en paisaje andino que muestre escucha atenta, pausas, sonido ambiente y observación del lugar antes de interpretar.",
       description:
         "Comienza con una escucha atenta: regula tu atención, observa el lugar y deja que el silencio también enseñe.",
       extendedDescription:
@@ -243,7 +246,9 @@ export const es: SiteContent = {
       title: "Ayllu y reciprocidad",
       kicker: "Lección 2",
       duration: "14 min",
-      youtubeId: "aqz-KE-bpKQ",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Filmar entrevistas y tomas de apoyo que muestren reciprocidad tipo ayllu en la vida diaria, con cuidado mutuo, gratitud y responsabilidad compartida.",
       description:
         "Explora la reciprocidad como una práctica viva de cuidado mutuo, responsabilidad y gratitud entre comunidad y territorio.",
       extendedDescription:
@@ -262,7 +267,9 @@ export const es: SiteContent = {
       title: "Atención ritual",
       kicker: "Lección 3",
       duration: "11 min",
-      youtubeId: "ysz5S6PUM-U",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Filmar una demostración respetuosa de gestos rituales simples y repetidos que expresen preparación, intención y atención encarnada sin espectáculo.",
       description:
         "Aprende cómo la atención ritual reúne memoria, intención y cuidado encarnado sin espectáculo ni presión performativa.",
       extendedDescription:
@@ -281,7 +288,9 @@ export const es: SiteContent = {
       title: "Llevar la enseñanza hacia adelante",
       kicker: "Lección 4",
       duration: "13 min",
-      youtubeId: "M7lc1UVf-VE",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Filmar una lección de cierre sobre custodia: cómo llevar la enseñanza con humildad, contexto, atribución y responsabilidad compartida.",
       description:
         "Cierra la secuencia considerando cómo las enseñanzas se transmiten con humildad, precisión y responsabilidad compartida.",
       extendedDescription:
@@ -300,7 +309,9 @@ export const es: SiteContent = {
       title: "Qué es PachaMind",
       kicker: "Lección 5",
       duration: "8 min",
-      youtubeId: "dQw4w9WgXcQ",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Filmar una orientación que presente PachaMind como espacio andino gratuito y sin fines de lucro, dejando explícito que no hay ventas ni checkout.",
       description:
         "Una orientación a PachaMind: un espacio de educación andina gratuito y sin fines de lucro dedicado a la preservación cultural y el acceso abierto.",
       extendedDescription:
@@ -320,7 +331,9 @@ export const es: SiteContent = {
       title: "Mallku Aribalo: Guardián de la tradición y maestro andino",
       kicker: "Lección 6",
       duration: "10 min",
-      youtubeId: "9bZkp7q19f0",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Filmar un perfil biográfico de Mallku Aribalo que cubra su rol como guardián de la tradición, contexto de linaje docente y valor de la atribución.",
       description:
         "Conoce a Mallku Aribalo — maestro chamánico andino, guardián de la tradición y ancla cultural del espacio de aprendizaje de PachaMind.",
       extendedDescription:
@@ -340,7 +353,9 @@ export const es: SiteContent = {
       title: "Kausay Pacha: El universo viviente",
       kicker: "Lección 7",
       duration: "12 min",
-      youtubeId: "eVTXPUF4Oz4",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Filmar una lección conceptual sobre Kausay Pacha como universo viviente y relacional, introduciendo el marco de las Tres Pachas.",
       description:
         "Explora Kausay Pacha — el concepto andino del universo viviente — como fundamento cosmológico del pensamiento y la práctica andinos.",
       extendedDescription:
@@ -360,7 +375,9 @@ export const es: SiteContent = {
       title: "Hanaq Pacha: Cielo, ciclos y arqueoastronomía",
       kicker: "Lección 8",
       duration: "14 min",
-      youtubeId: "pFqgFbDLMKk",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Filmar una lección de cielo y sitios sagrados sobre Hanaq Pacha con contexto histórico de arqueoastronomía, ciclos celestes y alineaciones.",
       description:
         "Estudia Hanaq Pacha — el mundo superior del cielo, las estrellas y los ciclos cósmicos — y cómo los pueblos andinos leyeron los cielos como un mapa del tiempo y la relación.",
       extendedDescription:
@@ -380,7 +397,9 @@ export const es: SiteContent = {
       title: "Kay Pacha: Reciprocidad y práctica cotidiana",
       kicker: "Lección 9",
       duration: "13 min",
-      youtubeId: "J---aiyznGQ",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Filmar una lección de vida cotidiana que muestre prácticas de reciprocidad en Kay Pacha con tierra, comunidad y gratitud diaria.",
       description:
         "Kay Pacha — el mundo presente de la vida cotidiana — es donde la reciprocidad se convierte en práctica: en la tierra, la comunidad y los ritmos de los días ordinarios.",
       extendedDescription:
@@ -400,7 +419,9 @@ export const es: SiteContent = {
       title: "Uku Pacha: Ancestralidad, profundidad e integración",
       kicker: "Lección 10",
       duration: "11 min",
-      youtubeId: "kJQP7kiw5Fk",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Filmar una lección de alfabetización cultural sobre Uku Pacha, ancestralidad, memoria e integración sin marco terapéutico.",
       description:
         "Uku Pacha — el mundo interior o inferior — sostiene la ancestralidad, la profundidad y las raíces de lo que portamos, ofrecido aquí como aprendizaje cultural sobre la integración y la memoria.",
       extendedDescription:
@@ -420,7 +441,9 @@ export const es: SiteContent = {
       title: "Ayni: Reciprocidad sagrada",
       kicker: "Lección 11",
       duration: "12 min",
-      youtubeId: "RgKAFK5djSk",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Filmar una lección ética que defina el Ayni como reciprocidad sagrada y contraste equilibrio relacional con intercambio transaccional.",
       description:
         "Ayni es el principio andino de reciprocidad sagrada: dar y recibir en equilibrio, con la tierra, la comunidad y el cosmos.",
       extendedDescription:
@@ -440,7 +463,9 @@ export const es: SiteContent = {
       title: "Munay, Yachay, Llank'ay, Sami y Hucha: Los valores como currículo",
       kicker: "Lección 12",
       duration: "15 min",
-      youtubeId: "OPf0YbXqDm0",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Filmar una lección curricular que desarrolle Munay, Yachay, Llank'ay, Sami y Hucha con ejemplos concretos de práctica.",
       description:
         "Los Cinco Valores Andinos — Munay, Yachay, Llank'ay, Sami y Hucha — forman la columna vertebral ética de la práctica cultural andina y el currículo de PachaMind.",
       extendedDescription:
@@ -461,7 +486,9 @@ export const es: SiteContent = {
       title: "Huacas y lugares sagrados: Interpretación académica y tradición viva",
       kicker: "Lección 13",
       duration: "13 min",
-      youtubeId: "4N1iwQxiHrs",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Filmar cobertura en sitio y con apoyo de archivo sobre huacas, equilibrando interpretación académica con significado vivo comunitario.",
       description:
         "Las huacas — lugares y objetos sagrados andinos — se encuentran en la intersección de la arqueología, la tradición viva y la custodia cultural.",
       extendedDescription:
@@ -481,7 +508,9 @@ export const es: SiteContent = {
       title: "Orientación al Camino del Puma: De Semilla a Puma como progresión de aprendizaje",
       kicker: "Lección 14",
       duration: "9 min",
-      youtubeId: "tgbNymZ7vqY",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Filmar una orientación del Camino del Puma que explique Semilla-a-Puma como progresión de estudio y no como iniciación o ceremonia.",
       description:
         "El Camino del Puma es la progresión de aprendizaje de PachaMind — un arco curricular estructurado de Semilla (semilla) a Puma — no una iniciación ni una ceremonia.",
       extendedDescription:
@@ -501,7 +530,9 @@ export const es: SiteContent = {
       title: "El camino de la integración",
       kicker: "Lección 15",
       duration: "15 min",
-      youtubeId: "ScMzIvxBSi4",
+      youtubeId: "",
+      mediaStatus: "NEEDS_REAL_VIDEO",
+      mediaNote: "Filmar un cierre de integración que muestre cómo escucha, reciprocidad, ritual y custodia se sostienen como práctica cíclica continua.",
       description:
         "Reúne las cuatro etapas en una práctica viva: cómo la escucha, la reciprocidad, el ritual y la custodia se sostienen y se renuevan mutuamente con el tiempo.",
       extendedDescription:
@@ -529,25 +560,25 @@ export const es: SiteContent = {
         title: "Reciprocidad con la tierra (Ayni)",
         body: "En la cosmovisión andina, la tierra no es un recurso que gestionar sino un ser vivo con quien relacionarse. El principio del ayni — reciprocidad — moldea cada interacción con la tierra: lo que tomas, lo devuelves; lo que recibes, lo cuidas. La conservación se convierte en un acto de gratitud continua.",
         image:
-          "https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/machu-picchu-general.png",
       },
       {
         title: "El agua como ser vivo",
         body: "En la tradición andina, el agua se honra como fuente de vida que porta memoria e intención. La conservación comienza con la escucha: comprender de dónde viene el agua, cómo se mueve y qué necesita para seguir fluyendo a través de comunidades y generaciones. Proteger las cuencas es un acto de reciprocidad comunitaria.",
         image:
-          "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/machu-picchu-urubamba-canyon.jpg",
       },
       {
         title: "Biodiversidad y la trama de la vida",
         body: "El pensamiento cosmológico andino reconoce que todos los seres vivos — plantas, animales, hongos, suelos — participan en una existencia compartida. La diversidad no es ornamental; es la integridad estructural del mundo vivo, y cada pérdida lo empobrece todo. Cuidar la biodiversidad es cuidar la relación misma.",
         image:
-          "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/machu-picchu-aster-nasa.jpg",
       },
       {
         title: "Prácticas sostenibles arraigadas en el saber ancestral",
         body: "Las tradiciones andinas de cultivo y gestión del territorio — terrazas, rotación de cultivos, canales de agua, policultivos — se desarrollaron durante siglos de observación cuidadosa y custodia comunitaria. Estas prácticas no son folclore; son respuestas sofisticadas a ecosistemas complejos, refinadas a lo largo de generaciones de cuidado atento.",
         image:
-          "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/machu-picchu-hb10.jpg",
       },
     ],
     principles: [
@@ -577,13 +608,13 @@ export const es: SiteContent = {
         title: "Escribir como escucha",
         body: "Llevar un diario dentro de un marco de cosmovisión no es análisis — es una manera de atender a lo que ya está presente. Escribe hacia la observación, no hacia conclusiones.",
         image:
-          "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/machu-picchu-aster-nasa.jpg",
       },
       {
         title: "Privado y sin prisa",
         body: "Estas notas te pertenecen solo a ti. No hay cuentas, ni envíos, ni respuestas correctas — solo el espacio tranquilo entre una pregunta y tu respuesta.",
         image:
-          "https://images.unsplash.com/photo-1457269449834-928af64c684d?auto=format&fit=crop&w=1600&q=80",
+          "/images/andes/machu-picchu-partial-1911.jpg",
       },
     ],
   },

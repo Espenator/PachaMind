@@ -86,7 +86,7 @@ export default async function LessonPage({
           <div className="documentary-card p-6 lg:p-8">
             <p className="text-xs uppercase tracking-[0.3em] text-stonegray">{content.lessonPage.watchHeading}</p>
             <div className="mt-4">
-              <YouTubeEmbed lesson={lesson} />
+              <YouTubeEmbed lesson={lesson} comingSoonLabel={content.lessonPage.videoComingSoonLabel} />
             </div>
           </div>
 
