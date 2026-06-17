@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-import { ContinueWatchingBar } from "@/components/continue-watching-bar";
+import { NavBar } from "@/components/nav-bar";
 import type { Language, SiteContent } from "@/lib/types";
 
 interface SiteShellProps {
@@ -11,141 +11,83 @@ interface SiteShellProps {
 }
 
 export function SiteShell({ content, language, children }: SiteShellProps) {
-  const navItems = [
-    { href: `/${language}`,           label: content.nav.home },
-    { href: `/${language}/library`,   label: content.nav.library },
-    { href: `/${language}/dashboard`, label: content.nav.dashboard },
-    { href: `/${language}/about`,     label: content.nav.about },
-    { href: `/${language}/contact`,   label: content.nav.contact },
-  ];
-
   return (
-    <div className="min-h-screen bg-cloud text-deepearth">
-      {/* ── Sticky translucent header ───────────────────────────────────── */}
-      <header className="sticky top-0 z-40 border-b border-deepearth/8 bg-cloud/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 sm:px-8 lg:px-10">
-
-          {/* Brand */}
-          <div className="flex flex-col">
-            <p className="text-[0.65rem] uppercase tracking-[0.34em] text-terracotta leading-none">
-              {content.brand.eyebrow}
-            </p>
-            <Link
-              href={`/${language}`}
-              className="headline-font text-xl sm:text-2xl text-deepearth leading-tight focus-gold"
-            >
-              {content.brand.name}
-            </Link>
-          </div>
-
-          {/* Desktop nav */}
-          <nav
-            aria-label="Main navigation"
-            className="hidden items-center gap-1 md:flex"
-          >
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="rounded-full px-4 py-2 text-sm font-medium text-stonegray transition-colors hover:bg-deepearth hover:text-cloud focus-gold min-h-[44px] flex items-center"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Language toggle */}
-          <div className="flex items-center gap-2">
-            <div className="flex items-center rounded-full border border-deepearth/12 bg-white/60 p-0.5 text-sm font-medium">
-              <Link
-                href="/en"
-                aria-label={content.nav.english}
-                className={`rounded-full px-3 py-1.5 transition-colors min-h-[36px] flex items-center focus-gold ${
-                  language === "en"
-                    ? "bg-deepearth text-cloud"
-                    : "text-stonegray hover:text-deepearth"
-                }`}
-              >
-                EN
-              </Link>
-              <Link
-                href="/es"
-                aria-label={content.nav.spanish}
-                className={`rounded-full px-3 py-1.5 transition-colors min-h-[36px] flex items-center focus-gold ${
-                  language === "es"
-                    ? "bg-deepearth text-cloud"
-                    : "text-stonegray hover:text-deepearth"
-                }`}
-              >
-                ES
-              </Link>
+    <div className="min-h-screen bg-cloudwhite text-deepearth">
+      <header className="sticky top-0 z-40 border-b border-deepearth/10 bg-cloudwhite/90 backdrop-blur">
+        <div className="mx-auto max-w-7xl px-6 py-5 lg:px-10">
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-[0.3em] text-terracotta">{content.brand.eyebrow}</p>
+                <Link href={`/${language}`} className="headline-font mt-2 block text-3xl text-deepearth">
+                  {content.brand.name}
+                </Link>
+              </div>
+              <div className="flex flex-wrap items-center gap-3 text-sm text-stonegray">
+                <span className="rounded-full border border-deepearth/10 bg-white px-4 py-2">
+                  {content.brand.promise}
+                </span>
+                <span className="rounded-full border border-deepearth/10 bg-white px-4 py-2">
+                  {content.brand.traditionHolderLabel}: {content.brand.traditionHolderName}
+                </span>
+              </div>
             </div>
+            <NavBar content={content} language={language} />
           </div>
         </div>
-
-        {/* Mobile nav row */}
-        <nav
-          aria-label="Mobile navigation"
-          className="flex items-center gap-1 overflow-x-auto px-5 pb-2 md:hidden"
-        >
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium text-stonegray transition-colors hover:bg-deepearth/8 focus-gold min-h-[44px] flex items-center flex-shrink-0"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
       </header>
 
-      {/* ── Page content ────────────────────────────────────────────────── */}
       <main>{children}</main>
 
-      {/* ── Footer (dark documentary band) ──────────────────────────────── */}
-      <footer className="section-dark grain">
-        <div className="mx-auto max-w-7xl px-6 py-12 lg:px-10">
-          <p className="headline-font text-fluid-2xl text-cloud">
-            {content.footer.credit}
-          </p>
-          <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-start sm:gap-8">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">
+      <footer className="border-t border-deepearth/10 bg-deepearth text-cloudwhite">
+        <div className="mx-auto max-w-7xl px-6 py-10 lg:px-10">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1fr_1fr]">
+            <div>
+              <p className="headline-font text-2xl">{content.footer.credit}</p>
+              <p className="mt-3 text-sm leading-7 text-cloudwhite/70">{content.brand.disclaimer}</p>
+            </div>
+            <nav aria-label="Footer navigation" className="flex flex-col gap-2">
+              <p className="mb-1 text-xs uppercase tracking-[0.28em] text-goldmoun">{content.nav.home}</p>
+              {[
+                { href: `/${language}/curriculum`, label: content.nav.curriculum },
+                { href: `/${language}/library`, label: content.nav.library },
+                { href: `/${language}/puma-path`, label: content.nav.pumaPath },
+                { href: `/${language}/conservation`, label: content.nav.conservation },
+                { href: `/${language}/reflections`, label: content.nav.reflections },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm text-cloudwhite/70 transition hover:text-cloudwhite"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+            <nav aria-label="Footer navigation secondary" className="flex flex-col gap-2">
+              <p className="mb-1 text-xs uppercase tracking-[0.28em] text-goldmoun">{content.nav.dashboard}</p>
+              {[
+                { href: `/${language}/dashboard`, label: content.nav.dashboard },
+                { href: `/${language}/about`, label: content.nav.about },
+                { href: `/${language}/contact`, label: content.nav.contact },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm text-cloudwhite/70 transition hover:text-cloudwhite"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+          <div className="mt-8 border-t border-cloudwhite/10 pt-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-goldmoun">
               {content.footer.mission}
             </p>
-            <p className="max-w-2xl text-sm leading-6 text-cloud/70">
-              {content.brand.disclaimer}
-            </p>
-          </div>
-          <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-cloud/10 pt-6">
-            <Link
-              href={`/${language}/about`}
-              className="text-sm text-cloud/60 transition hover:text-cloud focus-gold"
-            >
-              {content.nav.about}
-            </Link>
-            <Link
-              href={`/${language}/contact`}
-              className="text-sm text-cloud/60 transition hover:text-cloud focus-gold"
-            >
-              {content.nav.contact}
-            </Link>
-            <Link
-              href={`/${language}/library`}
-              className="text-sm text-cloud/60 transition hover:text-cloud focus-gold"
-            >
-              {content.nav.library}
-            </Link>
           </div>
         </div>
       </footer>
-
-      {/* Sticky "continue watching" bar — only renders client-side when progress exists */}
-      <ContinueWatchingBar
-        language={language}
-        lessons={content.lessons}
-        continueLabel={content.dashboard.continueLearning}
-      />
     </div>
   );
 }
