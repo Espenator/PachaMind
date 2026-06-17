@@ -24,7 +24,6 @@ export function CertificateView({ labels }: CertificateViewProps) {
   const [mounted, setMounted] = useState(false);
   const printRef = useRef<HTMLDivElement>(null);
 
-  /* eslint-disable react-hooks/set-state-in-effect -- reading localStorage for SSR-safe init */
   useEffect(() => {
     async function syncName() {
       const stored = readProgressState().displayName ?? "";
@@ -46,7 +45,6 @@ export function CertificateView({ labels }: CertificateViewProps) {
       setMounted(true);
     });
   }, [user]);
-  /* eslint-enable react-hooks/set-state-in-effect */
 
   function handleNameChange(e: React.ChangeEvent<HTMLInputElement>) {
     const value = e.target.value;

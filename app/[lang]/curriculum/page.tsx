@@ -89,6 +89,7 @@ export default async function CurriculumPage({
           <LibrarySearch
             lessons={content.lessons}
             library={content.library}
+            videoComingSoonLabel={content.lessonPage.videoComingSoonLabel}
             lang={lang}
           />
         </Suspense>

@@ -5,7 +5,6 @@ import {
   createContext,
   useContext,
   useEffect,
-  useMemo,
   useState,
   type ReactNode,
 } from "react";
@@ -23,43 +22,69 @@ interface AuthContextValue {
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const supabase = useMemo(() => getSupabaseBrowserClient(), []);
+  const [supabaseReady, setSupabaseReady] = useState(false);
+  const [fatalError, setFatalError] = useState<Error | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     let isMounted = true;
+    let unsubscribe: (() => void) | undefined;
 
     async function loadSession() {
-      const {
-        data: { session: activeSession },
-        error,
-      } = await supabase.auth.getSession();
+      try {
+        const supabase = getSupabaseBrowserClient();
+        const {
+          data: { session: activeSession },
+          error,
+        } = await supabase.auth.getSession();
 
-      if (error) {
-        throw error;
-      }
+        if (error) {
+          throw error;
+        }
 
-      if (isMounted) {
-        setSession(activeSession);
-        setIsLoading(false);
+        if (isMounted) {
+          setSession(activeSession);
+          setSupabaseReady(true);
+          setIsLoading(false);
+        }
+
+        const {
+          data: { subscription },
+        } = supabase.auth.onAuthStateChange((_event, nextSession) => {
+          setSession(nextSession);
+          setIsLoading(false);
+        });
+
+        unsubscribe = () => subscription.unsubscribe();
+      } catch (error) {
+        if (isMounted) {
+          setFatalError(
+            error instanceof Error
+              ? error
+              : new Error("[Supabase] Failed to initialize browser client."),
+          );
+          setIsLoading(false);
+        }
       }
     }
 
-    loadSession();
-
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, nextSession) => {
-      setSession(nextSession);
-      setIsLoading(false);
+    loadSession().catch((error) => {
+      if (isMounted) {
+        setFatalError(
+          error instanceof Error
+            ? error
+            : new Error("[Supabase] Failed to initialize browser client."),
+        );
+        setIsLoading(false);
+      }
     });
 
     return () => {
       isMounted = false;
-      subscription.unsubscribe();
+      unsubscribe?.();
     };
-  }, [supabase]);
+  }, []);
 
   async function signInWithEmail(email: string) {
     const trimmed = email.trim();
@@ -67,6 +92,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       throw new Error("Email is required for Supabase sign in.");
     }
 
+    if (!supabaseReady) {
+      throw new Error("[Supabase] Browser client is not ready.");
+    }
+
+    const supabase = getSupabaseBrowserClient();
     const { error } = await supabase.auth.signInWithOtp({
       email: trimmed,
       options: {
@@ -81,10 +111,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   async function signOut() {
+    if (!supabaseReady) {
+      throw new Error("[Supabase] Browser client is not ready.");
+    }
+
+    const supabase = getSupabaseBrowserClient();
     const { error } = await supabase.auth.signOut();
     if (error) {
       throw error;
     }
+  }
+
+  if (fatalError) {
+    throw fatalError;
   }
 
   return (
