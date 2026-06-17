@@ -3,7 +3,14 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import { useAuth } from "@/components/auth-provider";
 import { getReflectionEntry, saveReflectionEntry } from "@/lib/reflections";
+import { getSupabaseBrowserClient } from "@/lib/supabase/client";
+import {
+  loadSupabaseReflectionByLesson,
+  saveSupabaseReflection,
+} from "@/lib/supabase/reflections";
+import { saveSupabaseLessonNote } from "@/lib/supabase/progress";
 
 interface ReflectionBoxProps {
   lessonSlug: string;
@@ -20,19 +27,39 @@ interface ReflectionBoxProps {
 }
 
 export function ReflectionBox({ lessonSlug, prompt, lang, labels }: ReflectionBoxProps) {
+  const { user } = useAuth();
   const [text, setText] = useState("");
   const [saved, setSaved] = useState(false);
 
   useEffect(() => {
-    function loadEntry() {
+    const client = getSupabaseBrowserClient();
+
+    async function loadEntry() {
+      if (!user) {
+        const localEntry = getReflectionEntry(lessonSlug);
+        if (localEntry) {
+          setText(localEntry.text);
+          setSaved(true);
+        }
+        return;
+      }
+
+      const remoteEntry = await loadSupabaseReflectionByLesson(client, user.id, lessonSlug);
+      if (remoteEntry) {
+        setText(remoteEntry.text);
+        setSaved(true);
+      }
+    }
+
+    loadEntry().catch((error) => {
+      console.error("[Supabase] Failed to load reflection entry:", error);
       const entry = getReflectionEntry(lessonSlug);
       if (entry) {
         setText(entry.text);
         setSaved(true);
       }
-    }
-    loadEntry();
-  }, [lessonSlug]);
+    });
+  }, [lessonSlug, user]);
 
   function handleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
     setText(e.target.value);
@@ -41,13 +68,26 @@ export function ReflectionBox({ lessonSlug, prompt, lang, labels }: ReflectionBo
 
   function handleSave() {
     if (!text.trim()) return;
-    saveReflectionEntry({
+    const entry = {
       lessonSlug,
       prompt,
       text,
       savedAt: new Date().toISOString(),
-    });
+    };
+    saveReflectionEntry(entry);
     setSaved(true);
+
+    if (!user) {
+      return;
+    }
+
+    const client = getSupabaseBrowserClient();
+    Promise.all([
+      saveSupabaseReflection(client, user.id, entry),
+      saveSupabaseLessonNote(client, user.id, lessonSlug, text),
+    ]).catch((error) => {
+      console.error("[Supabase] Failed to save reflection entry:", error);
+    });
   }
 
   return (

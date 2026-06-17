@@ -43,8 +43,7 @@ export default async function ContactPage({
         <article
           className="photo-overlay parallax-band rounded-[2rem]"
           style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80)",
+            backgroundImage: "url(/images/andes/hero-machu-picchu.jpg)",
           }}
         >
           <div className="p-8 sm:p-12 lg:p-16">

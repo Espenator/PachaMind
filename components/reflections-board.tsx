@@ -3,7 +3,10 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import { useAuth } from "@/components/auth-provider";
 import { clearAllReflections, readReflectionsState, type ReflectionEntry } from "@/lib/reflections";
+import { getSupabaseBrowserClient } from "@/lib/supabase/client";
+import { clearAllSupabaseReflections, loadSupabaseReflections } from "@/lib/supabase/reflections";
 
 interface ReflectionsBoardProps {
   lang: string;
@@ -19,10 +22,13 @@ interface ReflectionsBoardProps {
 }
 
 export function ReflectionsBoard({ lang, lessonTitles, labels }: ReflectionsBoardProps) {
+  const { user } = useAuth();
   const [entries, setEntries] = useState<ReflectionEntry[]>([]);
 
   useEffect(() => {
-    function loadEntries() {
+    const client = getSupabaseBrowserClient();
+
+    function loadLocalEntries() {
       const state = readReflectionsState();
       setEntries(
         Object.values(state).sort(
@@ -30,13 +36,35 @@ export function ReflectionsBoard({ lang, lessonTitles, labels }: ReflectionsBoar
         ),
       );
     }
-    loadEntries();
-  }, []);
+
+    async function loadEntries() {
+      if (!user) {
+        loadLocalEntries();
+        return;
+      }
+
+      const remoteEntries = await loadSupabaseReflections(client, user.id);
+      setEntries(remoteEntries);
+    }
+
+    loadEntries().catch((error) => {
+      console.error("[Supabase] Failed to load reflections board:", error);
+      loadLocalEntries();
+    });
+  }, [user]);
 
   function handleClearAll() {
     if (window.confirm(labels.clearConfirm)) {
       clearAllReflections();
       setEntries([]);
+
+      if (!user) {
+        return;
+      }
+
+      clearAllSupabaseReflections(getSupabaseBrowserClient(), user.id).catch((error) => {
+        console.error("[Supabase] Failed to clear reflections:", error);
+      });
     }
   }
 

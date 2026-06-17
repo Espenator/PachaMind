@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 
+import { AuthProvider } from "@/components/auth-provider";
 import { SiteShell } from "@/components/site-shell";
 import { getContent, isLanguage } from "@/lib/content";
 import { SITE_URL } from "@/lib/site";
@@ -9,7 +10,7 @@ import { languages } from "@/lib/types";
 
 /** Default OG image shared across all pages. */
 const DEFAULT_OG_IMAGE =
-  "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80";
+  `${SITE_URL}/images/andes/hero-machu-picchu.jpg`;
 
 interface LangLayoutProps {
   children: ReactNode;
@@ -81,9 +82,11 @@ export default async function LangLayout({ children, params }: LangLayoutProps) 
   return (
     <html lang={lang} className="h-full antialiased">
       <body className="min-h-full bg-cloudwhite text-deepearth">
-        <SiteShell content={content} language={lang}>
-          {children}
-        </SiteShell>
+        <AuthProvider>
+          <SiteShell content={content} language={lang}>
+            {children}
+          </SiteShell>
+        </AuthProvider>
       </body>
     </html>
   );

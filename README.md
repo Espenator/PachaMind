@@ -21,8 +21,16 @@ npm run dev
 
 ```bash
 npm run lint
+npm run typecheck
 npm run build
+npm test
 ```
+
+## Supabase backend setup
+
+- Supabase setup guide: `/home/runner/work/PachaMind/PachaMind/docs/SUPABASE_SETUP.md`
+- Supabase migration docs: `/home/runner/work/PachaMind/PachaMind/supabase/README.md`
+- Media placeholders to replace: `/home/runner/work/PachaMind/PachaMind/docs/MEDIA_NEEDED.md`
 
 ## Content architecture
 

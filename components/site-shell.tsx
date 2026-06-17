@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
+import { AuthControls } from "@/components/auth-controls";
 import { NavBar } from "@/components/nav-bar";
 import type { Language, SiteContent } from "@/lib/types";
 
@@ -30,6 +31,7 @@ export function SiteShell({ content, language, children }: SiteShellProps) {
                 <span className="rounded-full border border-deepearth/10 bg-white px-4 py-2">
                   {content.brand.traditionHolderLabel}: {content.brand.traditionHolderName}
                 </span>
+                <AuthControls language={language} />
               </div>
             </div>
             <NavBar content={content} language={language} />

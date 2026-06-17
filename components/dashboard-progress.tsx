@@ -3,7 +3,10 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 
+import { useAuth } from "@/components/auth-provider";
 import { readProgressState, resetProgressState } from "@/lib/progress";
+import { getSupabaseBrowserClient } from "@/lib/supabase/client";
+import { loadSupabaseProgress, resetSupabaseProgress } from "@/lib/supabase/progress";
 import type { Language, Lesson } from "@/lib/types";
 import { CertificateView } from "@/components/certificate-view";
 
@@ -38,23 +41,41 @@ export function DashboardProgress({
   lessons,
   labels,
 }: DashboardProgressProps) {
+  const { user } = useAuth();
   const [completedLessonSlugs, setCompletedLessonSlugs] = useState<string[]>([]);
   const [lastOpenedLessonSlug, setLastOpenedLessonSlug] = useState<string | undefined>();
   const [confirmReset, setConfirmReset] = useState(false);
   const confirmRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    function syncFromStorage() {
+    const client = getSupabaseBrowserClient();
+
+    function syncFromStorageOnly() {
       const state = readProgressState();
       setCompletedLessonSlugs(state.completedLessonSlugs);
       setLastOpenedLessonSlug(state.lastOpenedLessonSlug);
     }
 
-    syncFromStorage();
-    window.addEventListener("storage", syncFromStorage);
+    async function syncProgress() {
+      if (!user) {
+        syncFromStorageOnly();
+        return;
+      }
 
-    return () => window.removeEventListener("storage", syncFromStorage);
-  }, []);
+      const remoteState = await loadSupabaseProgress(client, user.id);
+      setCompletedLessonSlugs(remoteState.completedLessonSlugs);
+      setLastOpenedLessonSlug(remoteState.lastOpenedLessonSlug);
+    }
+
+    syncProgress().catch((error) => {
+      console.error("[Supabase] Failed to load dashboard progress:", error);
+      syncFromStorageOnly();
+    });
+
+    window.addEventListener("storage", syncFromStorageOnly);
+
+    return () => window.removeEventListener("storage", syncFromStorageOnly);
+  }, [user]);
 
   // Focus confirm dialog when it opens
   useEffect(() => {
@@ -106,6 +127,14 @@ export function DashboardProgress({
     setCompletedLessonSlugs([]);
     setLastOpenedLessonSlug(undefined);
     setConfirmReset(false);
+
+    if (!user) {
+      return;
+    }
+
+    resetSupabaseProgress(getSupabaseBrowserClient(), user.id).catch((error) => {
+      console.error("[Supabase] Failed to reset dashboard progress:", error);
+    });
   }
 
   return (

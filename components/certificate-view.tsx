@@ -2,7 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 
+import { useAuth } from "@/components/auth-provider";
 import { readProgressState, setDisplayName } from "@/lib/progress";
+import { getSupabaseBrowserClient } from "@/lib/supabase/client";
+import { loadSupabaseProgress, saveSupabaseDisplayName } from "@/lib/supabase/progress";
 
 interface CertificateViewProps {
   labels: {
@@ -16,22 +19,47 @@ interface CertificateViewProps {
 }
 
 export function CertificateView({ labels }: CertificateViewProps) {
+  const { user } = useAuth();
   const [name, setName] = useState("");
   const [mounted, setMounted] = useState(false);
   const printRef = useRef<HTMLDivElement>(null);
 
   /* eslint-disable react-hooks/set-state-in-effect -- reading localStorage for SSR-safe init */
   useEffect(() => {
-    const stored = readProgressState().displayName ?? "";
-    setName(stored);
-    setMounted(true);
-  }, []);
+    async function syncName() {
+      const stored = readProgressState().displayName ?? "";
+
+      if (!user) {
+        setName(stored);
+        setMounted(true);
+        return;
+      }
+
+      const remoteState = await loadSupabaseProgress(getSupabaseBrowserClient(), user.id);
+      setName(remoteState.displayName ?? stored);
+      setMounted(true);
+    }
+
+    syncName().catch((error) => {
+      console.error("[Supabase] Failed to load certificate name:", error);
+      setName(readProgressState().displayName ?? "");
+      setMounted(true);
+    });
+  }, [user]);
   /* eslint-enable react-hooks/set-state-in-effect */
 
   function handleNameChange(e: React.ChangeEvent<HTMLInputElement>) {
     const value = e.target.value;
     setName(value);
     setDisplayName(value);
+
+    if (!user) {
+      return;
+    }
+
+    saveSupabaseDisplayName(getSupabaseBrowserClient(), user.id, value).catch((error) => {
+      console.error("[Supabase] Failed to save certificate name:", error);
+    });
   }
 
   function handlePrint() {
