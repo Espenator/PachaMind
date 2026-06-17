@@ -64,6 +64,7 @@ export default async function LibraryPage({
         <LibrarySearch
           lessons={content.lessons}
           library={content.library}
+          videoComingSoonLabel={content.lessonPage.videoComingSoonLabel}
           lang={lang}
         />
       </Suspense>

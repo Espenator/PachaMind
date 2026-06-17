@@ -99,6 +99,7 @@ export interface SiteContent {
     reflectionSaveLabel: string;
     reflectionSavedLabel: string;
     viewReflectionsLabel: string;
+    videoComingSoonLabel: string;
   };
   dashboard: {
     title: string;
