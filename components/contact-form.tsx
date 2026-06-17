@@ -124,7 +124,7 @@ export function ContactForm({ content }: ContactFormProps) {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <button
           type="submit"
-          className="rounded-full bg-deepearth px-6 py-3 text-sm font-semibold text-cloudwhite transition hover:bg-terracotta"
+          className="rounded-full bg-deepearth px-6 py-3 text-sm font-semibold text-cloud transition hover:bg-terracotta focus-gold min-h-[44px]"
         >
           {content.submitLabel}
         </button>
