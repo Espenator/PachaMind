@@ -62,17 +62,29 @@ Do not count Embodier.ai opt-in, paid membership interest, screening interest, t
 
 ## Signup model decision
 
-The current Space canon preserves the default account model of first name + mobile, with email optional/recommended, but the Flow A implementation must treat phone-first capture as unresolved until counsel confirms it does not create nonprofit lead-generation, SMS/TCPA, Twilio/A2P, or Ad Grants risk.
+**Settled by the June 17, 2026 canon (see
+[Operating Architecture](pachamind-operating-architecture.md#free-gamified-learning-membership-and-membership-coordinates)).**
+Flow A is a free, gamified, two-way learning membership that collects the
+approved **membership coordinates** for the real educational product — not a
+passive newsletter and not a hidden commercial lead funnel. The earlier
+"phone-first vs. email-first vs. dual-field" decision is no longer open.
 
-Decision options:
+Approved membership fields: first name, last name, email, country/region,
+country code, cell/WhatsApp number, preferred language, and separate per-channel
+communication permissions. Email is the account/access channel; WhatsApp is
+optional and educational; paid SMS is excluded (optional educational SMS only if
+activated later).
 
-| Option | Description | Pros | Risks |
-|---|---|---|---|
-| Email/account-first | Free account with email; SMS optional later | Cleanest Ad Grants posture | Less aligned with SMS-first funnel |
-| Phone-first PachaMind educational SMS | Mobile is primary for free educational reminders only | Matches mobile-first learning | May look like lead capture; counsel needed |
-| Dual-field with optional SMS | Email/account plus optional mobile | Balanced | More UX complexity |
+Best-case operating determination: the risk is **not** collecting reasonable
+membership coordinates; it is using them for undisclosed Embodier.ai commercial
+marketing, paid promotion, screening, payment, or Peru-pathway sales before
+separate Flow B consent. Counsel focuses on consent wording, logging,
+data-sharing, and channel consent.
 
-Recommended interim stance: build signup so the field configuration can change without rebuilding the learning platform.
+Implementation stance: build signup against a real educational product
+(dashboard, progress, lesson completion, video watch state, reflections,
+quizzes, badges, communication preferences, consent logging) so field and
+consent wording can be tuned without rebuilding the learning platform.
 
 ## First five lessons
 
@@ -103,7 +115,7 @@ Before launch, every public page should pass:
 
 ## Open counsel items
 
-- [NEEDS COUNSEL/VERIFICATION] Flow A signup model: phone-first versus email/account-first.
+- [NEEDS COUNSEL/VERIFICATION] Consent wording, logging schema, data-sharing boundary, and channel consent for the approved Flow A membership coordinates (the field set and email-for-access + optional WhatsApp model are settled by the June 17, 2026 canon; this is no longer a phone-first vs. email-first question).
 - [NEEDS COUNSEL/VERIFICATION] Whether optional PachaMind educational SMS can run before Ad Grants approval.
 - [NEEDS COUNSEL/VERIFICATION] Exact nonprofit entity ownership and Google for Nonprofits eligibility.
 - [NEEDS COUNSEL/VERIFICATION] Whether any Embodier.ai disclosure can appear during Flow A.

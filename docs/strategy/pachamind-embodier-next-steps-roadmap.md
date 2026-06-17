@@ -44,7 +44,7 @@ This is the first workstream because every other system depends on the entity an
 
 Key counsel questions:
 
-- [NEEDS COUNSEL/VERIFICATION] Can PachaMind.org collect phone numbers during Flow A without creating commercial lead-generation risk, or should Flow A use account/email-first with optional PachaMind-only educational SMS?
+- [NEEDS COUNSEL/VERIFICATION] Consent wording, logging, data-sharing, and channel-consent for the approved Flow A membership coordinates (the June 17, 2026 canon settles the field set — first/last name, email, country/region, country code, cell/WhatsApp, preferred language, separate permissions — collected for the real educational product; the risk is undisclosed commercial use before Flow B, not the collection itself, so this is no longer a phone-capture yes/no).
 - [NEEDS COUNSEL/VERIFICATION] What exact legal entity owns PachaMind.org, and can it qualify for Google for Nonprofits / Ad Grants in the intended jurisdiction?
 - [NEEDS COUNSEL/VERIFICATION] What disclosure, if any, can appear on PachaMind.org about Embodier.ai before Ad Grants approval without creating private-benefit or commerciality risk?
 - [NEEDS COUNSEL/VERIFICATION] What compensation and governance structure makes Mallku’s role structural rather than decorative?
@@ -139,7 +139,7 @@ Recommended “do now” sprint:
 
 - Create a single `PachaMind.org Flow A Launch Spec`.
 - Turn the recent research reports into a public/private content matrix.
-- Decide whether Flow A account signup is phone-first, email-first, or dual-field. This is the biggest unresolved conflict because the funnel skill favors phone-first conversion while the locked Ad Grants posture favors maximum nonprofit cleanliness.
+- ~~Decide whether Flow A account signup is phone-first, email-first, or dual-field.~~ **Settled by the June 17, 2026 canon:** Flow A is a free, gamified, two-way learning membership that collects the approved membership coordinates (first/last name, email, country/region, country code, cell/WhatsApp, preferred language, separate permissions) for the real educational product. It is email-for-access with optional WhatsApp; the open work is consent wording, logging, data-sharing, and channel consent — not a phone-first vs. email-first choice.
 - Draft the counsel packet before building sales automation.
 - Merge the existing GitHub research PRs and add an index to `docs/research/`.
 
@@ -198,7 +198,7 @@ Google requires Ad Grants accounts to maintain proper structure, use meaningful 
 1. Create the `PachaMind.org Flow A Launch Spec` with page list, copy rules, conversion rules, consent model, and no-commerce checklist.
 2. Create the `Public / Login / Counsel-Only / Forbidden Content Matrix` for all existing research and business-plan material.
 3. Prepare the counsel packet: entity map, data flow, payment flow, SMS flow, Ad Grants flow, and sample public copy.
-4. Decide the initial account-capture model with counsel: phone-first PachaMind educational SMS versus email-first account with later SMS opt-in.
+4. Confirm with counsel the consent wording, logging schema, data-sharing boundary, and channel consent for the approved Flow A membership coordinates. (The June 17, 2026 canon already settled the field set and the email-for-access + optional WhatsApp model, with optional educational SMS only if activated later; this is no longer a phone-first vs. email-first decision.)
 5. Build the first five lessons around Andean cosmovision, the Three Pachas, Five Values, Mallku attribution, and archaeo-astronomy.
 6. Draft Embodier.ai Flow B privately, but do not publish or connect it to PachaMind.org until the counsel and Ad Grants gates are cleared.
 7. Merge and index the existing GitHub research PRs so the repository becomes the canonical knowledge base rather than a scattered archive.

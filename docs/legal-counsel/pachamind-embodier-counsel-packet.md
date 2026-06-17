@@ -56,11 +56,31 @@ Questions:
 
 ## 3. Data and consent flow
 
-During Flow A, PachaMind.org may collect free membership signup information for
-**educational membership administration only**, subject to counsel review.
+During Flow A, PachaMind.org may collect **membership coordinates** for a
+**free, gamified, two-way learning membership** — used for educational
+membership administration only (learner progress, account access, reminders,
+private reflections, quizzes, badges, Puma Path progression, language/region
+relevance, and optional two-way educational communication), subject to counsel
+review. This is **not** a passive newsletter or a hidden commercial lead funnel.
 
-Preferred Flow A free membership fields: first name, last name, email, country
-code, cell/WhatsApp number, and **separate communication permissions**.
+Approved Flow A membership fields: first name, last name, email, country/region,
+country code, cell/WhatsApp number, preferred language, and **separate
+communication permissions**.
+
+**Best-case operating determination for counsel:** the legal/compliance risk is
+**not** the collection of reasonable membership coordinates itself. The risk is
+using those coordinates for **undisclosed Embodier.ai commercial marketing, paid
+membership promotion, screening, payment, Peru pathway sales, or unrelated
+communications before separate consent and counsel-approved Flow B.** Counsel is
+therefore asked to focus on consent wording, consent logging, data-sharing
+boundaries, channel consent, and the PachaMind/Embodier consent boundary —
+rather than on a yes/no decision about whether phone or coordinates may be
+collected for the real educational product.
+
+Required consent architecture (separate, never bundled): free membership /
+account-related messages; optional educational email; optional educational
+WhatsApp; optional educational SMS only if activated later; and **no Embodier.ai
+commercial consent during Flow A**.
 
 Communication channels:
 

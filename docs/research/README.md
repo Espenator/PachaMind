@@ -28,6 +28,12 @@ Hard rules carried from canon:
 - Future revenue is framed as **membership / membership levels**, never
   donations. There are no donations, pricing, or payment forms on PachaMind.org
   Flow A.
+- Flow A is a **free, gamified, two-way learning membership** that collects
+  **membership coordinates** (first/last name, email, country/region, country
+  code, cell/WhatsApp, preferred language, separate per-channel permissions) for
+  the real educational product — not a passive newsletter or hidden lead funnel.
+  The risk is undisclosed commercial use before Flow B, not the collection
+  itself; counsel reviews wording, logging, data-sharing, and channel consent.
 
 ## Research artifacts
 

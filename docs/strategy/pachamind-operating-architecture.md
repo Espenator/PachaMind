@@ -51,6 +51,76 @@ PachaMind.org during Flow A.
 - [NEEDS COUNSEL/VERIFICATION] Contractor/operator agreement scope between PachaMind and Embodier.ai, including private-benefit and inurement controls.
 - [NEEDS COUNSEL/VERIFICATION] Data-sharing, payment-routing, and operator-liability boundaries between the entities.
 
+## Free gamified learning membership and membership coordinates
+
+PachaMind.org Flow A is a **free, gamified, educational, two-way learning
+membership** — not a passive newsletter and not a hidden commercial lead funnel.
+
+PachaMind may collect **membership coordinates** from prospects and Google Ad
+Grants visitors when the data is used for free educational membership
+administration: learner progress, account access, reminders, private
+reflections, quizzes, badges, Puma Path progression, language/region relevance,
+and optional two-way educational communication.
+
+### Approved Flow A membership fields
+
+| Field | Purpose |
+|---|---|
+| First name | Account identity, personalization |
+| Last name | Account identity |
+| Email | Account access and primary educational communication |
+| Country / region | Language/region relevance and content fit |
+| Country code | Pairs with cell/WhatsApp number |
+| Cell / WhatsApp number | Optional two-way educational communication only — not paid SMS |
+| Preferred language | EN/ES (and future) educational relevance |
+| Separate communication permissions | Per-channel consent; never bundled |
+
+### Best-case operating determination
+
+The legal/compliance risk is **not** the collection of reasonable membership
+coordinates itself. The risk is using those coordinates for **undisclosed
+Embodier.ai commercial marketing, paid membership promotion, screening, payment,
+Peru pathway sales, or unrelated communications before separate consent and
+counsel-approved Flow B.** Counsel focus is therefore on wording, logging,
+data-sharing, channel consent, and the PachaMind/Embodier consent boundary —
+not on whether the coordinates may be collected for the real educational
+product.
+
+### Flow A signup framing
+
+Frame Flow A signup as:
+
+> "Create your free PachaMind learning membership. Your membership lets you
+> follow the Puma Path, save your progress, receive lesson reminders, complete
+> reflections, and choose how PachaMind may communicate with you about your
+> learning."
+
+### Required consent architecture
+
+- Free PachaMind learning membership / account-related messages
+- Optional PachaMind educational email
+- Optional PachaMind educational WhatsApp
+- Optional PachaMind educational SMS **only if activated later**
+- **No Embodier.ai commercial consent during Flow A**
+
+### Important boundary
+
+A PachaMind.org free learning membership does **not** create Embodier.ai
+commercial consent. Embodier.ai contact, paid membership promotion, commercial
+CRM, SMS/WhatsApp sales, screening, booking, or payment follow-up requires
+**separate Flow B consent after counsel and Ad Grants gates.**
+
+### Development implication
+
+Build the membership system as a **real educational product**: dashboard,
+progress, lesson completion, video watch state, reflections, quizzes, badges,
+communication preferences, and consent logging. This product depth justifies the
+membership coordinates and supports Ad Grants-safe educational conversion
+tracking.
+
+- [NEEDS COUNSEL/VERIFICATION] Membership-field consent wording, consent logging schema, and data-sharing boundary between PachaMind and Embodier.ai.
+- [NEEDS COUNSEL/VERIFICATION] Channel-consent language for email, optional WhatsApp, and any later-activated educational SMS.
+
 ## Revenue framing: membership, not donations
 
 Future PachaMind revenue should be framed as **PachaMind membership and
@@ -95,14 +165,16 @@ hard guardrail across all tracks.
 
 ### Flow A (PachaMind.org) — email-first, optional WhatsApp
 
-During Flow A, PachaMind.org may collect free membership signup information for
-**educational membership administration only**, subject to counsel review.
+During Flow A, PachaMind.org may collect **membership coordinates** for
+**free educational membership administration only**, subject to counsel review.
 
 - Prefer **email** and **optional WhatsApp** educational communication.
-- **Do not** use paid SMS during Flow A.
-- Preferred free membership fields: first name, last name, email, country code,
-  cell/WhatsApp number, and **separate communication permissions** (do not
-  bundle consents).
+- **Do not** use paid SMS during Flow A (optional educational SMS only if
+  activated later).
+- Approved Flow A membership fields: first name, last name, email,
+  country/region, country code, cell/WhatsApp number, preferred language, and
+  **separate communication permissions** (do not bundle consents). See
+  [Approved Flow A membership fields](#approved-flow-a-membership-fields).
 
 ### Flow B (Embodier.ai) — later, mobile-first commercial
 

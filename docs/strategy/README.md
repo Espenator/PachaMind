@@ -17,6 +17,18 @@ and sales — not the mission owner and not the public educational provider. Whe
 older documents reference donation checkout, donor, or conservation-contribution
 mechanics, the Operating Architecture controls.
 
+The June 17 amendment also reframes Flow A signup: it is a **free, gamified,
+two-way learning membership** that collects **membership coordinates** (first
+name, last name, email, country/region, country code, cell/WhatsApp number,
+preferred language, and separate per-channel communication permissions) for the
+real educational product — not a passive newsletter and not a hidden commercial
+lead funnel. The older "first name/email only" and "decide phone-first vs.
+email-first" framing is **superseded**: the field set is settled, and the risk
+is undisclosed commercial use of those coordinates before separate Flow B
+consent, not the collection itself. Counsel focuses on wording, logging,
+data-sharing, channel consent, and the PachaMind/Embodier consent boundary. See
+the repo status snapshot in [../repo-status.md](../repo-status.md).
+
 ## Roadmap canon
 
 The current sequencing is:

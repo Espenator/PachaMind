@@ -51,12 +51,14 @@ Every public page must pass all of these:
 
 ## Membership signup gate
 
-- [ ] Fields limited to: first name, last name, email, country code, cell/WhatsApp number, separate communication permissions
-- [ ] Communication permissions are separate (email vs. optional WhatsApp), not bundled
+- [ ] Signup is framed as a free, gamified, two-way learning membership — not a passive newsletter or hidden commercial lead funnel
+- [ ] Approved membership coordinates: first name, last name, email, country/region, country code, cell/WhatsApp number, preferred language, separate communication permissions
+- [ ] Communication permissions are separate per channel (account messages, optional email, optional WhatsApp, optional later SMS), not bundled
 - [ ] No payment, pricing, or upgrade fields
 - [ ] Signup does not imply or capture Embodier.ai commercial consent
-- [ ] Data collected only for educational membership administration
-- [ ] [NEEDS COUNSEL/VERIFICATION] Field set, consent text, and data handling reviewed by counsel
+- [ ] Membership coordinates used only for educational membership administration (progress, access, reminders, reflections, quizzes, badges, Puma Path, language/region relevance) — never for undisclosed commercial marketing before Flow B
+- [ ] Membership is backed by a real educational product (dashboard, progress, lesson completion, video watch state, reflections, quizzes, badges, preferences, consent logging)
+- [ ] [NEEDS COUNSEL/VERIFICATION] Consent wording, consent-logging schema, data-sharing boundary, and channel consent reviewed by counsel
 
 ## Communication gate
 
