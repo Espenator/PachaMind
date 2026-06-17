@@ -63,7 +63,21 @@ export default async function DashboardPage({
         <DashboardProgress
           language={lang}
           lessons={content.lessons}
-          labels={content.dashboard}
+          labels={{
+            ...content.dashboard,
+            lastWatchedLabel: content.dashboard.continueLearning,
+            topicsHeading: content.library.title,
+            resetLabel: content.reflections.clearAllLabel,
+            resetConfirmHeading: content.reflections.clearConfirm,
+            resetConfirmLabel: content.reflections.clearAllLabel,
+            resetCancelLabel: content.contact.submitLabel,
+            certificateTitle: content.dashboard.title,
+            certificateIntro: content.dashboard.intro,
+            certificateBody: content.brand.promise,
+            certificateNameLabel: content.contact.nameLabel,
+            certificateNamePlaceholder: content.contact.namePlaceholder,
+            certificatePrintLabel: content.contact.submitLabel,
+          }}
         />
       </section>
     </div>
