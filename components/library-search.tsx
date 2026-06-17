@@ -4,73 +4,80 @@ import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
-import { YouTubeEmbed } from "@/components/youtube-embed";
+import { VideoEmbed } from "@/components/video-embed";
 import type { Language, Lesson, SiteContent } from "@/lib/types";
 
 interface LibrarySearchProps {
   lessons: Lesson[];
   library: SiteContent["library"];
+  brand: SiteContent["brand"];
   lang: Language;
 }
 
-export function LibrarySearch({ lessons, library, lang }: LibrarySearchProps) {
-  const router = useRouter();
-  const pathname = usePathname();
+/** Maps topic keys to a Tailwind colour variant */
+const TOPIC_CHIP: Record<string, string> = {
+  listening:   "bg-sky/15 text-sky ring-1 ring-sky/30",
+  reciprocity: "bg-moss/15 text-moss ring-1 ring-moss/30",
+  ritual:      "bg-terracotta/15 text-terracotta ring-1 ring-terracotta/30",
+  stewardship: "bg-gold/15 text-deepearth ring-1 ring-gold/30",
+};
+
+export function LibrarySearch({ lessons, library, brand, lang }: LibrarySearchProps) {
+  const router       = useRouter();
+  const pathname     = usePathname();
   const searchParams = useSearchParams();
 
-  const initialQ = searchParams.get("q") ?? "";
-  const initialTopic = searchParams.get("topic") ?? "";
+  /*
+   * activeTopic is derived directly from the URL — no local state needed.
+   * Browser back/forward automatically updates the filter without any
+   * useEffect sync, which avoids the react-hooks/set-state-in-effect rule.
+   */
+  const activeTopic = searchParams.get("topic") ?? "";
 
-  const [inputValue, setInputValue] = useState(initialQ);
-  const [activeTopic, setActiveTopic] = useState(initialTopic);
+  /*
+   * Null-sentinel pattern: typingValue is non-null ONLY while the user is
+   * actively editing the search box.  After the debounce fires we reset it
+   * to null so that the URL value takes ownership again — meaning
+   * browser back/forward automatically updates the displayed text without
+   * needing any useEffect state sync.
+   */
+  const urlQ = searchParams.get("q") ?? "";
+  const [typingValue, setTypingValue] = useState<string | null>(null);
+  const inputValue = typingValue ?? urlQ;
 
-  // Keep a ref for the debounce timer
-  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const debounceRef  = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const uniqueTopics = Array.from(
+    new Set(lessons.map((l) => l.topic).filter((topic): topic is string => Boolean(topic))),
+  );
 
-  // Derive unique topics in the order lessons appear
-  const uniqueTopics = Array.from(new Set(lessons.map((l) => l.topic).filter((t): t is string => t !== undefined)));
-
-  // Sync URL when activeTopic changes (immediate)
   function updateUrl(q: string, topic: string) {
     const params = new URLSearchParams(searchParams.toString());
-    if (q) {
-      params.set("q", q);
-    } else {
-      params.delete("q");
-    }
-    if (topic) {
-      params.set("topic", topic);
-    } else {
-      params.delete("topic");
-    }
+    if (q)     { params.set("q",     q);     } else { params.delete("q"); }
+    if (topic) { params.set("topic", topic); } else { params.delete("topic"); }
     const query = params.toString();
     router.replace(`${pathname}${query ? `?${query}` : ""}`, { scroll: false });
   }
 
   function handleTopicChange(topic: string) {
-    const next = topic === activeTopic ? "" : topic;
-    setActiveTopic(next);
-    updateUrl(inputValue, next);
+    updateUrl(inputValue, topic === activeTopic ? "" : topic);
   }
 
   function handleSearchChange(e: React.ChangeEvent<HTMLInputElement>) {
     const value = e.target.value;
-    setInputValue(value);
+    setTypingValue(value);
     if (debounceRef.current) clearTimeout(debounceRef.current);
     debounceRef.current = setTimeout(() => {
       updateUrl(value, activeTopic);
+      setTypingValue(null); // Hand control back to the URL
     }, 300);
   }
 
-  // Clean up debounce on unmount
+  /* Cleanup debounce timer on unmount. */
   useEffect(() => {
-    return () => {
-      if (debounceRef.current) clearTimeout(debounceRef.current);
-    };
+    return () => { if (debounceRef.current) clearTimeout(debounceRef.current); };
   }, []);
 
-  // Filter lessons
-  const query = inputValue.trim().toLowerCase();
+  const query    = inputValue.trim().toLowerCase();
   const filtered = lessons.filter((lesson) => {
     const matchesTopic = !activeTopic || lesson.topic === activeTopic;
     const matchesQuery =
@@ -82,8 +89,8 @@ export function LibrarySearch({ lessons, library, lang }: LibrarySearchProps) {
 
   return (
     <>
-      {/* Search and filter controls */}
-      <div className="documentary-card mt-6 flex flex-col gap-5 p-6 lg:p-8">
+      {/* ── Search & filter controls ─────────────────────────────────── */}
+      <div className="documentary-card mt-6 flex flex-col gap-5 p-5 sm:p-7">
         {/* Search input */}
         <div className="relative">
           <svg
@@ -103,20 +110,20 @@ export function LibrarySearch({ lessons, library, lang }: LibrarySearchProps) {
             onChange={handleSearchChange}
             placeholder={library.searchPlaceholder}
             aria-label={library.searchPlaceholder}
-            className="w-full rounded-full border border-deepearth/15 bg-white/80 py-3 pl-11 pr-5 text-sm text-deepearth placeholder-stonegray/70 outline-none ring-terracotta/40 transition focus:ring-2"
+            className="w-full rounded-full border border-deepearth/12 bg-white/80 py-3 pl-11 pr-5 text-sm text-deepearth placeholder-stonegray/60 outline-none focus-gold min-h-[44px]"
           />
         </div>
 
-        {/* Topic filter chips */}
+        {/* Topic chips */}
         <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by topic">
           <button
             onClick={() => handleTopicChange("")}
-            className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-              activeTopic === ""
-                ? "bg-deepearth text-cloudwhite"
-                : "border border-deepearth/15 bg-white/80 text-stonegray hover:bg-deepearth/10"
-            }`}
             aria-pressed={activeTopic === ""}
+            className={`rounded-full px-4 py-2 text-sm font-medium transition min-h-[44px] focus-gold ${
+              activeTopic === ""
+                ? "bg-deepearth text-cloud"
+                : "border border-deepearth/12 bg-white/80 text-stonegray hover:bg-deepearth/8"
+            }`}
           >
             {library.filterAllLabel}
           </button>
@@ -124,12 +131,12 @@ export function LibrarySearch({ lessons, library, lang }: LibrarySearchProps) {
             <button
               key={topic}
               onClick={() => handleTopicChange(topic)}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-                activeTopic === topic
-                  ? "bg-terracotta text-cloudwhite"
-                  : "border border-deepearth/15 bg-white/80 text-stonegray hover:bg-terracotta/10"
-              }`}
               aria-pressed={activeTopic === topic}
+              className={`rounded-full px-4 py-2 text-sm font-medium transition min-h-[44px] focus-gold ${
+                activeTopic === topic
+                  ? "bg-terracotta text-cloud"
+                  : `${TOPIC_CHIP[topic] ?? "bg-sand text-stonegray"} hover:opacity-80`
+              }`}
             >
               {library.topics[topic] ?? topic}
             </button>
@@ -137,55 +144,91 @@ export function LibrarySearch({ lessons, library, lang }: LibrarySearchProps) {
         </div>
       </div>
 
-      {/* Lesson cards or empty state */}
+      {/* ── Lesson cards ─────────────────────────────────────────────── */}
       {filtered.length === 0 ? (
-        <div className="documentary-card mt-8 px-8 py-14 text-center">
+        <div className="documentary-card mt-8 px-8 py-16 text-center">
           <p className="text-base text-stonegray">{library.emptyState}</p>
         </div>
       ) : (
-        <section className="mt-8 grid gap-8">
+        <section className="mt-8 grid gap-6" aria-label={library.title}>
           {filtered.map((lesson) => (
             <article
               key={lesson.slug}
-              className="documentary-card grid gap-6 p-6 lg:grid-cols-[1.1fr_0.9fr] lg:p-8"
+              className="documentary-card overflow-hidden"
             >
-              <div className="flex flex-col gap-5">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-terracotta">
-                    {lesson.kicker} · {lesson.duration}
-                  </p>
-                  <h2 className="headline-font mt-3 text-3xl text-deepearth">{lesson.title}</h2>
-                  <p className="mt-4 text-base leading-7 text-stonegray">{lesson.description}</p>
-                  <p className="mt-4 text-base leading-7 text-stonegray">{lesson.extendedDescription}</p>
+              {/* Mobile: video on top; desktop: side by side (video left) */}
+              <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
+                {/* Video column — leads the card */}
+                <div className="relative">
+                  <VideoEmbed lesson={lesson} />
+                  {/* Topic chip overlaid on card at mobile */}
+                  <span
+                    className={`absolute top-3 left-3 z-10 rounded-full px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] lg:hidden ${lesson.topic ? (TOPIC_CHIP[lesson.topic] ?? "bg-sand text-stonegray") : "bg-sand text-stonegray"}`}
+                  >
+                    {lesson.topic ? (library.topics[lesson.topic] ?? lesson.topic) : lesson.topic}
+                  </span>
                 </div>
 
-                <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-stonegray">{library.notesLabel}</p>
-                  <ul className="mt-3 space-y-3 text-sm leading-7 text-deepearth">
-                    {lesson.learningNotes.map((note) => (
-                      <li key={note} className="rounded-2xl bg-cloudwhite px-4 py-3">
-                        {note}
-                      </li>
-                    ))}
-                  </ul>
+                {/* Content column */}
+                <div className="flex flex-col gap-5 p-6 lg:p-8">
+                  <div>
+                    {/* Topic chip — desktop only */}
+                    <div className="mb-3 hidden lg:block">
+                      <span
+                        className={`rounded-full px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] ${lesson.topic ? (TOPIC_CHIP[lesson.topic] ?? "bg-sand text-stonegray") : "bg-sand text-stonegray"}`}
+                      >
+                        {lesson.topic ? (library.topics[lesson.topic] ?? lesson.topic) : lesson.topic}
+                      </span>
+                    </div>
+
+                    <p className="text-xs uppercase tracking-[0.3em] text-stonegray/70">
+                      {lesson.kicker}&ensp;·&ensp;{lesson.duration}
+                    </p>
+                    <h2 className="headline-font mt-2 text-fluid-2xl text-deepearth">
+                      {lesson.title}
+                    </h2>
+                    <p className="mt-3 text-sm leading-7 text-stonegray">{lesson.description}</p>
+                  </div>
+
+                  {/* Learning notes */}
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.3em] text-stonegray/60 mb-3">
+                      {library.notesLabel}
+                    </p>
+                    <ul className="space-y-2">
+                      {lesson.learningNotes.map((note) => (
+                        <li key={note} className="flex items-start gap-2 text-sm leading-6 text-deepearth">
+                          <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gold" />
+                          {note}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-auto pt-2">
+                    <Link
+                      href={`/${lang}/lesson/${lesson.slug}`}
+                      className="inline-flex items-center gap-2 rounded-full bg-deepearth px-5 py-3 text-sm font-semibold text-cloud transition hover:bg-terracotta focus-gold min-h-[44px]"
+                    >
+                      {library.openLessonLabel}
+                      <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" aria-hidden="true">
+                        <path fillRule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clipRule="evenodd" />
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
-
-                <Link
-                  href={`/${lang}/lesson/${lesson.slug}`}
-                  className="w-fit rounded-full bg-deepearth px-5 py-3 text-sm font-semibold text-cloudwhite transition hover:bg-terracotta"
-                >
-                  {library.openLessonLabel}
-                </Link>
-              </div>
-
-              <div className="space-y-4">
-                <p className="text-xs uppercase tracking-[0.3em] text-stonegray">{library.watchLabel}</p>
-                <YouTubeEmbed lesson={lesson} />
               </div>
             </article>
           ))}
         </section>
       )}
+
+      {/* ── Promise reminder ─────────────────────────────────────────── */}
+      <div className="mt-10 rounded-[1.5rem] bg-sand/60 px-7 py-6 text-center">
+        <p className="text-sm font-medium uppercase tracking-[0.28em] text-terracotta">
+          {brand.promise}
+        </p>
+      </div>
     </>
   );
 }
