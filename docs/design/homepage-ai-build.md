@@ -25,5 +25,5 @@ The PachaMind homepage was generated in Figma using the UX Pilot AI UI Generator
 Colors map to the central `tokens.css` (additive). Surface and card fills reference the parchment/white palette already defined for Flow A. No new token files introduced.
 
 ## Next steps
-- Export frame PNG to `docs/design/assets/homepage-ai-build.png`.
+- [x] Exported frame PNG committed at `docs/design/assets/Home (AI generated).png` (PR #31).
 - Hand off section map to implementation (`docs/design/implementation-map.md`).
