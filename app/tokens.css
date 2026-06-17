@@ -1,0 +1,64 @@
+/*
+ * PachaMind Design Tokens — Flow A (Free Learning Membership)
+ * Additive token layer. Import AFTER globals.css; does not override existing globals.
+ * Source of truth: docs/design/pachamind-design-tokens.md
+ * Usage: import './tokens.css' in app/layout.tsx (after globals.css).
+ */
+
+:root {
+  /* Color */
+  --color-paper-white: #F7F1E7;
+  --color-deep-earth: #2F261F;
+  --color-terracotta: #B7653F;
+  --color-clay: #8E4E35;
+  --color-sage: #7D8B6F;
+  --color-sky: #8FB6C9;
+  --color-stone: #8C8578;
+  --color-charcoal: #1D1A17;
+  --color-soft-sand: #E6D7C3;
+  --color-mist: #EEF3F1;
+
+  /* Typography */
+  --font-display: "Source Serif 4", Georgia, serif;
+  --font-sans: Inter, system-ui, sans-serif;
+  --fs-display: 32px;
+  --fs-h1: 28px;
+  --fs-h2: 22px;
+  --fs-h3: 18px;
+  --fs-body: 16px;
+  --fs-small: 14px;
+  --fs-label: 13px;
+
+  /* Spacing (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 2px rgba(29, 26, 23, 0.08);
+  --shadow-md: 0 4px 12px rgba(29, 26, 23, 0.10);
+  --shadow-lg: 0 12px 32px rgba(29, 26, 23, 0.14);
+
+  /* Focus */
+  --focus-ring: 2px solid var(--color-terracotta);
+}
+
+/* Desktop scale (1440px and up) */
+@media (min-width: 1440px) {
+  :root {
+    --fs-display: 48px;
+    --fs-h1: 36px;
+    --fs-h2: 28px;
+  }
+}
