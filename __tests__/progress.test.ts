@@ -67,7 +67,7 @@ describe("progress utilities", () => {
 
   describe("writeProgressState", () => {
     it("persists state to localStorage", () => {
-      writeProgressState({ completedLessonSlugs: ["lesson-1"] });
+      writeProgressState({ completedLessonSlugs: ["lesson-1"], earnedBadgeKeys: [] });
       const raw = localStorage.getItem(PROGRESS_STORAGE_KEY);
       expect(raw).not.toBeNull();
       const parsed = JSON.parse(raw!);
@@ -76,7 +76,9 @@ describe("progress utilities", () => {
 
     it("is a no-op (SSR-safe) when window is undefined", () => {
       vi.stubGlobal("window", undefined);
-      expect(() => writeProgressState({ completedLessonSlugs: ["slug"] })).not.toThrow();
+      expect(() =>
+        writeProgressState({ completedLessonSlugs: ["slug"], earnedBadgeKeys: [] }),
+      ).not.toThrow();
     });
   });
 

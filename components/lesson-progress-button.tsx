@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 
+import { track } from "@/lib/analytics";
 import {
   readProgressState,
   setLastOpenedLessonSlug,
@@ -14,6 +15,9 @@ interface LessonProgressButtonProps {
   markIncompleteLabel: string;
   completedLabel: string;
   hint: string;
+  badgeKey?: string;
+  badgeTitle?: string;
+  badgeEarnedLabel?: string;
 }
 
 export function LessonProgressButton({
@@ -22,6 +26,9 @@ export function LessonProgressButton({
   markIncompleteLabel,
   completedLabel,
   hint,
+  badgeKey,
+  badgeTitle,
+  badgeEarnedLabel,
 }: LessonProgressButtonProps) {
   const [isCompleted, setIsCompleted] = useState(() =>
     readProgressState().completedLessonSlugs.includes(slug),
@@ -29,12 +36,19 @@ export function LessonProgressButton({
 
   useEffect(() => {
     setLastOpenedLessonSlug(slug);
+    track("lesson_started", { slug });
   }, [slug]);
 
   function toggleCompletion() {
     const nextValue = !isCompleted;
-    setLessonCompletion(slug, nextValue);
+    setLessonCompletion(slug, nextValue, badgeKey);
     setIsCompleted(nextValue);
+    if (nextValue) {
+      track("lesson_completed", { slug });
+      if (badgeKey) {
+        track("badge_earned", { badgeKey });
+      }
+    }
   }
 
   return (
@@ -49,6 +63,11 @@ export function LessonProgressButton({
       <p className="text-sm text-stonegray">
         {isCompleted ? completedLabel : hint}
       </p>
+      {isCompleted && badgeKey && badgeTitle && badgeEarnedLabel ? (
+        <p className="rounded-2xl border border-goldmoun/50 bg-goldmoun/10 px-4 py-3 text-sm font-semibold text-deepearth">
+          {badgeEarnedLabel}: {badgeTitle}
+        </p>
+      ) : null}
     </div>
   );
 }

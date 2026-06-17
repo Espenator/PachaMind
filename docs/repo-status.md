@@ -55,9 +55,29 @@ scaffold.
 
 ## Scope note for this PR
 
-This PR (#23) is **docs-only**. No application code was modified. The app
-inventory above is reported for accuracy and to ground the development
-implication in the canon; it does not represent code changes in this PR.
+The **Flow A free learning membership prototype** PR builds the remaining product
+depth into the existing app (it is no longer docs-only). Added:
+
+- **Data + lib:** extended `lib/types.ts` (membership, consent, quiz, badge,
+  Puma Path stage, progress types); new `lib/membership.ts` (mock, local-only
+  consent + membership store with an immutable consent audit trail); new
+  `lib/analytics.ts` (allowed/forbidden educational event taxonomy + no-op
+  `track`); extended `lib/progress.ts` (earned-badge tracking).
+- **Components:** `consent-checkbox`, `consent-record-debug-panel` (dev-only),
+  `free-membership-signup-form`, `communication-preferences-form`, `quiz-card`,
+  `transcript-drawer`, `progress-ring`, `badge-card`, `dashboard-membership`,
+  `legal-page`.
+- **Routes (`app/[lang]/...`):** `signup`, `account/preferences`, `learn`,
+  `mallku`, `privacy`, `terms`, `accessibility`; lesson pages now render the
+  transcript drawer, quiz, Puma Path stage, and badge-on-completion; dashboard
+  now shows the membership greeting, progress ring, current stage, and badges.
+- **Content:** EN/ES rewritten to the free-membership canon, with five+ canonical
+  lessons carrying stage, badge trigger, quiz, and a dev-only forbidden-language
+  note; new `signup`, `preferences`, `learn`, `mallku`, `legalPages`, and
+  `badges` sections.
+
+Everything membership/consent related is **client-side mock only** —
+localStorage, no server, no transmission, no real messages.
 
 ## Counsel/verification flags
 

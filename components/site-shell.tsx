@@ -13,8 +13,10 @@ interface SiteShellProps {
 export function SiteShell({ content, language, children }: SiteShellProps) {
   const navItems = [
     { href: `/${language}`, label: content.nav.home },
+    { href: `/${language}/learn`, label: content.nav.learn },
     { href: `/${language}/library`, label: content.nav.library },
     { href: `/${language}/puma-path`, label: content.nav.pumaPath },
+    { href: `/${language}/mallku`, label: content.nav.mallku },
     { href: `/${language}/conservation`, label: content.nav.conservation },
     { href: `/${language}/dashboard`, label: content.nav.dashboard },
     { href: `/${language}/reflections`, label: content.nav.reflections },
@@ -90,20 +92,28 @@ export function SiteShell({ content, language, children }: SiteShellProps) {
               ))}
             </nav>
 
-            <div
-              role="group"
-              aria-label={content.nav.languageToggleLabel}
-              className="flex items-center gap-2 text-sm"
-            >
-              {langLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="rounded-full border border-deepearth/10 px-4 py-2 transition hover:bg-skyblue hover:text-cloudwhite focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
-                >
-                  {link.label}
-                </Link>
-              ))}
+            <div className="flex items-center gap-3">
+              <Link
+                href={`/${language}/signup`}
+                className="rounded-full bg-terracotta px-4 py-2 text-sm font-semibold text-cloudwhite transition hover:bg-deepearth focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+              >
+                {content.nav.signup}
+              </Link>
+              <div
+                role="group"
+                aria-label={content.nav.languageToggleLabel}
+                className="flex items-center gap-2 text-sm"
+              >
+                {langLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="rounded-full border border-deepearth/10 px-4 py-2 transition hover:bg-skyblue hover:text-cloudwhite focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -117,29 +127,33 @@ export function SiteShell({ content, language, children }: SiteShellProps) {
         <div className="mx-auto grid max-w-7xl gap-4 px-6 py-8 lg:px-10">
           <p className="headline-font text-2xl">{content.footer.credit}</p>
           <p className="text-sm text-cloudwhite/85">{content.brand.disclaimer}</p>
-          <div className="flex flex-wrap items-center gap-4">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-goldmoun">
-              {content.footer.mission}
-            </p>
-            <Link
-              href={`/${language}/conservation`}
-              className="text-sm text-cloudwhite/70 transition hover:text-cloudwhite"
-            >
-              {content.nav.conservation}
-            </Link>
-            <Link
-              href={`/${language}/about`}
-              className="text-sm text-cloudwhite/70 transition hover:text-cloudwhite"
-            >
-              {content.nav.about}
-            </Link>
-            <Link
-              href={`/${language}/contact`}
-              className="text-sm text-cloudwhite/70 transition hover:text-cloudwhite"
-            >
-              {content.nav.contact}
-            </Link>
-          </div>
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-goldmoun">
+            {content.footer.mission}
+          </p>
+          <nav
+            aria-label={content.nav.mainNavLabel}
+            className="flex flex-wrap items-center gap-x-4 gap-y-2"
+          >
+            {[
+              { href: `/${language}/signup`, label: content.nav.signup },
+              { href: `/${language}/account/preferences`, label: content.nav.preferences },
+              { href: `/${language}/conservation`, label: content.nav.conservation },
+              { href: `/${language}/about`, label: content.nav.about },
+              { href: `/${language}/contact`, label: content.nav.contact },
+              { href: `/${language}/privacy`, label: content.nav.privacy },
+              { href: `/${language}/terms`, label: content.nav.terms },
+              { href: `/${language}/accessibility`, label: content.nav.accessibility },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-sm text-cloudwhite/70 transition hover:text-cloudwhite focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-goldmoun"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <p className="text-sm text-cloudwhite/70">{content.nav.complianceNote}</p>
         </div>
       </footer>
     </div>

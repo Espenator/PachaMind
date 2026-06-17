@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { DashboardMembership } from "@/components/dashboard-membership";
 import { DashboardProgress } from "@/components/dashboard-progress";
 import { getContent, isLanguage } from "@/lib/content";
 import { SITE_URL } from "@/lib/site";
@@ -51,6 +52,16 @@ export default async function DashboardPage({
         <p className="text-xs uppercase tracking-[0.34em] text-terracotta">{content.brand.promise}</p>
         <h1 className="headline-font mt-4 text-5xl text-deepearth">{content.dashboard.title}</h1>
         <p className="mt-5 max-w-3xl text-lg leading-8 text-stonegray">{content.dashboard.intro}</p>
+      </section>
+
+      <section className="mt-8">
+        <DashboardMembership
+          language={lang}
+          badges={content.badges}
+          stages={content.pumaPath.stages}
+          totalLessons={content.lessons.length}
+          labels={content.dashboard}
+        />
       </section>
 
       <section className="mt-8">

@@ -126,4 +126,94 @@ describe("page smoke tests — content shapes present in both locales", () => {
     expect(es.nav.openMenu).toBeTruthy();
     expect(es.nav.mainNavLabel).toBeTruthy();
   });
+
+  it("membership nav strings exist in both locales", () => {
+    const keys = [
+      "learn",
+      "mallku",
+      "signup",
+      "preferences",
+      "privacy",
+      "terms",
+      "accessibility",
+      "complianceNote",
+    ] as const;
+    for (const key of keys) {
+      expect(en.nav[key], `EN nav.${key} missing`).toBeTruthy();
+      expect(es.nav[key], `ES nav.${key} missing`).toBeTruthy();
+    }
+  });
+
+  it("signup section has five separate consent permission strings in both locales", () => {
+    for (const content of [en, es]) {
+      expect(content.signup.title).toBeTruthy();
+      expect(content.signup.intro).toBeTruthy();
+      const { permissions } = content.signup;
+      expect(permissions.account).toBeTruthy();
+      expect(permissions.email).toBeTruthy();
+      expect(permissions.whatsapp).toBeTruthy();
+      expect(permissions.sms).toBeTruthy();
+      expect(permissions.embodierDisclaimer).toBeTruthy();
+    }
+  });
+
+  it("signup embodier-disclaimer states no commercial enrollment", () => {
+    expect(en.signup.permissions.embodierDisclaimer.toLowerCase()).toContain(
+      "embodier",
+    );
+    expect(es.signup.permissions.embodierDisclaimer.toLowerCase()).toContain(
+      "embodier",
+    );
+  });
+
+  it("preferences, learn, and mallku sections exist in both locales", () => {
+    for (const content of [en, es]) {
+      expect(content.preferences.title).toBeTruthy();
+      expect(content.learn.title).toBeTruthy();
+      expect(content.mallku.title).toBeTruthy();
+    }
+  });
+
+  it("legal pages exist with sections in both locales", () => {
+    for (const content of [en, es]) {
+      for (const page of [
+        content.legalPages.privacy,
+        content.legalPages.terms,
+        content.legalPages.accessibility,
+      ]) {
+        expect(page.title).toBeTruthy();
+        expect(page.sections.length).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it("badges exist with matching keys across locales", () => {
+    expect(en.badges.length).toBeGreaterThan(0);
+    expect(en.badges.map((b) => b.key)).toEqual(es.badges.map((b) => b.key));
+  });
+
+  it("every lesson has a numeric estimatedMinutes and a stage in both locales", () => {
+    for (const lesson of [...en.lessons, ...es.lessons]) {
+      expect(typeof lesson.estimatedMinutes).toBe("number");
+      expect(lesson.stage).toBeTruthy();
+    }
+  });
+
+  it("every lesson quiz has a valid correctIndex in both locales", () => {
+    for (const lesson of [...en.lessons, ...es.lessons]) {
+      if (lesson.quiz) {
+        expect(lesson.quiz.correctIndex).toBeGreaterThanOrEqual(0);
+        expect(lesson.quiz.correctIndex).toBeLessThan(lesson.quiz.options.length);
+      }
+    }
+  });
+
+  it("quiz correctIndex matches across locales for each slug", () => {
+    for (const enLesson of en.lessons) {
+      const esLesson = es.lessons.find((l) => l.slug === enLesson.slug);
+      if (enLesson.quiz && esLesson?.quiz) {
+        expect(esLesson.quiz.correctIndex).toBe(enLesson.quiz.correctIndex);
+      }
+    }
+  });
 });

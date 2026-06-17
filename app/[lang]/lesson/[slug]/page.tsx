@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { LessonProgressButton } from "@/components/lesson-progress-button";
+import { QuizCard } from "@/components/quiz-card";
+import { TranscriptDrawer } from "@/components/transcript-drawer";
 import { YouTubeEmbed } from "@/components/youtube-embed";
 import { getContent, getLesson, isLanguage } from "@/lib/content";
 import { SITE_URL } from "@/lib/site";
@@ -66,6 +68,10 @@ export default async function LessonPage({
 
   const nextLessonIndex = content.lessons.findIndex((entry) => entry.slug === lesson.slug) + 1;
   const nextLesson = content.lessons[nextLessonIndex];
+  const stage = content.pumaPath.stages.find((entry) => entry.key === lesson.stage);
+  const badge = lesson.badgeTrigger
+    ? content.badges.find((entry) => entry.key === lesson.badgeTrigger)
+    : undefined;
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-10 lg:px-10 lg:py-16">
@@ -78,6 +84,11 @@ export default async function LessonPage({
             <p className="mt-5 text-xs uppercase tracking-[0.3em] text-terracotta">
               {lesson.kicker} · {lesson.duration}
             </p>
+            {stage ? (
+              <p className="mt-3 inline-flex rounded-full border border-deepearth/10 bg-cloudwhite px-4 py-1.5 text-xs uppercase tracking-[0.24em] text-stonegray">
+                {content.lessonPage.stageLabel}: {stage.title}
+              </p>
+            ) : null}
             <h1 className="headline-font mt-4 text-5xl leading-tight text-deepearth">{lesson.title}</h1>
             <p className="mt-5 text-lg leading-8 text-stonegray">{lesson.description}</p>
             <p className="mt-5 text-base leading-7 text-stonegray">{lesson.extendedDescription}</p>
@@ -90,6 +101,13 @@ export default async function LessonPage({
             </div>
           </div>
 
+          <TranscriptDrawer
+            heading={content.lessonPage.transcriptHeading}
+            openLabel={content.lessonPage.transcriptToggleOpen}
+            closeLabel={content.lessonPage.transcriptToggleClose}
+            body={content.lessonPage.transcriptPlaceholder}
+          />
+
           <div className="documentary-card p-8">
             <h2 className="headline-font text-3xl text-deepearth">{content.lessonPage.notesHeading}</h2>
             <ul className="mt-5 space-y-4 text-base leading-7 text-deepearth">
@@ -100,6 +118,17 @@ export default async function LessonPage({
               ))}
             </ul>
           </div>
+
+          {lesson.quiz ? (
+            <QuizCard
+              quiz={lesson.quiz}
+              heading={content.lessonPage.quizHeading}
+              submitLabel={content.lessonPage.quizSubmitLabel}
+              correctLabel={content.lessonPage.quizCorrectLabel}
+              incorrectLabel={content.lessonPage.quizIncorrectLabel}
+              tryAgainLabel={content.lessonPage.quizTryAgainLabel}
+            />
+          ) : null}
         </section>
 
         <aside className="space-y-8">
@@ -110,6 +139,9 @@ export default async function LessonPage({
             markIncompleteLabel={content.lessonPage.markIncomplete}
             completedLabel={content.lessonPage.completedLabel}
             hint={content.lessonPage.progressHint}
+            badgeKey={badge?.key}
+            badgeTitle={badge?.title}
+            badgeEarnedLabel={content.lessonPage.badgeEarnedLabel}
           />
 
           <div className="documentary-card p-8">
