@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./tokens.css"; // additive token aliases; must load after globals.css
 import type { ReactNode } from "react";
 
 // The <html> and <body> tags are rendered by app/[lang]/layout.tsx so that
