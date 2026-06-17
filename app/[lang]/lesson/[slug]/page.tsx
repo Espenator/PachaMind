@@ -69,9 +69,9 @@ export default async function LessonPage({
             <div className="documentary-card grain p-7 sm:p-9">
               <div className="flex flex-wrap items-center gap-3">
                 <span
-                  className={`rounded-full px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] ${TOPIC_CHIP[lesson.topic] ?? "bg-sand text-stonegray"}`}
+                  className={`rounded-full px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] ${lesson.topic ? (TOPIC_CHIP[lesson.topic] ?? "bg-sand text-stonegray") : "bg-sand text-stonegray"}`}
                 >
-                  {content.library.topics[lesson.topic] ?? lesson.topic}
+                  {lesson.topic ? (content.library.topics[lesson.topic] ?? lesson.topic) : lesson.topic}
                 </span>
                 <p className="text-xs uppercase tracking-[0.28em] text-stonegray/70">
                   {lesson.kicker}&ensp;·&ensp;{lesson.duration}

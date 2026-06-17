@@ -46,7 +46,9 @@ export function LibrarySearch({ lessons, library, brand, lang }: LibrarySearchPr
   const inputValue = typingValue ?? urlQ;
 
   const debounceRef  = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const uniqueTopics = Array.from(new Set(lessons.map((l) => l.topic)));
+  const uniqueTopics = Array.from(
+    new Set(lessons.map((l) => l.topic).filter((topic): topic is string => Boolean(topic))),
+  );
 
   function updateUrl(q: string, topic: string) {
     const params = new URLSearchParams(searchParams.toString());
@@ -161,9 +163,9 @@ export function LibrarySearch({ lessons, library, brand, lang }: LibrarySearchPr
                   <VideoEmbed lesson={lesson} />
                   {/* Topic chip overlaid on card at mobile */}
                   <span
-                    className={`absolute top-3 left-3 z-10 rounded-full px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] lg:hidden ${TOPIC_CHIP[lesson.topic] ?? "bg-sand text-stonegray"}`}
+                    className={`absolute top-3 left-3 z-10 rounded-full px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] lg:hidden ${lesson.topic ? (TOPIC_CHIP[lesson.topic] ?? "bg-sand text-stonegray") : "bg-sand text-stonegray"}`}
                   >
-                    {library.topics[lesson.topic] ?? lesson.topic}
+                    {lesson.topic ? (library.topics[lesson.topic] ?? lesson.topic) : lesson.topic}
                   </span>
                 </div>
 
@@ -173,9 +175,9 @@ export function LibrarySearch({ lessons, library, brand, lang }: LibrarySearchPr
                     {/* Topic chip — desktop only */}
                     <div className="mb-3 hidden lg:block">
                       <span
-                        className={`rounded-full px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] ${TOPIC_CHIP[lesson.topic] ?? "bg-sand text-stonegray"}`}
+                        className={`rounded-full px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] ${lesson.topic ? (TOPIC_CHIP[lesson.topic] ?? "bg-sand text-stonegray") : "bg-sand text-stonegray"}`}
                       >
-                        {library.topics[lesson.topic] ?? lesson.topic}
+                        {lesson.topic ? (library.topics[lesson.topic] ?? lesson.topic) : lesson.topic}
                       </span>
                     </div>
 

@@ -86,9 +86,9 @@ export default async function HomePage({
               className="documentary-card group flex flex-col gap-3 p-6 transition-shadow hover:shadow-[0_24px_64px_rgba(43,27,18,0.16)] focus-gold"
             >
               <span
-                className={`w-fit rounded-full px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.2em] ${topicColors[lesson.topic] ?? "bg-sand text-stonegray"}`}
+                className={`w-fit rounded-full px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.2em] ${lesson.topic ? (topicColors[lesson.topic] ?? "bg-sand text-stonegray") : "bg-sand text-stonegray"}`}
               >
-                {content.library.topics[lesson.topic] ?? lesson.topic}
+                {lesson.topic ? (content.library.topics[lesson.topic] ?? lesson.topic) : lesson.topic}
               </span>
               <h3 className="headline-font text-fluid-xl text-deepearth leading-snug group-hover:text-terracotta transition-colors">
                 {lesson.title}
