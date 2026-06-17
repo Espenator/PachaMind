@@ -1,0 +1,70 @@
+/*
+ * PachaMind Design Tokens — Flow A (Free Learning Membership)
+ * Additive aliasing layer. Imported AFTER globals.css.
+ *
+ * IMPORTANT: globals.css is the canonical source of truth for the live system
+ * (Tailwind v4 @theme + :root). This file does NOT redefine colors or fonts.
+ * It only exposes friendly spacing/radius/shadow scales and semantic aliases
+ * that point at the existing canonical variables, so docs/components can use
+ * stable names without ever drifting from the live palette.
+ *
+ * Canonical (defined in globals.css — do not duplicate here):
+ *   Fonts:  --font-display (Playfair Display), --font-body (Inter)
+ *   Colors: --color-deepearth, --color-terracotta, --color-goldmoon,
+ *           --color-stonegray, --color-skyblue, --color-cloudwhite
+ *   Focus:  :focus-visible terracotta ring
+ */
+
+:root {
+  /* Semantic aliases -> canonical tokens (no new hex introduced) */
+  --surface-base: var(--color-cloudwhite);
+  --surface-card: var(--color-cloudwhite);
+  --text-primary: var(--color-deepearth);
+  --text-muted: var(--color-stonegray);
+  --accent-primary: var(--color-terracotta);
+  --accent-highlight: var(--color-goldmoon);
+  --accent-info: var(--color-skyblue);
+
+  /* Type family aliases -> canonical fonts (CONFIRMED: Playfair Display + Inter) */
+  --font-heading: var(--font-display);
+  --font-ui: var(--font-body);
+
+  /* Type scale (mobile-first; additive only) */
+  --fs-display: 32px;
+  --fs-h1: 28px;
+  --fs-h2: 22px;
+  --fs-h3: 18px;
+  --fs-body: 16px;
+  --fs-small: 14px;
+  --fs-label: 13px;
+
+  /* Spacing (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Shadow (tuned to deepearth) */
+  --shadow-sm: 0 1px 2px rgba(36, 25, 21, 0.08);
+  --shadow-md: 0 4px 12px rgba(36, 25, 21, 0.10);
+  --shadow-lg: 0 12px 32px rgba(36, 25, 21, 0.14);
+}
+
+/* Desktop scale (1440px and up) */
+@media (min-width: 1440px) {
+  :root {
+    --fs-display: 48px;
+    --fs-h1: 36px;
+    --fs-h2: 28px;
+  }
+}
