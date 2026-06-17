@@ -7,9 +7,8 @@ import { getContent, isLanguage } from "@/lib/content";
 import { SITE_URL } from "@/lib/site";
 import { languages } from "@/lib/types";
 
-/** Default OG image shared across all pages. */
-const DEFAULT_OG_IMAGE =
-  "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80";
+/** Default OG image shared across all pages. Absolute URL so crawlers resolve it. */
+const DEFAULT_OG_IMAGE = `${SITE_URL}/images/andes/andes-iss59-range.jpg`;
 
 interface LangLayoutProps {
   children: ReactNode;
@@ -48,8 +47,8 @@ export async function generateMetadata({
       images: [
         {
           url: DEFAULT_OG_IMAGE,
-          width: 1200,
-          height: 630,
+          width: 2400,
+          height: 1600,
           alt: content.meta.title,
         },
       ],

@@ -38,7 +38,7 @@ export default async function ContactPage({
           className="photo-overlay parallax-band rounded-[2rem]"
           style={{
             backgroundImage:
-              "url(https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80)",
+              "url(/images/andes/andes-iss59-range.jpg)",
           }}
         >
           <div className="relative z-10 p-8 sm:p-10 lg:p-14">

@@ -1,17 +1,28 @@
 # PachaMind Media Assets Manifest
 
-Verified license-clean Andean media for /public. Each entry was checked on its
-source page on 2026-06-16. Only Public Domain (PD) and CC0 assets are listed
-here; do NOT add CC-BY / CC-BY-SA assets to this manifest.
+Verified license-clean Andean media for /public. Only Public Domain (PD) and CC0
+assets are listed here; do NOT add CC-BY / CC-BY-SA assets to this manifest or to
+production paths.
 
-## How to use
+All stills in the table below are **committed to the repo** under
+`public/images/andes/` and wired into the site. Each license was re-verified
+against the Wikimedia Commons API (`prop=imageinfo`, field `LicenseShortName`) on
+2026-06-17. Historic Bingham photos are PD by age; NASA / ASTER images are PD as
+US-government works.
 
-These files are referenced by URL until the binaries are fetched into the repo.
-To materialize them locally, run a fetch step (e.g. a script that curls each
-`source_url` into the given `path`), then optimize to <=2400px / <500KB stills.
-Historic Bingham photos are PD by age; NASA images are PD as US-gov works.
+## How to re-fetch
 
-## Images
+To re-materialize the binaries (e.g. after a clean checkout), run:
+
+```bash
+python3 scripts/fetch-assets.py
+```
+
+The script re-verifies each source's license via the Commons API before download
+and refuses any source that is not CC0 / PD, then optimizes to <= 2400 px / < 500 KB
+JPEG stills (the one PNG is a grayscale historic archival scan).
+
+## Images (committed, verified CC0/PD)
 
 | path | subject | source_url | author | license |
 |------|---------|-----------|--------|---------|
@@ -26,24 +37,34 @@ Historic Bingham photos are PD by age; NASA images are PD as US-gov works.
 | public/images/andes/andes-iss64-range.jpg | Andes range, Lagunas Ajuachaya | https://upload.wikimedia.org/wikipedia/commons/9/95/ISS-64_Andes_Mountain_range%2C_Peru.jpg | NASA | Public domain |
 | public/images/andes/andes-western-slope-aster.jpg | Western slope of the Andes (ASTER) | https://upload.wikimedia.org/wikipedia/commons/1/16/Western_slope_of_Andes%2C_Peru_%28ASTER%29.jpg | NASA/METI/AIST/Japan ASTER | Public domain |
 
-## Video (to source from Pexels - free, no attribution, commercial OK)
+## License-needs-verification — DO NOT wire into production
 
-Pexels footage is License-free for commercial use without attribution. Pick
-clips on pexels.com/search/videos and record the chosen clip URL + id here
-before committing:
+Sources that appeared in an earlier draft asset registry with a "Public Domain"
+label that the Commons API contradicts. Recorded here only to prevent accidental
+reuse. Do not add to production paths without re-verifying and satisfying their
+attribution / share-alike terms:
 
-| path | subject | source | license |
-|------|---------|--------|---------|
-| public/video/andes-hero.mp4 | Andes mountains / clouds, looping hero | pexels.com (TBD clip id) | Pexels License (no attribution) |
-| public/video/machu-picchu.mp4 | Machu Picchu scenic clip | pexels.com (TBD clip id) | Pexels License (no attribution) |
-| public/video/andes-hero-poster.jpg | Poster still for andes-hero.mp4 | derived from hero frame | n/a |
+| Commons file | actual license (API, 2026-06-17) | note |
+|---|---|---|
+| File:Machu Picchu, Peru.jpg | CC BY-SA 2.0 | NOT public domain — attribution + share-alike |
+| File:Urubamba - Valle Sagrado 3.JPG | CC BY 3.0 | NOT public domain — attribution required |
+| File:Andes mountains - Peru (30534266461).jpg | title not found | provenance unverified |
+| File:2013 Peru - Sacred Valley (9561018788).jpg | title not found | provenance unverified |
+| File:Pisac Peru 0908.jpg | title not found | provenance unverified |
 
-## Notes / TODO
+## Video
+
+No video is committed. The site currently uses imagery, not a video file. If a
+clip is added later, source from Pexels (Pexels License — free for commercial use,
+no attribution) and record the chosen clip URL + id and license here before
+committing. Verify the clip page license at the time of download.
+
+## Notes
 
 - Historic Bingham (1911-1912) Machu Picchu photos are striking black-and-white;
-  good for documentary texture sections. Use a NASA/ISS color shot or a Pexels
-  clip for the full-color cinematic hero.
-- Still need a CC0/PD color Sacred Valley, Andean textiles, condor, and llama
-  still; add here only after verifying each on its Commons/Pexels page.
-- After binaries land, wire paths into lib/content/en.ts + es.ts (SiteContent)
-  and the VideoHero/VideoPlayer components, with next/image blur placeholders.
+  `machu-picchu-general.png` is kept as a grayscale archival scan for documentary
+  texture. NASA/ISS color shots provide full-color range and citadel views.
+- Although CC0 / PD do not legally require attribution, the author column above is
+  retained as good practice.
+- Re-verification command (per file):
+  `https://commons.wikimedia.org/w/api.php?action=query&format=json&titles=<File:...>&prop=imageinfo&iiprop=extmetadata&iiextmetadatafilter=LicenseShortName`

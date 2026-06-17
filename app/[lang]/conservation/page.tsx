@@ -71,7 +71,7 @@ export default async function ConservationPage({
           className="photo-overlay parallax-band rounded-[2rem]"
           style={{
             backgroundImage:
-              "url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80)",
+              "url(/images/andes/machu-picchu-urubamba-canyon.jpg)",
           }}
         >
           <div className="relative z-10 p-8 sm:p-10 lg:p-14">
