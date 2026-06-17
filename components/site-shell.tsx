@@ -13,13 +13,16 @@ interface SiteShellProps {
 export function SiteShell({ content, language, children }: SiteShellProps) {
   const navItems = [
     { href: `/${language}`, label: content.nav.home },
+    { href: `/${language}/learn`, label: content.nav.learn },
     { href: `/${language}/library`, label: content.nav.library },
     { href: `/${language}/puma-path`, label: content.nav.pumaPath },
     { href: `/${language}/conservation`, label: content.nav.conservation },
     { href: `/${language}/dashboard`, label: content.nav.dashboard },
     { href: `/${language}/reflections`, label: content.nav.reflections },
     { href: `/${language}/about`, label: content.nav.about },
+    { href: `/${language}/mallku`, label: content.nav.mallku },
     { href: `/${language}/contact`, label: content.nav.contact },
+    { href: `/${language}/signup`, label: content.nav.signup },
   ];
 
   const langLinks = [
@@ -138,6 +141,24 @@ export function SiteShell({ content, language, children }: SiteShellProps) {
               className="text-sm text-cloudwhite/70 transition hover:text-cloudwhite"
             >
               {content.nav.contact}
+            </Link>
+            <Link
+              href={`/${language}/privacy`}
+              className="text-sm text-cloudwhite/70 transition hover:text-cloudwhite"
+            >
+              {content.pages.privacy.title}
+            </Link>
+            <Link
+              href={`/${language}/terms`}
+              className="text-sm text-cloudwhite/70 transition hover:text-cloudwhite"
+            >
+              {content.pages.terms.title}
+            </Link>
+            <Link
+              href={`/${language}/accessibility`}
+              className="text-sm text-cloudwhite/70 transition hover:text-cloudwhite"
+            >
+              {content.pages.accessibility.title}
             </Link>
           </div>
         </div>

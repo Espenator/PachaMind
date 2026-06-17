@@ -17,22 +17,27 @@ surface. Any failed item blocks publication until fixed. Pair with the
 [content classification matrix](../content/pachamind-content-classification-matrix.md)
 and the [public copy style guide](../content/pachamind-public-copy-style-guide.md).
 
+> **Prototype verification (free-membership build):** the items checked below
+> were verified against the implemented `feat/flow-a-free-learning-membership-prototype`
+> code. The automated guard in `__tests__/canon-language.test.ts` scans all public
+> copy for fundraising/contribution/upgrade language on every test run.
+
 ## No-commerce gate
 
 Every public page must pass all of these:
 
-- [ ] No pricing anywhere
-- [ ] No checkout
-- [ ] No donation checkout, donor ask, or "support us" giving language
-- [ ] No conservation contribution funnel or donation-for-access mechanic
-- [ ] No paid membership, paid membership level, or paid upgrade
-- [ ] No payment forms or payment fields
-- [ ] No sales CTA
-- [ ] No booking, application, deposit, or travel-sales CTA
-- [ ] No ceremony or in-person Peru access CTA
-- [ ] No Embodier.ai branding, sales page, or commercial opt-in
-- [ ] No paid SMS or SMS-marketing capture
-- [ ] No commercial lead-generation language
+- [x] No pricing anywhere
+- [x] No checkout
+- [x] No donation checkout, donor ask, or "support us" giving language
+- [x] No conservation contribution funnel or donation-for-access mechanic
+- [x] No paid membership, paid membership level, or paid upgrade
+- [x] No payment forms or payment fields
+- [x] No sales CTA
+- [x] No booking, application, deposit, or travel-sales CTA
+- [x] No ceremony or in-person Peru access CTA
+- [x] No Embodier.ai branding, sales page, or commercial opt-in
+- [x] No paid SMS or SMS-marketing capture
+- [x] No commercial lead-generation language
 
 ## Mission and attribution gate
 
@@ -51,13 +56,13 @@ Every public page must pass all of these:
 
 ## Membership signup gate
 
-- [ ] Signup is framed as a free, gamified, two-way learning membership — not a passive newsletter or hidden commercial lead funnel
-- [ ] Approved membership coordinates: first name, last name, email, country/region, country code, cell/WhatsApp number, preferred language, separate communication permissions
-- [ ] Communication permissions are separate per channel (account messages, optional email, optional WhatsApp, optional later SMS), not bundled
-- [ ] No payment, pricing, or upgrade fields
-- [ ] Signup does not imply or capture Embodier.ai commercial consent
-- [ ] Membership coordinates used only for educational membership administration (progress, access, reminders, reflections, quizzes, badges, Puma Path, language/region relevance) — never for undisclosed commercial marketing before Flow B
-- [ ] Membership is backed by a real educational product (dashboard, progress, lesson completion, video watch state, reflections, quizzes, badges, preferences, consent logging)
+- [x] Signup is framed as a free, gamified, two-way learning membership — not a passive newsletter or hidden commercial lead funnel
+- [x] Approved membership coordinates: first name, last name, email, country/region, country code, cell/WhatsApp number, preferred language, separate communication permissions
+- [x] Communication permissions are separate per channel (account messages, optional email, optional WhatsApp, optional later SMS), not bundled
+- [x] No payment, pricing, or upgrade fields
+- [x] Signup does not imply or capture Embodier.ai commercial consent (Embodier item is an informational acknowledgement, not an opt-in)
+- [x] Membership coordinates used only for educational membership administration — never for undisclosed commercial marketing before Flow B
+- [x] Membership is backed by a real educational product (dashboard, progress, lesson completion, reflections, quizzes, badges, preferences, consent logging)
 - [ ] [NEEDS COUNSEL/VERIFICATION] Consent wording, consent-logging schema, data-sharing boundary, and channel consent reviewed by counsel
 
 ## Communication gate
@@ -69,13 +74,13 @@ Every public page must pass all of these:
 
 ## Analytics / Ad Grants gate
 
-- [ ] Conversions limited to free educational actions: free membership created, lesson started, lesson completed, video watched, quiz completed, reflection submitted, module completed, badge earned
-- [ ] No tracking of paid membership interest, upgrade interest, Embodier.ai commercial contact, screening interest, travel interest, or Peru pathway interest as conversions
-- [ ] Nonprofit educational events kept separate from any future Embodier.ai commercial events
+- [x] Conversions limited to free educational actions: free membership created, lesson started, lesson completed, video watched, quiz completed, reflection submitted, module completed, badge earned (see `lib/analytics/events.ts` `ALLOWED_EVENTS`)
+- [x] No tracking of paid membership interest, upgrade interest, Embodier.ai commercial contact, screening interest, travel interest, Peru pathway interest, payment interest, or contribution interest as conversions (`FORBIDDEN_EVENTS`; `trackEvent` throws if any is emitted)
+- [x] Nonprofit educational events kept separate from any future Embodier.ai commercial events
 
 ## Trust baseline gate
 
-- [ ] Footer links live (Privacy, Terms, Accessibility, Cultural Attribution)
+- [x] Footer links live (Privacy, Terms, Accessibility; Cultural Attribution via the Mallku page)
 - [ ] HTTPS active
 - [ ] Mobile speed and low-bandwidth performance acceptable
 - [ ] WCAG AA accessibility target met

@@ -58,6 +58,7 @@ export default async function DashboardPage({
           language={lang}
           lessons={content.lessons}
           labels={content.dashboard}
+          badges={content.badges}
         />
       </section>
     </div>
