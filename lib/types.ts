@@ -13,6 +13,8 @@ export interface Lesson {
   learningNotes: string[];
   reflectionPrompt: string;
   youtubeId: string;
+  mediaStatus?: "NEEDS_REAL_VIDEO";
+  mediaNote?: string;
 }
 
 export interface PumaPathStage {
@@ -88,6 +90,7 @@ export interface SiteContent {
     progressHint: string;
     nextLessonLabel: string;
     dashboardLabel: string;
+    videoComingSoonLabel: string;
   };
   dashboard: {
     title: string;

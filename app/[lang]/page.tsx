@@ -79,7 +79,7 @@ export default async function HomePage({
           <h2 className="headline-font mt-3 text-3xl text-deepearth">{featuredLesson.title}</h2>
           <p className="mt-3 text-base leading-7 text-stonegray">{featuredLesson.extendedDescription}</p>
           <div className="mt-6">
-            <YouTubeEmbed lesson={featuredLesson} />
+            <YouTubeEmbed lesson={featuredLesson} comingSoonLabel={content.lessonPage.videoComingSoonLabel} />
           </div>
         </div>
       </section>

@@ -27,20 +27,26 @@ describe("bilingual content integrity", () => {
     }
   });
 
-  it("every EN lesson has a non-empty youtubeId", () => {
+  it("every EN lesson has either a youtubeId or explicit missing-media metadata", () => {
     for (const lesson of en.lessons) {
       expect(
-        typeof lesson.youtubeId === "string" && lesson.youtubeId.length > 0,
-        `EN lesson "${lesson.slug}" missing youtubeId`,
+        (typeof lesson.youtubeId === "string" && lesson.youtubeId.length > 0) ||
+          (lesson.mediaStatus === "NEEDS_REAL_VIDEO" &&
+            typeof lesson.mediaNote === "string" &&
+            lesson.mediaNote.length > 0),
+        `EN lesson "${lesson.slug}" missing youtubeId or mediaStatus/mediaNote`,
       ).toBe(true);
     }
   });
 
-  it("every ES lesson has a non-empty youtubeId", () => {
+  it("every ES lesson has either a youtubeId or explicit missing-media metadata", () => {
     for (const lesson of es.lessons) {
       expect(
-        typeof lesson.youtubeId === "string" && lesson.youtubeId.length > 0,
-        `ES lesson "${lesson.slug}" missing youtubeId`,
+        (typeof lesson.youtubeId === "string" && lesson.youtubeId.length > 0) ||
+          (lesson.mediaStatus === "NEEDS_REAL_VIDEO" &&
+            typeof lesson.mediaNote === "string" &&
+            lesson.mediaNote.length > 0),
+        `ES lesson "${lesson.slug}" missing youtubeId or mediaStatus/mediaNote`,
       ).toBe(true);
     }
   });
