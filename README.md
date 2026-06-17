@@ -29,3 +29,5 @@ npm run build
 - English content: `/home/runner/work/PachaMind/PachaMind/lib/content/en.ts`
 - Spanish content: `/home/runner/work/PachaMind/PachaMind/lib/content/es.ts`
 - Browser progress storage: `/home/runner/work/PachaMind/PachaMind/lib/progress.ts`
+- Missing real media tracker: `/home/runner/work/PachaMind/PachaMind/docs/MEDIA_NEEDED.md`
+- Public asset reality check: `/home/runner/work/PachaMind/PachaMind/public/ASSETS.md`
