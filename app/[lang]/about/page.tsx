@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { ScenicBand } from "@/components/scenic-band";
 import { getContent, isLanguage } from "@/lib/content";
+import { sharedAssets } from "@/lib/media";
 import { SITE_URL } from "@/lib/site";
 
 export async function generateMetadata({
@@ -69,45 +71,28 @@ export default async function AboutPage({
 
       {/* Mallku Aribalo attribution */}
       <section className="mx-auto mt-6 max-w-7xl px-6 lg:px-10">
-        <article
-          className="photo-overlay parallax-band rounded-[2rem]"
-          style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80)",
-          }}
-        >
-          <div className="relative z-10 p-8 sm:p-10 lg:p-14">
-            <p className="text-xs uppercase tracking-[0.3em] text-goldmoun">
-              {content.brand.traditionHolderLabel}
-            </p>
-            <h2 className="headline-font mt-4 text-4xl text-cloudwhite sm:text-5xl">
-              {content.about.traditionHolderHeading}
-            </h2>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-cloudwhite/90">
-              {content.about.traditionHolderBody}
-            </p>
-          </div>
-        </article>
+        <ScenicBand
+          image={sharedAssets.aboutAttribution}
+          eyebrow={content.brand.traditionHolderLabel}
+          title={content.about.traditionHolderHeading}
+          body={content.about.traditionHolderBody}
+          alt={content.about.traditionHolderHeading}
+        />
       </section>
 
       {/* Values + Disclaimer */}
       <section className="mx-auto mt-6 grid max-w-7xl gap-6 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-10">
-        <article
-          className="photo-overlay parallax-band rounded-[2rem]"
-          style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=1600&q=80)",
-          }}
+        <ScenicBand
+          image={sharedAssets.aboutValues}
+          title={content.about.valuesHeading}
+          alt={content.about.valuesHeading}
         >
-          <div className="relative z-10 p-8 sm:p-10 lg:p-14">
-            <h2 className="headline-font text-4xl text-cloudwhite">{content.about.valuesHeading}</h2>
-            <ul className="mt-6 space-y-4 text-lg leading-8 text-cloudwhite/92">
-              {content.about.values.map((value) => (
-                <li key={value}>{value}</li>
-              ))}
-            </ul>
-          </div>
-        </article>
+          <ul className="mt-6 space-y-4 text-lg leading-8 text-cloudwhite/92">
+            {content.about.values.map((value) => (
+              <li key={value}>{value}</li>
+            ))}
+          </ul>
+        </ScenicBand>
 
         <div className="documentary-card flex flex-col justify-center gap-5 p-8">
           <p className="text-sm uppercase tracking-[0.24em] text-stonegray">{content.footer.credit}</p>

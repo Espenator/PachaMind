@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 
+import { ScenicBand } from "@/components/scenic-band";
 import { getContent, isLanguage } from "@/lib/content";
+import { sharedAssets } from "@/lib/media";
 
 export default async function ConservationPage({
   params,
@@ -30,16 +32,13 @@ export default async function ConservationPage({
       {/* Parallax thematic bands */}
       <section className="mx-auto grid max-w-7xl gap-6 px-6 lg:px-10">
         {c.bands.map((band) => (
-          <article
+          <ScenicBand
             key={band.title}
-            className="photo-overlay parallax-band rounded-[2rem]"
-            style={{ backgroundImage: `url(${band.image})` }}
-          >
-            <div className="relative z-10 max-w-3xl p-8 sm:p-10 lg:p-14">
-              <h2 className="headline-font text-3xl text-cloudwhite sm:text-4xl">{band.title}</h2>
-              <p className="mt-4 text-lg leading-8 text-cloudwhite/90">{band.body}</p>
-            </div>
-          </article>
+            image={band.image}
+            title={band.title}
+            body={band.body}
+            alt={band.title}
+          />
         ))}
       </section>
 
@@ -67,25 +66,13 @@ export default async function ConservationPage({
 
       {/* Mallku Aribalo attribution */}
       <section className="mx-auto mt-6 max-w-7xl px-6 lg:px-10">
-        <article
-          className="photo-overlay parallax-band rounded-[2rem]"
-          style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80)",
-          }}
-        >
-          <div className="relative z-10 p-8 sm:p-10 lg:p-14">
-            <p className="text-xs uppercase tracking-[0.3em] text-goldmoun">
-              {c.attributionLabel}
-            </p>
-            <h2 className="headline-font mt-4 text-4xl text-cloudwhite sm:text-5xl">
-              {content.about.traditionHolderHeading}
-            </h2>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-cloudwhite/90">
-              {content.about.traditionHolderBody}
-            </p>
-          </div>
-        </article>
+        <ScenicBand
+          image={sharedAssets.conservationAttribution}
+          eyebrow={c.attributionLabel}
+          title={content.about.traditionHolderHeading}
+          body={content.about.traditionHolderBody}
+          alt={content.about.traditionHolderHeading}
+        />
       </section>
 
       {/* Brand promise */}

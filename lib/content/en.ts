@@ -18,6 +18,7 @@ export const en: SiteContent = {
   },
   nav: {
     home: "Home",
+    curriculum: "Curriculum",
     library: "Library",
     pumaPath: "Puma Path",
     dashboard: "Dashboard",
@@ -44,20 +45,54 @@ export const en: SiteContent = {
       {
         title: "Documentary pacing",
         body: "Slow visuals, layered notes, and grounded prompts help each lesson feel like a field visit instead of a sales funnel.",
-        image:
-          "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/machu-picchu-inti-punku.jpg",
       },
       {
         title: "Bilingual access",
         body: "English and Spanish stay in sync so every reflection, lesson note, and next step carries the same meaning across both routes.",
-        image:
-          "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/machu-picchu-general.png",
       },
       {
         title: "Free and nonprofit",
         body: "Every page repeats the core promise clearly: no pricing, no checkout, no reservation pressure, and no donations asked here.",
-        image:
-          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/andes-western-slope-aster.jpg",
+      },
+    ],
+  },
+  curriculum: {
+    title: "A bilingual curriculum paced like a field notebook",
+    intro:
+      "Move from orientation and cosmovision into reciprocity, stewardship, and integration. The curriculum stays free, bilingual, and grounded in documentary pacing at every step.",
+    viewLessonLabel: "Begin the curriculum",
+    modules: [
+      {
+        title: "Foundation",
+        description:
+          "Enter through listening, tradition-holder context, and the living universe that frames the lessons.",
+        lessonSlugs: [
+          "what-pachamind-is",
+          "mallku-aribalo-tradition-holder",
+          "mountain-listening",
+          "kausay-pacha-living-universe",
+          "hanaq-pacha-sky-cycles",
+          "kay-pacha-reciprocity",
+          "uku-pacha-ancestry",
+        ],
+      },
+      {
+        title: "Practice",
+        description:
+          "Follow reciprocity, ritual, stewardship, and the Puma Path into lived reflection and cultural responsibility.",
+        lessonSlugs: [
+          "ayllu-reciprocity",
+          "ayni-sacred-reciprocity",
+          "ritual-attention",
+          "values-munay-yachay-llankay",
+          "carrying-the-teaching",
+          "huacas-sacred-sites",
+          "puma-path-orientation",
+          "path-of-integration",
+        ],
       },
     ],
   },
@@ -112,7 +147,7 @@ export const en: SiteContent = {
     resetConfirmLabel: "Yes, reset",
     resetCancelLabel: "Cancel",
     certificateTitle: "Certificate of Completion",
-    certificateIntro: "You have completed all four lessons in this browser.",
+    certificateIntro: "You have completed every lesson available in this browser.",
     certificateBody:
       "This is a free acknowledgment of your learning journey through PachaMind. Tradition-holder: Mallku Aribalo. No cost, no sales — only learning.",
     certificateNameLabel: "Your name (optional, stored only in this browser)",
@@ -182,36 +217,31 @@ export const en: SiteContent = {
         key: "listening",
         title: "Listening",
         body: "Arrive before you interpret. The first stage trains attention to receive before it reacts — learning to notice weather, rhythm, silence, and the space between words.",
-        image:
-          "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/machu-picchu-urubamba-canyon.jpg",
       },
       {
         key: "reciprocity",
         title: "Reciprocity",
         body: "Shift from receiving to responding. Reciprocity asks what you hold in relation — to community, to land, to teaching — and how steady care sustains belonging over time.",
-        image:
-          "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/andes-iss47-mountain-road.jpg",
       },
       {
         key: "ritual",
         title: "Ritual",
         body: "Anchor intention in repeated action. Ritual attention is the discipline of showing up consistently: small, focused gestures practiced with care accumulate into living memory.",
-        image:
-          "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/machu-picchu-partial-1911.jpg",
       },
       {
         key: "stewardship",
         title: "Stewardship",
         body: "Hold what you have learned lightly and faithfully. Stewardship asks how teachings travel without losing their roots — and how credit, context, and humility travel with them.",
-        image:
-          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/andes-iss59-range.jpg",
       },
       {
         key: "integration",
         title: "Integration",
         body: "Let the four stages move together. Integration is not a final destination but a continuing return: each practice renews the others when held as a whole rather than a sequence.",
-        image:
-          "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/andes-iss64-range.jpg",
       },
     ],
   },
@@ -526,26 +556,22 @@ export const en: SiteContent = {
       {
         title: "Reciprocity with the land (Ayni)",
         body: "In Andean cosmovision, the earth is not a resource to be managed but a living being to be in relationship with. The principle of ayni — reciprocity — shapes every interaction with land: what you take, you return; what you receive, you care for. Conservation becomes an act of ongoing gratitude.",
-        image:
-          "https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/andes-western-slope-aster.jpg",
       },
       {
         title: "Water as a living being",
         body: "Water is honoured in Andean tradition as a source of life that carries memory and intention. Conservation begins with listening: understanding where water comes from, how it moves, and what it needs to keep flowing across communities and generations. Protecting watersheds is an act of communal reciprocity.",
-        image:
-          "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/machu-picchu-aster-nasa.jpg",
       },
       {
         title: "Biodiversity and the web of life",
         body: "Andean cosmological thinking recognises that all living beings — plants, animals, fungi, soils — participate in a shared existence. Diversity is not ornamental; it is the structural integrity of the living world, and each loss diminishes the whole. Tending biodiversity is tending relationship itself.",
-        image:
-          "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/andes-iss59-range.jpg",
       },
       {
         title: "Sustainable practices rooted in ancestral knowledge",
         body: "Andean farming and land management traditions — terracing, crop rotation, water channelling, polyculture — evolved through centuries of careful observation and communal stewardship. These practices are not folklore; they are sophisticated responses to complex ecosystems, refined over generations of attentive care.",
-        image:
-          "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/andes-iss47-mountain-road.jpg",
       },
     ],
     principles: [
@@ -574,14 +600,12 @@ export const en: SiteContent = {
       {
         title: "Writing as listening",
         body: "Journaling within a cosmovision framework is not analysis — it is a way of attending to what is already present. Write toward noticing, not toward conclusions.",
-        image:
-          "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/machu-picchu-hb10.jpg",
       },
       {
         title: "Private and unhurried",
         body: "These notes belong only to you. There are no accounts, no submissions, and no right answers — only the quiet space between a question and your response.",
-        image:
-          "https://images.unsplash.com/photo-1457269449834-928af64c684d?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/machu-picchu-general.png",
       },
     ],
   },

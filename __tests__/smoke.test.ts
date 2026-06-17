@@ -21,6 +21,15 @@ describe("page smoke tests — content shapes present in both locales", () => {
     expect(es.library.title).toBeTruthy();
   });
 
+  it("curriculum content exists in EN and ES", () => {
+    expect(en.curriculum).toBeDefined();
+    expect(en.curriculum.title).toBeTruthy();
+    expect(en.curriculum.modules.length).toBeGreaterThan(0);
+    expect(es.curriculum).toBeDefined();
+    expect(es.curriculum.title).toBeTruthy();
+    expect(es.curriculum.modules.length).toBeGreaterThan(0);
+  });
+
   it("library topics map is present in both locales", () => {
     expect(typeof en.library.topics).toBe("object");
     expect(typeof es.library.topics).toBe("object");
@@ -104,6 +113,7 @@ describe("page smoke tests — content shapes present in both locales", () => {
   it("nav includes all page links in both locales", () => {
     const requiredNavKeys = [
       "home",
+      "curriculum",
       "library",
       "pumaPath",
       "conservation",

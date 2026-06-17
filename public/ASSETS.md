@@ -34,8 +34,9 @@ before committing:
 
 | path | subject | source | license |
 |------|---------|--------|---------|
-| public/video/andes-hero.mp4 | Andes mountains / clouds, looping hero | pexels.com (TBD clip id) | Pexels License (no attribution) |
-| public/video/machu-picchu.mp4 | Machu Picchu scenic clip | pexels.com (TBD clip id) | Pexels License (no attribution) |
+| public/video/andes-hero.mp4 | Andes sunrise cinematic hero | https://www.pexels.com/video/scenic-sunrise-at-the-andes-mountains-2775516/ | Pexels License (no attribution) |
+| public/video/andes-hero.webm | WebM transcode of the chosen hero clip | https://www.pexels.com/video/scenic-sunrise-at-the-andes-mountains-2775516/ | Pexels License (derived transcode) |
+| public/video/machu-picchu.mp4 | Machu Picchu aerial scenic cutaway | https://www.pexels.com/video/aerial-view-of-mountainous-landscape-in-machu-picchu-peru-1759824/ | Pexels License (no attribution) |
 | public/video/andes-hero-poster.jpg | Poster still for andes-hero.mp4 | derived from hero frame | n/a |
 
 ## Notes / TODO
@@ -45,5 +46,10 @@ before committing:
   clip for the full-color cinematic hero.
 - Still need a CC0/PD color Sacred Valley, Andean textiles, condor, and llama
   still; add here only after verifying each on its Commons/Pexels page.
-- After binaries land, wire paths into lib/content/en.ts + es.ts (SiteContent)
-  and the VideoHero/VideoPlayer components, with next/image blur placeholders.
+- `npm run assets:download` reads this manifest, fetches every image row when
+  outbound network is available, optimizes to <=2400px / <500KB, and writes blur
+  placeholders to `lib/generated/asset-blurs.ts`.
+- When outbound access is blocked, the script keeps deterministic documentary
+  gradient placeholders in place so image paths stay valid and the site remains
+  buildable. Pexels MP4/WebM downloads remain manual until network access is
+  available in the environment.

@@ -18,6 +18,7 @@ export const es: SiteContent = {
   },
   nav: {
     home: "Inicio",
+    curriculum: "Currículo",
     library: "Biblioteca",
     pumaPath: "Camino del Puma",
     dashboard: "Panel",
@@ -45,20 +46,54 @@ export const es: SiteContent = {
       {
         title: "Ritmo documental",
         body: "Visuales lentos, notas en capas y preguntas serenas hacen que cada lección se sienta como una visita de campo y no como un embudo de ventas.",
-        image:
-          "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/machu-picchu-inti-punku.jpg",
       },
       {
         title: "Acceso bilingüe",
         body: "El inglés y el español se mantienen sincronizados para que cada reflexión, nota y siguiente paso conserve el mismo sentido en ambas rutas.",
-        image:
-          "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/machu-picchu-general.png",
       },
       {
         title: "Gratuito y sin fines de lucro",
         body: "Cada página repite la promesa central con claridad: sin precios, sin checkout, sin presión para reservar y sin solicitudes de donación.",
-        image:
-          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/andes-western-slope-aster.jpg",
+      },
+    ],
+  },
+  curriculum: {
+    title: "Un currículo bilingüe con el ritmo de un cuaderno de campo",
+    intro:
+      "Avanza desde la orientación y la cosmovisión hacia la reciprocidad, la custodia y la integración. El currículo se mantiene gratuito, bilingüe y documental en cada etapa.",
+    viewLessonLabel: "Comenzar el currículo",
+    modules: [
+      {
+        title: "Fundamentos",
+        description:
+          "Entra por la escucha, el contexto del guardián de la tradición y el universo viviente que enmarca todas las lecciones.",
+        lessonSlugs: [
+          "what-pachamind-is",
+          "mallku-aribalo-tradition-holder",
+          "mountain-listening",
+          "kausay-pacha-living-universe",
+          "hanaq-pacha-sky-cycles",
+          "kay-pacha-reciprocity",
+          "uku-pacha-ancestry",
+        ],
+      },
+      {
+        title: "Práctica",
+        description:
+          "Sigue la reciprocidad, el ritual, la custodia y el Camino del Puma hacia una reflexión vivida y una responsabilidad cultural sostenida.",
+        lessonSlugs: [
+          "ayllu-reciprocity",
+          "ayni-sacred-reciprocity",
+          "ritual-attention",
+          "values-munay-yachay-llankay",
+          "carrying-the-teaching",
+          "huacas-sacred-sites",
+          "puma-path-orientation",
+          "path-of-integration",
+        ],
       },
     ],
   },
@@ -114,7 +149,7 @@ export const es: SiteContent = {
     resetConfirmLabel: "Sí, restablecer",
     resetCancelLabel: "Cancelar",
     certificateTitle: "Certificado de finalización",
-    certificateIntro: "Has completado las cuatro lecciones en este navegador.",
+    certificateIntro: "Has completado todas las lecciones disponibles en este navegador.",
     certificateBody:
       "Este es un reconocimiento gratuito de tu recorrido de aprendizaje en PachaMind. Guardián de la tradición: Mallku Aribalo. Sin costo, sin ventas — solo aprendizaje.",
     certificateNameLabel: "Tu nombre (opcional, guardado solo en este navegador)",
@@ -184,36 +219,31 @@ export const es: SiteContent = {
         key: "listening",
         title: "Escucha",
         body: "Llega antes de interpretar. La primera etapa entrena la atención para recibir antes de reaccionar: aprender a notar el clima, el ritmo, el silencio y el espacio entre las palabras.",
-        image:
-          "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/machu-picchu-urubamba-canyon.jpg",
       },
       {
         key: "reciprocity",
         title: "Reciprocidad",
         body: "Pasa de recibir a responder. La reciprocidad pregunta qué sostienes en relación —con la comunidad, con la tierra, con la enseñanza— y cómo el cuidado constante sostiene el sentido de pertenencia.",
-        image:
-          "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/andes-iss47-mountain-road.jpg",
       },
       {
         key: "ritual",
         title: "Ritual",
         body: "Ancla la intención en la acción repetida. La atención ritual es la disciplina de aparecer con constancia: gestos pequeños y enfocados practicados con cuidado se acumulan en memoria viva.",
-        image:
-          "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/machu-picchu-partial-1911.jpg",
       },
       {
         key: "stewardship",
         title: "Custodia",
         body: "Sostén lo que aprendiste con ligereza y fidelidad. La custodia pregunta cómo viajan las enseñanzas sin perder sus raíces, y cómo el crédito, el contexto y la humildad viajan con ellas.",
-        image:
-          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/andes-iss59-range.jpg",
       },
       {
         key: "integration",
         title: "Integración",
         body: "Deja que las cuatro etapas se muevan juntas. La integración no es un destino final sino un retorno continuo: cada práctica renueva las otras cuando se sostienen como un todo y no como una secuencia.",
-        image:
-          "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/andes-iss64-range.jpg",
       },
     ],
   },
@@ -528,26 +558,22 @@ export const es: SiteContent = {
       {
         title: "Reciprocidad con la tierra (Ayni)",
         body: "En la cosmovisión andina, la tierra no es un recurso que gestionar sino un ser vivo con quien relacionarse. El principio del ayni — reciprocidad — moldea cada interacción con la tierra: lo que tomas, lo devuelves; lo que recibes, lo cuidas. La conservación se convierte en un acto de gratitud continua.",
-        image:
-          "https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/andes-western-slope-aster.jpg",
       },
       {
         title: "El agua como ser vivo",
         body: "En la tradición andina, el agua se honra como fuente de vida que porta memoria e intención. La conservación comienza con la escucha: comprender de dónde viene el agua, cómo se mueve y qué necesita para seguir fluyendo a través de comunidades y generaciones. Proteger las cuencas es un acto de reciprocidad comunitaria.",
-        image:
-          "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/machu-picchu-aster-nasa.jpg",
       },
       {
         title: "Biodiversidad y la trama de la vida",
         body: "El pensamiento cosmológico andino reconoce que todos los seres vivos — plantas, animales, hongos, suelos — participan en una existencia compartida. La diversidad no es ornamental; es la integridad estructural del mundo vivo, y cada pérdida lo empobrece todo. Cuidar la biodiversidad es cuidar la relación misma.",
-        image:
-          "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/andes-iss59-range.jpg",
       },
       {
         title: "Prácticas sostenibles arraigadas en el saber ancestral",
         body: "Las tradiciones andinas de cultivo y gestión del territorio — terrazas, rotación de cultivos, canales de agua, policultivos — se desarrollaron durante siglos de observación cuidadosa y custodia comunitaria. Estas prácticas no son folclore; son respuestas sofisticadas a ecosistemas complejos, refinadas a lo largo de generaciones de cuidado atento.",
-        image:
-          "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/andes-iss47-mountain-road.jpg",
       },
     ],
     principles: [
@@ -576,14 +602,12 @@ export const es: SiteContent = {
       {
         title: "Escribir como escucha",
         body: "Llevar un diario dentro de un marco de cosmovisión no es análisis — es una manera de atender a lo que ya está presente. Escribe hacia la observación, no hacia conclusiones.",
-        image:
-          "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/machu-picchu-hb10.jpg",
       },
       {
         title: "Privado y sin prisa",
         body: "Estas notas te pertenecen solo a ti. No hay cuentas, ni envíos, ni respuestas correctas — solo el espacio tranquilo entre una pregunta y tu respuesta.",
-        image:
-          "https://images.unsplash.com/photo-1457269449834-928af64c684d?auto=format&fit=crop&w=1600&q=80",
+        image: "/images/andes/machu-picchu-general.png",
       },
     ],
   },

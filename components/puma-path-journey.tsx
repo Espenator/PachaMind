@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
+import { FillImage } from "@/components/fill-image";
 import { readProgressState } from "@/lib/progress";
 import type { Language, Lesson, SiteContent } from "@/lib/types";
 
@@ -80,10 +81,18 @@ export function PumaPathJourney({
             return (
               <article
                 key={stage.key}
-                className="photo-overlay parallax-band rounded-[2rem]"
-                style={{ backgroundImage: `url(${stage.image})` }}
+                className="photo-overlay relative overflow-hidden rounded-[2rem]"
                 aria-label={`${pumaPath.stageLabel} ${stageNumber}: ${stage.title}`}
               >
+                <FillImage
+                  src={stage.image}
+                  alt={stage.title}
+                  sizes="(min-width: 1024px) 80rem, 100vw"
+                />
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-deepearth/80 via-deepearth/35 to-deepearth/10"
+                  aria-hidden="true"
+                />
                 <div className="relative z-10 flex flex-col gap-6 p-8 sm:p-10 lg:p-14">
                   <div className="flex flex-wrap items-start justify-between gap-4">
                     <div className="max-w-2xl">

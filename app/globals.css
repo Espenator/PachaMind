@@ -55,6 +55,14 @@ a {
   font-family: var(--font-display);
 }
 
+.text-fluid-xl {
+  font-size: clamp(1.35rem, 1.1rem + 1vw, 2rem);
+}
+
+.text-fluid-5xl {
+  font-size: clamp(2.8rem, 2.1rem + 3vw, 5.6rem);
+}
+
 .documentary-card {
   @apply rounded-[2rem] border border-white/20 bg-white/70 shadow-[0_25px_80px_rgba(36,25,21,0.12)] backdrop-blur-sm;
 }
@@ -80,8 +88,47 @@ a {
   background-size: cover;
 }
 
+.scroll-cue {
+  height: 2.8rem;
+  width: 1.35rem;
+  border-radius: 999px;
+  border: 1px solid rgba(251, 248, 243, 0.65);
+  position: relative;
+}
+
+.scroll-cue::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0.45rem;
+  height: 0.65rem;
+  width: 0.28rem;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: rgba(251, 248, 243, 0.85);
+  animation: scrollCue 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollCue {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate(-50%, 0.75rem);
+    opacity: 1;
+  }
+}
+
 @media (max-width: 768px) {
   .parallax-band {
     background-attachment: scroll;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue::after {
+    animation: none;
   }
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
+import { ContinueWatchingBar } from "@/components/continue-watching-bar";
 import { MobileNav } from "@/components/mobile-nav";
 import type { Language, SiteContent } from "@/lib/types";
 
@@ -13,6 +14,7 @@ interface SiteShellProps {
 export function SiteShell({ content, language, children }: SiteShellProps) {
   const navItems = [
     { href: `/${language}`, label: content.nav.home },
+    { href: `/${language}/curriculum`, label: content.nav.curriculum },
     { href: `/${language}/library`, label: content.nav.library },
     { href: `/${language}/puma-path`, label: content.nav.pumaPath },
     { href: `/${language}/conservation`, label: content.nav.conservation },
@@ -113,33 +115,32 @@ export function SiteShell({ content, language, children }: SiteShellProps) {
         {children}
       </main>
 
+      <ContinueWatchingBar
+        language={language}
+        lessons={content.lessons}
+        label={content.dashboard.continueLearning}
+      />
+
       <footer className="border-t border-deepearth/10 bg-deepearth text-cloudwhite">
-        <div className="mx-auto grid max-w-7xl gap-4 px-6 py-8 lg:px-10">
-          <p className="headline-font text-2xl">{content.footer.credit}</p>
-          <p className="text-sm text-cloudwhite/85">{content.brand.disclaimer}</p>
-          <div className="flex flex-wrap items-center gap-4">
+        <div className="mx-auto grid max-w-7xl gap-6 px-6 py-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-10">
+          <div className="space-y-4">
+            <p className="headline-font text-2xl">{content.footer.credit}</p>
+            <p className="text-sm text-cloudwhite/85">{content.brand.disclaimer}</p>
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-goldmoun">
               {content.footer.mission}
             </p>
-            <Link
-              href={`/${language}/conservation`}
-              className="text-sm text-cloudwhite/70 transition hover:text-cloudwhite"
-            >
-              {content.nav.conservation}
-            </Link>
-            <Link
-              href={`/${language}/about`}
-              className="text-sm text-cloudwhite/70 transition hover:text-cloudwhite"
-            >
-              {content.nav.about}
-            </Link>
-            <Link
-              href={`/${language}/contact`}
-              className="text-sm text-cloudwhite/70 transition hover:text-cloudwhite"
-            >
-              {content.nav.contact}
-            </Link>
           </div>
+          <nav aria-label={content.nav.mainNavLabel} className="grid gap-3 sm:grid-cols-2">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-sm text-cloudwhite/75 transition hover:text-cloudwhite"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
         </div>
       </footer>
     </div>

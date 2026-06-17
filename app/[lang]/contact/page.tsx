@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 
 import { ContactForm } from "@/components/contact-form";
+import { ScenicBand } from "@/components/scenic-band";
 import { getContent, isLanguage } from "@/lib/content";
+import { sharedAssets } from "@/lib/media";
 
 export default async function ContactPage({
   params,
@@ -34,18 +36,12 @@ export default async function ContactPage({
 
       {/* Attribution band */}
       <section className="mx-auto mt-6 max-w-7xl px-6 lg:px-10">
-        <article
-          className="photo-overlay parallax-band rounded-[2rem]"
-          style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80)",
-          }}
-        >
-          <div className="relative z-10 p-8 sm:p-10 lg:p-14">
-            <p className="text-xs uppercase tracking-[0.3em] text-goldmoun">{content.footer.credit}</p>
-            <p className="headline-font mt-4 text-3xl text-cloudwhite sm:text-4xl">{content.footer.mission}</p>
-          </div>
-        </article>
+        <ScenicBand
+          image={sharedAssets.contactBand}
+          eyebrow={content.footer.credit}
+          title={content.footer.mission}
+          alt={content.footer.mission}
+        />
       </section>
     </div>
   );

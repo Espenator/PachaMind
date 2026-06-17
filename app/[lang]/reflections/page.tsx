@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 
 import { ReflectionsNotes } from "@/components/reflections-notes";
+import { ScenicBand } from "@/components/scenic-band";
 import { getContent, isLanguage } from "@/lib/content";
 
 export default async function ReflectionsPage({
@@ -33,20 +34,14 @@ export default async function ReflectionsPage({
       </section>
 
       {r.parallaxSections[0] && (
-        <section
-          className="photo-overlay parallax-band mx-6 rounded-[2rem] lg:mx-10"
-          style={{ backgroundImage: `url(${r.parallaxSections[0].image})` }}
-          aria-hidden="true"
-        >
-          <div className="relative z-10 max-w-3xl p-8 sm:p-10 lg:p-14">
-            <h2 className="headline-font text-3xl text-cloudwhite sm:text-4xl">
-              {r.parallaxSections[0].title}
-            </h2>
-            <p className="mt-4 text-lg leading-8 text-cloudwhite/90">
-              {r.parallaxSections[0].body}
-            </p>
-          </div>
-        </section>
+        <div className="mx-6 lg:mx-10">
+          <ScenicBand
+            image={r.parallaxSections[0].image}
+            title={r.parallaxSections[0].title}
+            body={r.parallaxSections[0].body}
+            alt={r.parallaxSections[0].title}
+          />
+        </div>
       )}
 
       <section className="mx-auto max-w-7xl px-6 py-10 lg:px-10 lg:py-16">
@@ -65,20 +60,14 @@ export default async function ReflectionsPage({
       </section>
 
       {r.parallaxSections[1] && (
-        <section
-          className="photo-overlay parallax-band mx-6 rounded-[2rem] lg:mx-10"
-          style={{ backgroundImage: `url(${r.parallaxSections[1].image})` }}
-          aria-hidden="true"
-        >
-          <div className="relative z-10 max-w-3xl p-8 sm:p-10 lg:p-14">
-            <h2 className="headline-font text-3xl text-cloudwhite sm:text-4xl">
-              {r.parallaxSections[1].title}
-            </h2>
-            <p className="mt-4 text-lg leading-8 text-cloudwhite/90">
-              {r.parallaxSections[1].body}
-            </p>
-          </div>
-        </section>
+        <div className="mx-6 lg:mx-10">
+          <ScenicBand
+            image={r.parallaxSections[1].image}
+            title={r.parallaxSections[1].title}
+            body={r.parallaxSections[1].body}
+            alt={r.parallaxSections[1].title}
+          />
+        </div>
       )}
 
       <section className="mx-auto max-w-7xl px-6 py-10 lg:px-10">

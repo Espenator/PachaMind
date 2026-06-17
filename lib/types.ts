@@ -38,6 +38,7 @@ export interface SiteContent {
   };
   nav: {
     home: string;
+    curriculum: string;
     library: string;
     pumaPath: string;
     dashboard: string;
@@ -63,6 +64,16 @@ export interface SiteContent {
       title: string;
       body: string;
       image: string;
+    }>;
+  };
+  curriculum: {
+    title: string;
+    intro: string;
+    viewLessonLabel: string;
+    modules: Array<{
+      title: string;
+      description: string;
+      lessonSlugs: string[];
     }>;
   };
   library: {

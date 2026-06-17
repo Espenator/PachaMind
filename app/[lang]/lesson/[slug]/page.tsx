@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { LessonProgressButton } from "@/components/lesson-progress-button";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { YouTubeEmbed } from "@/components/youtube-embed";
 import { getContent, getLesson, isLanguage } from "@/lib/content";
 import { SITE_URL } from "@/lib/site";
@@ -71,7 +72,7 @@ export default async function LessonPage({
     <div className="mx-auto max-w-7xl px-6 py-10 lg:px-10 lg:py-16">
       <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
         <section className="space-y-8">
-          <div className="documentary-card p-8 lg:p-10">
+          <ScrollReveal className="documentary-card p-8 lg:p-10">
             <Link href={`/${lang}/library`} className="text-sm font-medium text-terracotta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta rounded">
               {content.lessonPage.backToLibrary}
             </Link>
@@ -81,16 +82,16 @@ export default async function LessonPage({
             <h1 className="headline-font mt-4 text-5xl leading-tight text-deepearth">{lesson.title}</h1>
             <p className="mt-5 text-lg leading-8 text-stonegray">{lesson.description}</p>
             <p className="mt-5 text-base leading-7 text-stonegray">{lesson.extendedDescription}</p>
-          </div>
+          </ScrollReveal>
 
-          <div className="documentary-card p-6 lg:p-8">
+          <ScrollReveal className="documentary-card p-6 lg:p-8" delay={60}>
             <p className="text-xs uppercase tracking-[0.3em] text-stonegray">{content.lessonPage.watchHeading}</p>
             <div className="mt-4">
-              <YouTubeEmbed lesson={lesson} />
+              <YouTubeEmbed lesson={lesson} priority />
             </div>
-          </div>
+          </ScrollReveal>
 
-          <div className="documentary-card p-8">
+          <ScrollReveal className="documentary-card p-8" delay={120}>
             <h2 className="headline-font text-3xl text-deepearth">{content.lessonPage.notesHeading}</h2>
             <ul className="mt-5 space-y-4 text-base leading-7 text-deepearth">
               {lesson.learningNotes.map((note) => (
@@ -99,7 +100,7 @@ export default async function LessonPage({
                 </li>
               ))}
             </ul>
-          </div>
+          </ScrollReveal>
         </section>
 
         <aside className="space-y-8">
@@ -115,6 +116,12 @@ export default async function LessonPage({
           <div className="documentary-card p-8">
             <h2 className="headline-font text-3xl text-deepearth">{content.lessonPage.reflectionHeading}</h2>
             <p className="mt-4 text-base leading-8 text-stonegray">{lesson.reflectionPrompt}</p>
+            <Link
+              href={`/${lang}/reflections`}
+              className="mt-5 inline-flex rounded-full border border-deepearth/10 px-4 py-2 text-sm font-medium text-deepearth transition hover:bg-deepearth hover:text-cloudwhite"
+            >
+              {content.nav.reflections}
+            </Link>
           </div>
 
           <div className="documentary-card flex flex-col gap-4 p-8">

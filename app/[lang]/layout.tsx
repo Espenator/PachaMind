@@ -4,12 +4,12 @@ import type { ReactNode } from "react";
 
 import { SiteShell } from "@/components/site-shell";
 import { getContent, isLanguage } from "@/lib/content";
+import { sharedAssets } from "@/lib/media";
 import { SITE_URL } from "@/lib/site";
 import { languages } from "@/lib/types";
 
 /** Default OG image shared across all pages. */
-const DEFAULT_OG_IMAGE =
-  "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80";
+const DEFAULT_OG_IMAGE = `${SITE_URL}${sharedAssets.defaultOgImage}`;
 
 interface LangLayoutProps {
   children: ReactNode;

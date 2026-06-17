@@ -1,27 +1,22 @@
+import { getLessonPoster } from "@/lib/media";
 import type { Lesson } from "@/lib/types";
+
+import { VideoPlayer } from "@/components/video-player";
 
 interface YouTubeEmbedProps {
   lesson: Lesson;
+  priority?: boolean;
 }
 
-export function YouTubeEmbed({ lesson }: YouTubeEmbedProps) {
+export function YouTubeEmbed({ lesson, priority = false }: YouTubeEmbedProps) {
   return (
-    <div
-      className="overflow-hidden rounded-[1.75rem] border border-white/20 bg-deepearth/90 shadow-[0_24px_60px_rgba(36,25,21,0.24)]"
-      aria-label={lesson.title}
-      role="region"
-    >
-      <div className="relative aspect-video w-full">
-        <iframe
-          className="h-full w-full"
-          src={`https://www.youtube-nocookie.com/embed/${lesson.youtubeId}?rel=0`}
-          title={lesson.title}
-          loading="lazy"
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        />
-      </div>
-    </div>
+    <VideoPlayer
+      youtubeId={lesson.youtubeId}
+      title={lesson.title}
+      posterSrc={getLessonPoster(lesson.topic)}
+      kicker={lesson.kicker}
+      duration={lesson.duration}
+      priority={priority}
+    />
   );
 }

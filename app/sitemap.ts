@@ -6,6 +6,7 @@ import { languages } from "@/lib/types";
 
 const STATIC_PATHS = [
   "",
+  "/curriculum",
   "/library",
   "/about",
   "/dashboard",
