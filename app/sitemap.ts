@@ -6,13 +6,19 @@ import { languages } from "@/lib/types";
 
 const STATIC_PATHS = [
   "",
+  "/learn",
   "/library",
   "/about",
+  "/mallku",
   "/dashboard",
   "/conservation",
   "/puma-path",
   "/reflections",
   "/contact",
+  "/signup",
+  "/privacy",
+  "/terms",
+  "/accessibility",
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {

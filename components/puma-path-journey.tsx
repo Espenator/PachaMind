@@ -34,11 +34,12 @@ export function PumaPathJourney({
 
   const stagesWithLessons = pumaPath.stages.map((stage) => ({
     stage,
-    lesson: lessons.find((l) => l.topic === stage.key),
+    lesson: lessons.find((l) => l.stage === stage.key),
   }));
 
-  const completedStageCount = stagesWithLessons.filter(({ lesson }) =>
-    lesson ? completedSet.has(lesson.slug) : false,
+  // A stage is "reached" once any of its lessons is completed.
+  const completedStageCount = pumaPath.stages.filter((stage) =>
+    lessons.some((l) => l.stage === stage.key && completedSet.has(l.slug)),
   ).length;
 
   const totalStages = pumaPath.stages.length;
@@ -74,7 +75,9 @@ export function PumaPathJourney({
         <h2 className="sr-only">{pumaPath.stagesHeading}</h2>
         <div className="grid gap-6">
           {stagesWithLessons.map(({ stage, lesson }, index) => {
-            const isCompleted = lesson ? completedSet.has(lesson.slug) : false;
+            const isCompleted = lessons.some(
+              (l) => l.stage === stage.key && completedSet.has(l.slug),
+            );
             const stageNumber = index + 1;
 
             return (

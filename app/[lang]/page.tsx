@@ -58,19 +58,27 @@ export default async function HomePage({
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-stonegray">{content.home.intro}</p>
           </div>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col gap-4">
             <Link
-              href={`/${lang}/library`}
-              className="rounded-full bg-deepearth px-6 py-3 text-sm font-semibold text-cloudwhite transition hover:bg-terracotta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+              href={`/${lang}/signup`}
+              className="rounded-full bg-terracotta px-6 py-3 text-center text-sm font-semibold text-cloudwhite transition hover:bg-deepearth focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-deepearth"
             >
-              {content.home.primaryCta}
+              {content.home.membershipCta}
             </Link>
-            <Link
-              href={`/${lang}/dashboard`}
-              className="rounded-full border border-deepearth/10 px-6 py-3 text-sm font-semibold transition hover:bg-skyblue hover:text-cloudwhite focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
-            >
-              {content.home.secondaryCta}
-            </Link>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href={`/${lang}/library`}
+                className="rounded-full bg-deepearth px-6 py-3 text-sm font-semibold text-cloudwhite transition hover:bg-terracotta focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+              >
+                {content.home.primaryCta}
+              </Link>
+              <Link
+                href={`/${lang}/dashboard`}
+                className="rounded-full border border-deepearth/10 px-6 py-3 text-sm font-semibold transition hover:bg-skyblue hover:text-cloudwhite focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+              >
+                {content.home.secondaryCta}
+              </Link>
+            </div>
           </div>
         </div>
 
