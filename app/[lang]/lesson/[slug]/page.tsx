@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { BadgeCard } from "@/components/badge-card";
 import { LessonProgressButton } from "@/components/lesson-progress-button";
+import { QuizCard } from "@/components/quiz-card";
 import { YouTubeEmbed } from "@/components/youtube-embed";
 import { getContent, getLesson, isLanguage } from "@/lib/content";
 import { SITE_URL } from "@/lib/site";
@@ -67,6 +69,10 @@ export default async function LessonPage({
   const nextLessonIndex = content.lessons.findIndex((entry) => entry.slug === lesson.slug) + 1;
   const nextLesson = content.lessons[nextLessonIndex];
 
+  const lessonBadge = lesson.badge
+    ? content.badges.items.find((item) => item.key === lesson.badge)
+    : undefined;
+
   return (
     <div className="mx-auto max-w-7xl px-6 py-10 lg:px-10 lg:py-16">
       <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
@@ -100,6 +106,21 @@ export default async function LessonPage({
               ))}
             </ul>
           </div>
+
+          {lesson.transcript ? (
+            <details className="documentary-card p-8">
+              <summary className="headline-font cursor-pointer text-2xl text-deepearth">
+                {content.lessonPage.watchHeading}
+              </summary>
+              <p className="mt-4 whitespace-pre-line text-base leading-7 text-stonegray">
+                {lesson.transcript}
+              </p>
+            </details>
+          ) : null}
+
+          {lesson.quiz ? (
+            <QuizCard lessonSlug={lesson.slug} question={lesson.quiz} labels={content.quiz} />
+          ) : null}
         </section>
 
         <aside className="space-y-8">
@@ -116,6 +137,20 @@ export default async function LessonPage({
             <h2 className="headline-font text-3xl text-deepearth">{content.lessonPage.reflectionHeading}</h2>
             <p className="mt-4 text-base leading-8 text-stonegray">{lesson.reflectionPrompt}</p>
           </div>
+
+          {lessonBadge ? (
+            <div>
+              <p className="mb-3 text-xs uppercase tracking-[0.3em] text-stonegray">
+                {content.badges.heading}
+              </p>
+              <BadgeCard
+                badge={lessonBadge}
+                earned={false}
+                earnedLabel={content.badges.earnedLabel}
+                lockedLabel={content.badges.lockedLabel}
+              />
+            </div>
+          ) : null}
 
           <div className="documentary-card flex flex-col gap-4 p-8">
             <Link

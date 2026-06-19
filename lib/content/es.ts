@@ -18,13 +18,16 @@ export const es: SiteContent = {
   },
   nav: {
     home: "Inicio",
+    learn: "Aprender",
     library: "Biblioteca",
     pumaPath: "Camino del Puma",
     dashboard: "Panel",
     reflections: "Reflexiones",
     about: "Acerca de",
+    mallku: "Mallku",
     contact: "Contacto",
     conservation: "Conservación",
+    signup: "Únete gratis",
     english: "English",
     spanish: "Español",
     skipToContent: "Saltar al contenido principal",
@@ -56,7 +59,7 @@ export const es: SiteContent = {
       },
       {
         title: "Gratuito y sin fines de lucro",
-        body: "Cada página repite la promesa central con claridad: sin precios, sin checkout, sin presión para reservar y sin solicitudes de donación.",
+        body: "Cada página repite la promesa central con claridad: una membresía de aprendizaje gratuita de PachaMind, sin costo y sin nada que comprar — solo aprendizaje.",
         image:
           "/images/andes/andes-western-slope-aster.jpg",
       },
@@ -137,7 +140,7 @@ export const es: SiteContent = {
       "Mallku Aribalo es un maestro chamánico andino y guardián de la tradición cuyo conocimiento de la práctica cosmológica, la reciprocidad comunitaria y la atención sagrada forma el fundamento vivo de cada lección en este espacio. Sus enseñanzas se ofrecen aquí para el aprendizaje cultural y la reflexión, y aparecen acreditadas a él en toda la experiencia.",
     valuesHeading: "Compromisos que nos orientan",
     values: [
-      "100 % gratuito y sin fines de lucro, sin precios, embudos de venta ni lenguaje de checkout.",
+      "100 % gratuito y sin fines de lucro: una membresía de aprendizaje gratuita de PachaMind sin nada que comprar.",
       "Mallku Aribalo aparece acreditado como guardián de la tradición en toda la experiencia.",
       "Las lecciones apoyan el aprendizaje cultural y la reflexión sin afirmaciones terapéuticas ni médicas.",
     ],
@@ -309,15 +312,32 @@ export const es: SiteContent = {
       title: "Qué es PachaMind",
       kicker: "Lección 5",
       duration: "8 min",
+      estimatedMinutes: 8,
+      stage: "semilla",
+      badge: "seed-listener",
+      transcript:
+        "Marcador de transcripción — la transcripción bilingüe completa acompañará el video de orientación. PachaMind es un espacio educativo andino gratuito y sin fines de lucro dedicado a la preservación cultural y el acceso abierto.",
+      quiz: {
+        id: "what-pachamind-is-q1",
+        prompt: "¿Qué es PachaMind?",
+        options: [
+          "Un servicio de reservas de viajes.",
+          "Un espacio educativo andino gratuito y sin fines de lucro.",
+          "Una clínica de terapia y bienestar.",
+        ],
+        correctIndex: 1,
+        explanation:
+          "PachaMind es un espacio de aprendizaje gratuito y sin fines de lucro para la educación cultural andina — una membresía de aprendizaje gratuita, sin afirmaciones de salud ni terapéuticas.",
+      },
       youtubeId: "",
       mediaStatus: "NEEDS_REAL_VIDEO",
-      mediaNote: "Filmar una orientación que presente PachaMind como espacio andino gratuito y sin fines de lucro, dejando explícito que no hay ventas ni checkout.",
+      mediaNote: "Filmar una orientación que presente PachaMind como espacio andino gratuito y sin fines de lucro que ofrece una membresía de aprendizaje gratuita.",
       description:
         "Una orientación a PachaMind: un espacio de educación andina gratuito y sin fines de lucro dedicado a la preservación cultural y el acceso abierto.",
       extendedDescription:
-        "Esta lección presenta el propósito y los compromisos de PachaMind. Explica por qué este espacio está estructurado como un entorno de aprendizaje documental, por qué nunca aparece ningún costo ni lenguaje de ventas, y cómo cada lección se conecta con las tradiciones vivas que sostiene Mallku Aribalo. PachaMind existe para hacer que el conocimiento cultural andino esté disponible gratuitamente, sin distorsión, comercialización ni presión.",
+        "Esta lección presenta el propósito y los compromisos de PachaMind. Explica por qué este espacio está estructurado como un entorno de aprendizaje documental, por qué ofrece una membresía de aprendizaje gratuita sin nada que comprar, y cómo cada lección se conecta con las tradiciones vivas que sostiene Mallku Aribalo. PachaMind existe para hacer que el conocimiento cultural andino esté disponible gratuitamente, sin distorsión, comercialización ni presión.",
       learningNotes: [
-        "PachaMind es un espacio de aprendizaje gratuito y sin fines de lucro — sin precios, sin checkout, sin solicitudes de donación.",
+        "PachaMind es un espacio de aprendizaje gratuito y sin fines de lucro que ofrece una membresía de aprendizaje gratuita sin nada que comprar.",
         "Cada lección está arraigada en la tradición viva de Mallku Aribalo, acreditado como guardián de la tradición en toda la experiencia.",
         "El contenido se ofrece solo para aprendizaje cultural y reflexión; no reemplaza orientación médica, terapéutica ni legal.",
         "Nivel de riesgo: Bajo — contenido de orientación sin afirmaciones de salud ni de resultados.",
@@ -331,6 +351,23 @@ export const es: SiteContent = {
       title: "Mallku Aribalo: Guardián de la tradición y maestro andino",
       kicker: "Lección 6",
       duration: "10 min",
+      estimatedMinutes: 10,
+      stage: "raiz",
+      badge: "rooted-learner",
+      transcript:
+        "Marcador de transcripción — la transcripción bilingüe completa acompañará el perfil biográfico. Mallku Aribalo (James Arevalo Merejildo) es acreditado como guardián de la tradición y maestro chamánico andino en todo PachaMind.",
+      quiz: {
+        id: "mallku-aribalo-q1",
+        prompt: "¿Por qué PachaMind acredita a Mallku Aribalo en toda la experiencia?",
+        options: [
+          "La atribución es un acto de reciprocidad que preserva la integridad de la enseñanza.",
+          "Para anunciar sesiones comerciales con él.",
+          "Porque la ley exige un respaldo de una celebridad.",
+        ],
+        correctIndex: 0,
+        explanation:
+          "Acreditar la fuente es reciprocidad: saber quién sostiene una enseñanza es inseparable de la enseñanza misma. No se implica ninguna oferta comercial.",
+      },
       youtubeId: "",
       mediaStatus: "NEEDS_REAL_VIDEO",
       mediaNote: "Filmar un perfil biográfico de Mallku Aribalo que cubra su rol como guardián de la tradición, contexto de linaje docente y valor de la atribución.",
@@ -353,6 +390,23 @@ export const es: SiteContent = {
       title: "Kausay Pacha: El universo viviente",
       kicker: "Lección 7",
       duration: "12 min",
+      estimatedMinutes: 12,
+      stage: "tallo",
+      badge: "growing-student",
+      transcript:
+        "Marcador de transcripción — la transcripción bilingüe completa acompañará la lección sobre Kausay Pacha, el universo viviente andino, presentado como educación cultural y filosófica.",
+      quiz: {
+        id: "kausay-pacha-q1",
+        prompt: "¿Qué describe Kausay Pacha?",
+        options: [
+          "Un programa con resultados personales garantizados.",
+          "Un plan de tratamiento médico.",
+          "Un universo entendido como vivo, animado y relacional.",
+        ],
+        correctIndex: 2,
+        explanation:
+          "Kausay Pacha es la idea andina de un universo vivo y relacional — ofrecida aquí como aprendizaje cultural, no como guía terapéutica ni de resultados garantizados.",
+      },
       youtubeId: "",
       mediaStatus: "NEEDS_REAL_VIDEO",
       mediaNote: "Filmar una lección conceptual sobre Kausay Pacha como universo viviente y relacional, introduciendo el marco de las Tres Pachas.",
@@ -375,6 +429,23 @@ export const es: SiteContent = {
       title: "Hanaq Pacha: Cielo, ciclos y arqueoastronomía",
       kicker: "Lección 8",
       duration: "14 min",
+      estimatedMinutes: 14,
+      stage: "flor",
+      badge: "flowering-mind",
+      transcript:
+        "Marcador de transcripción — la transcripción bilingüe completa acompañará la lección sobre las Tres Pachas (Hanaq Pacha, Kay Pacha, Uku Pacha) como mapa de aprendizaje, con la arqueoastronomía presentada como interpretación histórica.",
+      quiz: {
+        id: "hanaq-pacha-q1",
+        prompt: "¿Cómo se entienden mejor las Tres Pachas en esta lección?",
+        options: [
+          "Como hecho científico o astrológico comprobado.",
+          "Como un mapa de aprendizaje cultural: Hanaq Pacha, Kay Pacha y Uku Pacha.",
+          "Como un marco de diagnóstico médico.",
+        ],
+        correctIndex: 1,
+        explanation:
+          "Las Tres Pachas se presentan como un mapa de aprendizaje andino. El material astronómico se presenta como interpretación histórica, no como afirmación predictiva ni de consenso académico.",
+      },
       youtubeId: "",
       mediaStatus: "NEEDS_REAL_VIDEO",
       mediaNote: "Filmar una lección de cielo y sitios sagrados sobre Hanaq Pacha con contexto histórico de arqueoastronomía, ciclos celestes y alineaciones.",
@@ -463,6 +534,23 @@ export const es: SiteContent = {
       title: "Munay, Yachay, Llank'ay, Sami y Hucha: Los valores como currículo",
       kicker: "Lección 12",
       duration: "15 min",
+      estimatedMinutes: 15,
+      stage: "puma",
+      badge: "puma-path-complete",
+      transcript:
+        "Marcador de transcripción — la transcripción bilingüe completa acompañará la lección curricular sobre los Cinco Valores Andinos: Ayni, Munay, Yachay, Llank'ay y Sami / Hucha, presentados como valores de aprendizaje sin afirmaciones de autoayuda ni terapia.",
+      quiz: {
+        id: "values-q1",
+        prompt: "¿Cómo se presentan los Cinco Valores Andinos en PachaMind?",
+        options: [
+          "Como un programa comercial de autoayuda con resultados garantizados.",
+          "Como valores de aprendizaje del currículo: Ayni, Munay, Yachay, Llank'ay y Sami / Hucha.",
+          "Como un protocolo terapéutico para tratar afecciones.",
+        ],
+        correctIndex: 1,
+        explanation:
+          "Los valores — Ayni, Munay, Yachay, Llank'ay, Sami y Hucha — se enseñan como currículo cultural, no como autoayuda comercial ni afirmaciones terapéuticas.",
+      },
       youtubeId: "",
       mediaStatus: "NEEDS_REAL_VIDEO",
       mediaNote: "Filmar una lección curricular que desarrolle Munay, Yachay, Llank'ay, Sami y Hucha con ejemplos concretos de práctica.",
@@ -615,6 +703,209 @@ export const es: SiteContent = {
         body: "Estas notas te pertenecen solo a ti. No hay cuentas, ni envíos, ni respuestas correctas — solo el espacio tranquilo entre una pregunta y tu respuesta.",
         image:
           "/images/andes/machu-picchu-partial-1911.jpg",
+      },
+    ],
+  },
+  pages: {
+    learn: {
+      title: "Aprender",
+      intro:
+        "Comienza aquí. El centro de aprendizaje reúne la biblioteca de lecciones y el Camino del Puma en un punto de entrada tranquilo. Todo es gratuito.",
+      startLabel: "Abrir la biblioteca de lecciones",
+      pathLabel: "Seguir el Camino del Puma",
+    },
+    mallku: {
+      title: "Mallku Aribalo",
+      intro:
+        "Mallku Aribalo — también conocido como James Arevalo Merejildo — es acreditado como guardián de la tradición y maestro chamánico andino cuyo conocimiento sostiene cada lección de PachaMind.",
+      sections: [
+        {
+          heading: "Guardián de la tradición y maestro",
+          paragraphs: [
+            "Mallku Aribalo es un maestro chamánico andino y guardián de la tradición cuyo trabajo en la práctica cosmológica, la reciprocidad comunitaria y la atención sagrada forma la base viva de este espacio de aprendizaje.",
+            "Aquí, \"maestro chamánico\" nombra un rol cultural y tradicional. PachaMind no hace afirmaciones terapéuticas, médicas ni de resultados, y ofrece sus enseñanzas solo para el aprendizaje cultural y la reflexión.",
+          ],
+        },
+        {
+          heading: "Por qué importa la atribución",
+          paragraphs: [
+            "Acreditar la fuente de una enseñanza es en sí mismo un acto de reciprocidad. Saber quién sostiene una enseñanza es inseparable de comprenderla, y la mantiene conectada con la comunidad que la lleva.",
+          ],
+        },
+      ],
+      attributionNote:
+        "Los detalles biográficos se presentan con cuidado. Algunos datos específicos aún requieren verificación antes de su publicación; consulta las notas de desarrollo.",
+    },
+    privacy: {
+      title: "Privacidad",
+      intro:
+        "Esta página describe cómo el prototipo de Flow A de PachaMind.org maneja la información del estudiante. Es un resumen en lenguaje sencillo, no asesoría legal.",
+      sections: [
+        {
+          heading: "Qué almacena este prototipo",
+          paragraphs: [
+            "En este prototipo, el progreso de aprendizaje, las notas de reflexión y los datos de membresía que ingresas se almacenan solo en tu propio navegador (localStorage). No se transmite ningún dato a un servidor y no se envían mensajes.",
+          ],
+        },
+        {
+          heading: "Coordenadas de membresía",
+          paragraphs: [
+            "Una membresía de aprendizaje gratuita puede recopilar: nombre, apellido, correo electrónico, país / región, código de país, número de celular / WhatsApp, idioma preferido y tus permisos de comunicación por separado. Se usan solo para la comunicación educativa de aprendizaje.",
+          ],
+        },
+        {
+          heading: "Sin uso comercial",
+          paragraphs: [
+            "Una membresía de aprendizaje gratuita de PachaMind.org no crea ninguna relación comercial con Embodier.ai. Tus datos no se usan para ventas, membresías de pago, reservas, selección ni seguimiento de viajes.",
+          ],
+        },
+      ],
+    },
+    terms: {
+      title: "Términos",
+      intro:
+        "Términos en lenguaje sencillo para usar el prototipo de aprendizaje de Flow A de PachaMind.org. No es asesoría legal.",
+      sections: [
+        {
+          heading: "Uso educativo gratuito",
+          paragraphs: [
+            "PachaMind se ofrece de forma gratuita para el aprendizaje cultural y la reflexión. El lanzamiento inicial brinda únicamente una membresía de aprendizaje gratuita de PachaMind, sin nada que comprar.",
+          ],
+        },
+        {
+          heading: "Sin afirmaciones de salud ni de resultados",
+          paragraphs: [
+            "Las lecciones son educación cultural. No brindan orientación médica, terapéutica ni legal, y no prometen resultados personales, de salud ni espirituales.",
+          ],
+        },
+        {
+          heading: "Respeto por la tradición",
+          paragraphs: [
+            "El contenido se comparte con atribución a Mallku Aribalo. Por favor lleva estas enseñanzas adelante con contexto, crédito y cuidado.",
+          ],
+        },
+      ],
+    },
+    accessibility: {
+      title: "Accesibilidad",
+      intro:
+        "PachaMind está diseñado para ser tranquilo, legible y utilizable en un teléfono. Buscamos cumplir con WCAG 2.1 AA donde sea posible.",
+      sections: [
+        {
+          heading: "Lo que hacemos",
+          paragraphs: [
+            "Diseños mobile-first desde 375px, anillos de enfoque de teclado visibles, un enlace para saltar al contenido, encabezados semánticos y contraste de color verificado con WCAG AA.",
+          ],
+        },
+        {
+          heading: "Dinos qué mejorar",
+          paragraphs: [
+            "La accesibilidad es continua. Si algo es difícil de usar, la página de contacto abre un mensaje en tu propia aplicación de correo para que nos avises.",
+          ],
+        },
+      ],
+    },
+  },
+  membership: {
+    signup: {
+      title: "Crea tu membresía de aprendizaje gratuita de PachaMind",
+      intro:
+        "Tu membresía te permite seguir el Camino del Puma, guardar tu progreso, recibir recordatorios de lecciones, completar reflexiones y elegir cómo PachaMind puede comunicarse contigo sobre tu aprendizaje.",
+      firstNameLabel: "Nombre",
+      lastNameLabel: "Apellido",
+      emailLabel: "Correo electrónico",
+      countryRegionLabel: "País / región",
+      countryCodeLabel: "Código de país",
+      cellWhatsappLabel: "Número de celular / WhatsApp",
+      preferredLanguageLabel: "Idioma preferido",
+      languageOptionEn: "English",
+      languageOptionEs: "Español",
+      permissionsHeading: "Permisos de comunicación",
+      submitLabel: "Crear mi membresía gratuita",
+      successHeading: "Tu membresía de aprendizaje gratuita está lista",
+      successBody:
+        "Esto es un prototipo: tus datos y elecciones se guardan solo en este navegador. No se envían mensajes ni se crea ninguna inscripción comercial.",
+      requiredHint: "Todos los campos a continuación son obligatorios para crear tu membresía gratuita.",
+      consentLabels: {
+        account:
+          "Acepto crear una membresía de aprendizaje gratuita de PachaMind y recibir mensajes relacionados con la cuenta.",
+        email: "Acepto recibir correos electrónicos educativos de PachaMind.",
+        whatsapp: "Acepto recibir mensajes educativos de PachaMind por WhatsApp.",
+        sms: "Acepto recibir mensajes educativos de PachaMind por SMS si este canal llega a estar disponible.",
+        embodierAcknowledgement:
+          "Entiendo que esto no me inscribe en comunicaciones comerciales de Embodier.ai.",
+      },
+      validation: {
+        firstName: "Por favor ingresa tu nombre.",
+        lastName: "Por favor ingresa tu apellido.",
+        email: "Por favor ingresa un correo electrónico válido.",
+        countryRegion: "Por favor ingresa tu país o región.",
+        countryCode: "Por favor ingresa tu código de país.",
+        cellWhatsapp: "Por favor ingresa tu número de celular / WhatsApp.",
+        accountConsent:
+          "Crear una membresía requiere aceptar los mensajes relacionados con la cuenta.",
+      },
+      noCommerceNote:
+        "PachaMind ofrece únicamente una membresía de aprendizaje gratuita, sin nada que comprar. Una membresía de aprendizaje gratuita no crea ninguna relación comercial con Embodier.ai.",
+    },
+    preferences: {
+      title: "Preferencias de comunicación",
+      intro:
+        "Elige qué canales educativos puede usar PachaMind. Puedes cambiarlos en cualquier momento. Estas elecciones son solo educativas.",
+      saveLabel: "Guardar preferencias",
+      savedLabel: "Preferencias guardadas en este navegador",
+      noMembershipHeading: "No se encontró ninguna membresía en este navegador",
+      noMembershipBody:
+        "Crea primero una membresía de aprendizaje gratuita para gestionar tus preferencias de comunicación.",
+      joinLabel: "Crear una membresía gratuita",
+    },
+    debugPanel: {
+      heading: "Registro de consentimiento (solo desarrollo)",
+      note: "Registros de consentimiento simulados guardados localmente para este prototipo. Ocultos en compilaciones de producción.",
+    },
+  },
+  quiz: {
+    heading: "Comprobación de conocimiento",
+    submitLabel: "Comprobar mi respuesta",
+    correctLabel: "Correcto",
+    incorrectLabel: "Casi",
+    tryAgainLabel: "Intentar de nuevo",
+    selectPrompt: "Elige una respuesta.",
+  },
+  badges: {
+    heading: "Insignias de aprendizaje",
+    earnedLabel: "Obtenida",
+    lockedLabel: "Bloqueada",
+    items: [
+      {
+        key: "seed-listener",
+        title: "Oyente Semilla",
+        description: "Otorgada por comenzar el Camino del Puma con tu primera lección.",
+        trigger: "semilla",
+      },
+      {
+        key: "rooted-learner",
+        title: "Aprendiz Enraizado",
+        description: "Otorgada por afianzarte en los fundamentos del aprendizaje cultural andino.",
+        trigger: "raiz",
+      },
+      {
+        key: "growing-student",
+        title: "Estudiante en Crecimiento",
+        description: "Otorgada por llevar las enseñanzas a una comprensión cultural más amplia.",
+        trigger: "tallo",
+      },
+      {
+        key: "flowering-mind",
+        title: "Mente en Flor",
+        description: "Otorgada por conectar las lecciones de cosmovisión en un mapa vivo.",
+        trigger: "flor",
+      },
+      {
+        key: "puma-path-complete",
+        title: "Compañero del Camino del Puma",
+        description: "Otorgada por completar el recorrido completo de aprendizaje del Camino del Puma.",
+        trigger: "puma",
       },
     ],
   },

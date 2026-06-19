@@ -4,7 +4,9 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import { readProgressState, resetProgressState } from "@/lib/progress";
-import type { Language, Lesson } from "@/lib/types";
+import { readMembershipSubmission } from "@/lib/membership/consent";
+import type { Language, Lesson, SiteContent } from "@/lib/types";
+import { BadgeCard } from "@/components/badge-card";
 import { CertificateView } from "@/components/certificate-view";
 
 interface DashboardProgressProps {
@@ -31,16 +33,19 @@ interface DashboardProgressProps {
     certificateNamePlaceholder: string;
     certificatePrintLabel: string;
   };
+  badges: SiteContent["badges"];
 }
 
 export function DashboardProgress({
   language,
   lessons,
   labels,
+  badges,
 }: DashboardProgressProps) {
   const [completedLessonSlugs, setCompletedLessonSlugs] = useState<string[]>([]);
   const [lastOpenedLessonSlug, setLastOpenedLessonSlug] = useState<string | undefined>();
   const [confirmReset, setConfirmReset] = useState(false);
+  const [firstName, setFirstName] = useState<string | undefined>();
   const confirmRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -48,6 +53,7 @@ export function DashboardProgress({
       const state = readProgressState();
       setCompletedLessonSlugs(state.completedLessonSlugs);
       setLastOpenedLessonSlug(state.lastOpenedLessonSlug);
+      setFirstName(readMembershipSubmission()?.profile.firstName);
     }
 
     syncFromStorage();
@@ -76,6 +82,17 @@ export function DashboardProgress({
     lessons.length === 0 ? 0 : Math.round((completedCount / lessons.length) * 100);
 
   const isAllComplete = lessons.length > 0 && completedCount >= lessons.length;
+
+  // A badge is earned when the lesson carrying its key is completed.
+  const earnedBadgeKeys = useMemo(() => {
+    const keys = new Set<string>();
+    for (const lesson of lessons) {
+      if (lesson.badge && completedSet.has(lesson.slug)) {
+        keys.add(lesson.badge);
+      }
+    }
+    return keys;
+  }, [lessons, completedSet]);
 
   const continueLesson =
     lessons.find(
@@ -110,6 +127,12 @@ export function DashboardProgress({
 
   return (
     <div className="flex flex-col gap-8">
+      {firstName ? (
+        <p className="headline-font text-2xl text-deepearth">
+          {labels.continueLearning} — {firstName}
+        </p>
+      ) : null}
+
       {/* Stats row */}
       <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="documentary-card grid gap-4 p-8 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
@@ -246,6 +269,26 @@ export function DashboardProgress({
             certificatePrintLabel: labels.certificatePrintLabel,
           }}
         />
+      )}
+
+      {/* Learning badges */}
+      {badges.items.length > 0 && (
+        <div className="documentary-card p-8">
+          <p className="text-sm uppercase tracking-[0.24em] text-stonegray">
+            {badges.heading}
+          </p>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {badges.items.map((badge) => (
+              <BadgeCard
+                key={badge.key}
+                badge={badge}
+                earned={earnedBadgeKeys.has(badge.key)}
+                earnedLabel={badges.earnedLabel}
+                lockedLabel={badges.lockedLabel}
+              />
+            ))}
+          </div>
+        </div>
       )}
 
       {/* Reset progress */}

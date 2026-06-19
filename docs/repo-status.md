@@ -59,6 +59,48 @@ This PR (#23) is **docs-only**. No application code was modified. The app
 inventory above is reported for accuracy and to ground the development
 implication in the canon; it does not represent code changes in this PR.
 
+## Update — Flow A free-membership prototype build
+
+> Added when the free-learning-membership prototype was implemented on
+> `feat/flow-a-free-learning-membership-prototype` (supersedes the "docs-only"
+> scope note above for that later branch).
+
+The free PachaMind learning membership prototype is now implemented in code:
+
+- **New member-facing routes (`app/[lang]/...`):** `learn`, `mallku`, `signup`,
+  `privacy`, `terms`, `accessibility`, and `account/preferences`. All prerender
+  in both locales (`/en/...`, `/es/...`).
+- **Membership model (`lib/membership/`):** `types.ts` (profile + consent
+  records) and `consent.ts` (auditable `ConsentRecord` builder with consent /
+  privacy / terms versions, localStorage-only persistence — no network, no
+  message send, no Embodier.ai handoff).
+- **Analytics placeholders (`lib/analytics/events.ts`):** educational-only
+  `ALLOWED_EVENTS`; `FORBIDDEN_EVENTS` now also blocks `payment_interest` and
+  `contribution_interest`. `trackEvent` throws on any forbidden event.
+- **Learning scaffolding (`lib/learning/puma-path.ts`):** Puma Path stage keys
+  (`semilla`, `raiz`, `tallo`, `flor`, `puma`).
+- **Components:** `free-membership-signup-form`, `communication-preferences-form`,
+  `consent-checkbox`, `consent-record-debug-panel` (dev-only), `quiz-card`,
+  `badge-card`. The signup form keeps all communication permissions opt-in
+  (unchecked by default) and renders the Embodier.ai item as an informational
+  acknowledgement, not a grantable opt-in.
+- **Lesson page** now renders the optional transcript, knowledge-check quiz, and
+  the lesson's learning badge. **Dashboard** now shows a learner greeting from the
+  stored profile and an earned/locked learning-badge grid.
+- **Tests:** added `__tests__/membership.test.ts` (consent + analytics guard +
+  storage round-trip) and `__tests__/canon-language.test.ts` (scans all public
+  copy for fundraising/contribution/upgrade language and checks badge / Puma Path
+  parity across locales).
+
+**Free-membership canon enforced:** Flow A offers a free PachaMind learning
+membership only. No pricing, checkout, payment, contribution, fundraising,
+booking, travel, screening, or Embodier.ai commercial opt-in appears anywhere in
+the prototype. A free learning membership does not create any Embodier.ai
+commercial relationship.
+
+Validation at build time: `npm run lint`, `npm run typecheck`, `npm run build`,
+and `npm test` (52 tests) all pass.
+
 ## Counsel/verification flags
 
 - [NEEDS COUNSEL/VERIFICATION] Whether the existing membership/account data model
